@@ -68,7 +68,7 @@ client.on('message', message=>{
             var yourping = new Date().getTime() - message.createdTimestamp
             var botping = Math.round(client.ws.ping)
 
-            message.channel.send(`Your ping: ${yourping} \nBots ping: ${botping}`)
+            message.channel.send(`Your ping: ${yourping}ms \nMy ping: ${botping}ms`)
             break;
         case 'invite':
             message.channel.send('Invite me using this link: https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847')
