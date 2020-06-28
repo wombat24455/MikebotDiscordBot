@@ -65,10 +65,8 @@ client.on('message', message=>{
             message.channel.send({ embed: exampleEmbed });
             break;
         case 'ping':
-            var yourping = new Date().getTime() - message.createdTimestamp
-            var botping = Math.round(bot.ws.ping)
-
-            message.channel.send(`Your ping: ${yourping} \nBots ping: ${botping}`)
+            var ping = Date.now() - message.createdTimestamp + " ms";
+            message.channel.sendMessage("Your ping is `" + `${Date.now() - message.createdTimestamp}` + " ms`");
             break;
         case 'invite':
             message.channel.send('Invite me using this link: https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847')
