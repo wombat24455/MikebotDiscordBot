@@ -6,7 +6,7 @@ prefix = '$';
 
 // bot version
 // format: major.minor.patch
-var version = '1.1.1';
+var version = '1.2.6';
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
