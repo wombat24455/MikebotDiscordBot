@@ -1,1 +1,1 @@
-Worker: node idex.js
+Worker: node index.js
