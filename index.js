@@ -84,7 +84,7 @@ client.on('message', message=>{
                 let uptime = ` I have been awake for ${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds!`;
                 const uptimeEmbed = {
                     color: 0x0099ff,
-                    title: 'I have been awake for',',
+                    title: 'I have been awake for',
                     fields: [
                         {
                             name: uptime,
