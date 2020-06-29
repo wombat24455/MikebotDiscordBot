@@ -12,7 +12,7 @@ var version = '1.8.10';
 client.on('ready', () =>{
     console.log('Bot ready')
     console.log(`Server count: ${client.guilds.cache.size}`);
-    client.user.setActivity("you in dissapointment", { type: "WATCHING"});
+    client.user.setActivity("you in disappointment", { type: "WATCHING"});
 })
 
 // Extract the required classes from the discord.js module
