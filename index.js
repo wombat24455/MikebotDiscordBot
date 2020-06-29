@@ -27,7 +27,7 @@ client.on('message', message=>{
 
     switch(args[0]){
         case 'help':
-            const exampleEmbed = {
+            const helpEmbed = {
                 color: 0x0099ff,
                 title: 'MikeBot Command List',
                 description: 'Here is the "huge" list of my commands lol',
@@ -62,7 +62,7 @@ client.on('message', message=>{
                 },
             };
             
-            message.channel.send({ embed: exampleEmbed });
+            message.channel.send({ embed: helpEmbed });
             break;
         case 'ping':
             var ping = Date.now() - message.createdTimestamp + " ms";
