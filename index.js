@@ -106,7 +106,7 @@ client.on('message', message=>{
                 totalSeconds %= 3600;
                 let minutes = Math.floor(totalSeconds / 60);
                 let seconds = Math.floor(totalSeconds % 60);
-                let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds!`;
+                let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
                 const uptimeEmbed = {
                     color: 0x0099ff,
                     title: 'I have been awake for',
@@ -129,31 +129,11 @@ client.on('message', message=>{
                 totalSeconds %= 3600;
                 let minutes = Math.floor(totalSeconds / 60);
                 let seconds = Math.floor(totalSeconds % 60);
-                let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds!`;
+                let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
                 const infoEmbed = {
                     color: 0x0099ff,
                     title: 'Bot info',
                     fields: [
-                        {
-                            name: 'Bot version',
-                            value: version,
-                            inline: true,
-                        },
-                        {
-                            name: 'Bot uptime',
-                            value: uptime,
-                            inline: true,
-                        },
-                        {
-                            name: 'Programming language',
-                            value: 'Javascript',
-                            inline: true,
-                        },
-                        {
-                            name: 'Servercount',
-                            value: `${client.guilds.cache.size} servers`,
-                            inline: true,
-                        },
                         {
                             name: 'Invite me',
                             value: '[Click here](https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847)',
@@ -165,8 +145,28 @@ client.on('message', message=>{
                             inline: true,
                         },
                         {
+                            name: 'Bot version',
+                            value: version,
+                            inline: true,
+                        },
+                        {
+                            name: 'Programming language',
+                            value: 'Javascript',
+                            inline: true,
+                        },
+                        {
+                            name: 'Server count',
+                            value: `${client.guilds.cache.size} servers`,
+                            inline: false,
+                        },
+                        {
                             name: 'My Discord',
                             value: 'Coming soon',
+                            inline: true,
+                        },
+                        {
+                            name: 'Bot uptime',
+                            value: uptime,
                             inline: true,
                         },
                     ],
