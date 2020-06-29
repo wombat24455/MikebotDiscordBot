@@ -1,6 +1,6 @@
 {
   "name": "mikebot",
-  "version": "1.0.0",
+  "version": "1.8.8",
   "description": "MikeBot",
   "main": "index.js",
   "scripts": {
