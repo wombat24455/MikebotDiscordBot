@@ -123,6 +123,7 @@ client.on('message', message=>{
                 };
                 message.channel.send({ embed: uptimeEmbed });
             }else if (args[1] === 'all'){
+                let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds!`;
                 const infoEmbed = {
                     color: 0x0099ff,
                     title: 'Bot info',
@@ -134,7 +135,7 @@ client.on('message', message=>{
                         },
                         {
                             name: 'Bot uptime',
-                            value: `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`,
+                            value: uptime,
                             inline: true,
                         },
                         {
