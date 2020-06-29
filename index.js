@@ -6,7 +6,7 @@ prefix = '$';
 
 // bot version
 // format: major.minor.patch
-var version = '1.3.8';
+var version = '1.4.8';
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
@@ -66,7 +66,21 @@ client.on('message', message=>{
             break;
         case 'ping':
             var ping = Date.now() - message.createdTimestamp + " ms";
-            message.channel.send("Your ping is `" + `${Date.now() - message.createdTimestamp}` + " ms`");
+            const pingEmbed = {
+                color: 0x0099ff,
+                title: 'Your ping is:',
+                fields: [
+                    {
+                        name: ping,
+                        value: 'Might not be 100% accurate',
+                    },
+                ],
+                timestamp: new Date(),
+                footer: {
+                    text: 'Nothin down here buddy'
+                },
+            };
+            message.channel.send({ embed: pingEmbed });
             break;
         case 'invite':
             message.channel.send('Invite me using this link: https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847')
