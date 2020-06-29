@@ -6,7 +6,7 @@ prefix = '$';
 
 // bot version
 // format: major.minor.patch
-var version = '1.8.10';
+var version = '1.9.10';
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
@@ -44,7 +44,7 @@ client.on('message', message=>{
                     },
                     {
                         name: '$info [query]',
-                        value: 'Available info about me (replace [query] with version or uptime)',
+                        value: 'Available info about me (replace [query] with all, version or uptime)',
                     },
                     {
                         name: '$del [amount]',
@@ -122,6 +122,51 @@ client.on('message', message=>{
                     },
                 };
                 message.channel.send({ embed: uptimeEmbed });
+            }else if (args[1] === 'all'){
+                const infoEmbed = {
+                    color: 0x0099ff,
+                    title: 'Bot info',
+                    fields: [
+                        {
+                            name: 'Bot version',
+                            value: version,
+                            inline: true,
+                        },
+                        {
+                            name: 'Bot uptime',
+                            value: uptime,
+                            inline: true,
+                        },
+                        {
+                            name: 'Programming language',
+                            value: 'Javascript',
+                            inline: true,
+                        },
+                        {
+                            name: 'Servercount',
+                            value: `${client.guilds.cache.size} servers`,
+                            inline: true,
+                        },
+                        {
+                            name: 'Invite me',
+                            value: 'Click here',
+                            url: 'https://discord.com/oauth2/authorize?client_id=161660517914509312&scope=bot+identify+guilds&response_type=code&redirect_uri=https%3A%2F%2Fdyno.gg%2Freturn&permissions=2134207679',
+                            inline: false,
+                        },
+                        {
+                            name: 'My website',
+                            value: 'Click here',
+                            url: 'http:///mikebot.byethost6.com/',
+                            inline: true,
+                        },
+                        {
+                            name: 'My Discord',
+                            value: 'Coming soon',
+                            inline: true,
+                        },
+                    ],
+                };
+                message.channel.send({ embed: infoEmbed });
             }else{
                 message.channel.send('Bro do ``$help`` so you know how to use the damn command.');
             }
