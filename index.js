@@ -6,7 +6,7 @@ prefix = '$';
 
 // bot version
 // format: major.minor.patch
-var version = '1.4.8';
+var version = '1.5.8';
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
@@ -50,6 +50,10 @@ client.on('message', message=>{
                     {
                         name: '$del [amount]',
                         value: 'I bulk delete the amount of messages you tell me to delete',
+                    },
+                    {
+                        name: '$features',
+                        value: 'I reply with a list of stuff that I will be able to do in the future',
                     },
                     {
                         name: 'Nothing here yet buddy',
@@ -119,10 +123,33 @@ client.on('message', message=>{
                 if(!args[1]) return message.reply('You need to tell me the number of messages you want to delete you numpty.')
                     var newamount = Number(args[1]) + Number(1);
                     message.channel.bulkDelete(newamount);
-                    message.channel.send('Deleted ' + args[1] + ' messages.').then(msg => {
+                    message.channel.send('I yeeted ' + args[1] + ' messages into the void.').then(msg => {
                         msg.delete({ timeout: 3000 })
                     })
                     .catch(console.error);
+            break;
+            case 'features':
+            const featureEmbed = {
+                color: 0x0099ff,
+                title: 'This stuff be coming soon',
+                description: 'The stuff listed here might be added soon.',
+                fields: [
+                    {
+                        name: 'More commands',
+                        value: 'I don\'t have many commands rn but more will be added soon.',
+                    },
+                    {
+                        name: 'Better website functionality',
+                        value: 'Not much of the website works rn lol (mostly the top part) so I will work on those at some point.',
+                    },
+                    {
+                        name: 'Discord server',
+                        value: 'As of right now there is no official/current server for me but one will be created in the near future hopefully.',
+                    },
+                ],
+                timestamp: new Date(),
+            };
+            message.channel.send({ embed: featureEmbed });
             break;
     }
 })
