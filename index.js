@@ -6,14 +6,15 @@ prefix = '$';
 
 // bot version
 // format: major.minor.patch
-var version = '1.7.8';
+var version = '1.8.8';
+
+servercount = `${client.guilds.cache.size} servers`
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
     console.log('Bot ready')
-    console.log(`Server count: ${client.guilds.cache.size}`);
-    client.user.setActivity("with dissapointment", { type: "WATCHING"});
-
+    console.log('servercount:' + servercount)
+    client.user.setActivity("you in dissapointment", { type: "WATCHING"});
 })
 
 // Extract the required classes from the discord.js module
@@ -58,6 +59,10 @@ client.on('message', message=>{
                     {
                         name: '$website',
                         value: 'I send a link to my website (not 100% functional)',
+                    },
+                    {
+                        name: '$servercount',
+                        value: 'I tell you how many servers I am currently in',
                     },
                     {
                         name: 'Nothing here yet buddy',
@@ -163,6 +168,15 @@ client.on('message', message=>{
                     timestamp: new Date(),
                 };
                 message.channel.send({ embed: websiteEmbed });
+            break;
+            case 'servercount':
+                const servercountEmbed = {
+                    color: 0x0099ff,
+                    title: 'I am currently in',
+                    description: servercount,
+                    timestamp: new Date(),
+                };
+                message.channel.send({ embed: servercountEmbed });
             break;
     }
 })
