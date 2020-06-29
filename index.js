@@ -134,7 +134,7 @@ client.on('message', message=>{
                         },
                         {
                             name: 'Bot uptime',
-                            value: '${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds',
+                            value: `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`,
                             inline: true,
                         },
                         {
@@ -143,7 +143,7 @@ client.on('message', message=>{
                             inline: true,
                         },
                         {
-                            name: 'Servercount',
+                            name: 'Server count',
                             value: `${client.guilds.cache.size} servers`,
                             inline: true,
                         },
