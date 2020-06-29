@@ -157,7 +157,7 @@ client.on('message', message=>{
                         {
                             name: 'Server count',
                             value: `${client.guilds.cache.size} servers`,
-                            inline: false,
+                            inline: true,
                         },
                         {
                             name: 'My Discord',
@@ -167,7 +167,7 @@ client.on('message', message=>{
                         {
                             name: 'Bot uptime',
                             value: uptime,
-                            inline: true,
+                            inline: false,
                         },
                     ],
                 };
