@@ -157,7 +157,7 @@ client.on('message', message=>{
                         {
                             name: 'Invite me',
                             value: '[Click here](https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847)',
-                            inline: false,
+                            inline: true,
                         },
                         {
                             name: 'My website',
