@@ -134,7 +134,7 @@ client.on('message', message=>{
                         },
                         {
                             name: 'Bot uptime',
-                            value: uptime,
+                            value: `${uptime}`,
                             inline: true,
                         },
                         {
