@@ -82,7 +82,20 @@ client.on('message', message=>{
                 let minutes = Math.floor(totalSeconds / 60);
                 let seconds = Math.floor(totalSeconds % 60);
                 let uptime = ` I have been awake for ${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds!`;
-                message.channel.send(uptime)
+                const uptimeEmbed = {
+                    color: 0x0099ff,
+                    title: 'I have been awake for',',
+                    fields: [
+                        {
+                            name: uptime,
+                        },
+                    ],
+                    timestamp: new Date(),
+                    footer: {
+                        text: 'I tend to sleep every now and then',
+                    },
+                };
+                message.channel.send({ embed: uptimeEmbed });
             }else{
                 message.channel.send('Bro do ``$help`` so you know how to use the damn command.');
             }
