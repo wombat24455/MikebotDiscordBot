@@ -141,7 +141,7 @@ client.on('message', message=>{
                         },
                         {
                             name: 'My website',
-                            value: '[Click here](http:///mikebot.byethost6.com/)',
+                            value: 'http:///mikebot.byethost6.com/',
                             inline: true,
                         },
                         {
