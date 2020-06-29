@@ -8,12 +8,10 @@ prefix = '$';
 // format: major.minor.patch
 var version = '1.8.8';
 
-servercount = `${client.guilds.cache.size} servers`
-
 // outputs in console when bot code is run
 client.on('ready', () =>{
     console.log('Bot ready')
-    console.log('servercount:' + servercount)
+    console.log(`Server count: ${client.guilds.cache.size}`);
     client.user.setActivity("you in dissapointment", { type: "WATCHING"});
 })
 
@@ -173,7 +171,7 @@ client.on('message', message=>{
                 const servercountEmbed = {
                     color: 0x0099ff,
                     title: 'I am currently in',
-                    description: servercount,
+                    description: `${client.guilds.cache.size} + 'servers'`,
                     timestamp: new Date(),
                 };
                 message.channel.send({ embed: servercountEmbed });
