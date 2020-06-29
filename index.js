@@ -81,7 +81,7 @@ client.on('message', message=>{
                 totalSeconds %= 3600;
                 let minutes = Math.floor(totalSeconds / 60);
                 let seconds = Math.floor(totalSeconds % 60);
-                let uptime = ` I have been awake for ${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds!`;
+                let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds!`;
                 const uptimeEmbed = {
                     color: 0x0099ff,
                     title: 'I have been awake for',
