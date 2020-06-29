@@ -44,7 +44,7 @@ client.on('message', message=>{
                     },
                     {
                         name: '$info [query]',
-                        value: 'Available info about me (replace [query] with all, version or uptime)',
+                        value: 'Available info about me (replace [query] with version or uptime)',
                     },
                     {
                         name: '$del [amount]',
