@@ -6,7 +6,7 @@ prefix = '$';
 
 // bot version
 // format: major.minor.patch
-var version = '1.2.7';
+var version = '1.3.8';
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
@@ -88,11 +88,12 @@ client.on('message', message=>{
                     fields: [
                         {
                             name: uptime,
+                            value: 'I tend to sleep every now and then',
                         },
                     ],
                     timestamp: new Date(),
                     footer: {
-                        text: 'I tend to sleep every now and then'
+                        text: 'Nothin down here buddy'
                     },
                 };
                 message.channel.send({ embed: uptimeEmbed });
