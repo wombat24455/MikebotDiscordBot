@@ -134,7 +134,7 @@ client.on('message', message=>{
                         },
                         {
                             name: 'Bot uptime',
-                            value: `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`,
+                            value: `${uptime}`,
                             inline: true,
                         },
                         {
@@ -143,20 +143,18 @@ client.on('message', message=>{
                             inline: true,
                         },
                         {
-                            name: 'Server count',
+                            name: 'Servercount',
                             value: `${client.guilds.cache.size} servers`,
                             inline: true,
                         },
                         {
                             name: 'Invite me',
-                            value: 'Click here',
-                            url: 'https://discord.com/oauth2/authorize?client_id=161660517914509312&scope=bot+identify+guilds&response_type=code&redirect_uri=https%3A%2F%2Fdyno.gg%2Freturn&permissions=2134207679',
+                            value: '[Click here](https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847)',
                             inline: false,
                         },
                         {
                             name: 'My website',
-                            value: 'Click here',
-                            url: 'http:///mikebot.byethost6.com/',
+                            value: '[Click here](http:///mikebot.byethost6.com/)',
                             inline: true,
                         },
                         {
