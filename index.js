@@ -171,7 +171,7 @@ client.on('message', message=>{
                 const servercountEmbed = {
                     color: 0x0099ff,
                     title: 'I am currently in',
-                    description: `${client.guilds.cache.size} + 'servers'`,
+                    description: `${client.guilds.cache.size} servers`,
                     timestamp: new Date(),
                 };
                 message.channel.send({ embed: servercountEmbed });
