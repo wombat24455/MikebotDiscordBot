@@ -118,7 +118,7 @@ client.on('message', message=>{
                     ],
                     timestamp: new Date(),
                     footer: {
-                        text: 'Nothin down here buddy'
+                        text: 'Nothin\' down here buddy'
                     },
                 };
                 message.channel.send({ embed: uptimeEmbed });
@@ -193,7 +193,7 @@ client.on('message', message=>{
                     fields: [
                         {
                             name: 'More commands',
-                            value: 'I don\'t have many commands rn but more will be added soon.',
+                            value: 'I don\'t have many commands rn but more will be added as development continues.',
                         },
                         {
                             name: 'Better website functionality',
