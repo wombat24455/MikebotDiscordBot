@@ -92,7 +92,7 @@ client.on('message', message=>{
                     ],
                     timestamp: new Date(),
                     footer: {
-                        text: 'I tend to sleep every now and then',
+                        text: 'I tend to sleep every now and then'
                     },
                 };
                 message.channel.send({ embed: uptimeEmbed });
