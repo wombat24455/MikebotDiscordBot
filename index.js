@@ -177,16 +177,13 @@ client.on('message', message=>{
             }
             break;
             case 'del':
-                if (message.author.hasPermission('MANAGE_MESSAGES')) {
-                    if(!args[1]) return message.reply('You need to tell me the number of messages you want to delete you numpty.')
+                if(!args[1]) return message.reply('You need to tell me the number of messages you want to delete you numpty.')
                     var newamount = Number(args[1]) + Number(1);
                     message.channel.bulkDelete(newamount);
                     message.channel.send('I yeeted ' + args[1] + ' messages into the void.').then(msg => {
                         msg.delete({ timeout: 3000 })
                     })
                     .catch(console.error);
-                }else{
-                    message.channel.send("You can\'t use this command if you dont have manage message perms dummy")
                 }
             break;
             case 'features':
