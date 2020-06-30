@@ -197,7 +197,7 @@ client.on('message', message=>{
                         },
                         {
                             name: 'Better website functionality',
-                            value: 'Not much of the website works rn lol (mostly the top part) so it will work on those at some point.',
+                            value: 'Not much of the website works rn lol (mostly the top part) so it will work on it at some point.',
                         },
                         {
                             name: 'Discord server',
