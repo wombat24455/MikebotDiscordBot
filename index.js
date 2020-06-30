@@ -177,7 +177,7 @@ client.on('message', message=>{
             }
             break;
             case 'del':
-                if (member.hasPermission('MANAGE_MESSAGES')) {
+                if (message.author.hasPermission('MANAGE_MESSAGES')) {
                     if(!args[1]) return message.reply('You need to tell me the number of messages you want to delete you numpty.')
                     var newamount = Number(args[1]) + Number(1);
                     message.channel.bulkDelete(newamount);
