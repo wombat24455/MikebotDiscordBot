@@ -7,6 +7,9 @@ Some of the features that are coming to the bot are listed on the website (linke
 ## Development of MikeBot
 As MikeBot is only developed by one person (me), development of the bot will not be as fast as many other discord bots out there. I will be working on the bot a lot of the time so there might be an occasional restart of the bot either because I am working on a new feature or fixing an issue with a current feature. I will be adding a suggestions or feedback command to MikeBot so you can send any suggestions or feedback through the bot which will be sent to the MikeBot discord server, but as of right now I have not created a discord server for MikeBot yet as I am working on fixing and adding commands to MikeBot. For now just leave your suggestions/feedback [here](https://github.com/wombat24455/MikebotDiscordBot/issues).
 
+## Development of MikeBot Website
+I will be working on the website along side the bot itself but the website will not be updated as quickly as I can with MikeBot as GitHub will only allow me to push 10 commits an hour to the website.
+
 ## Tasks to be done
 - [x] Get bot online 24/7
 - [x] Create website for MikeBot
