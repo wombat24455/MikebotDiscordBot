@@ -184,7 +184,6 @@ client.on('message', message=>{
                         msg.delete({ timeout: 3000 })
                     })
                     .catch(console.error);
-                }
             break;
             case 'features':
                 const featureEmbed = {
