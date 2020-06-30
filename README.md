@@ -27,7 +27,7 @@ Command | Description
 $ping | Replies with your current ping (might not be 100% accurate)
 $invite | Provides the link to add MikeBot to your server
 $info [query] | Tells you info about MikeBot. Available queries are all, version and uptime
-$del [amount] | Deletes the amount of messages you tell it to delete (perm requirement still in the works)
+$del [num] | Deletes the amount of messages you tell it to delete (perm requirement still in the works)
 $features | Replies with some of the features coming to MikeBot in the future, most things shown are external features
 $website | Provides the link to the MikeBot website
 $servercount | Displays the number of servers mikebot is in at the moment
