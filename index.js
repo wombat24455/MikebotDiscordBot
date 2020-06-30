@@ -6,7 +6,7 @@ prefix = '$';
 
 // bot version
 // format: major.minor.patch
-var version = '1.9.11';
+var version = '1.9.10';
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
@@ -106,7 +106,7 @@ client.on('message', message=>{
                 totalSeconds %= 3600;
                 let minutes = Math.floor(totalSeconds / 60);
                 let seconds = Math.floor(totalSeconds % 60);
-                let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
+                let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds!`;
                 const uptimeEmbed = {
                     color: 0x0099ff,
                     title: 'I have been awake for',
@@ -118,7 +118,7 @@ client.on('message', message=>{
                     ],
                     timestamp: new Date(),
                     footer: {
-                        text: 'Nothin\' down here buddy'
+                        text: 'Nothin down here buddy'
                     },
                 };
                 message.channel.send({ embed: uptimeEmbed });
@@ -129,24 +129,19 @@ client.on('message', message=>{
                 totalSeconds %= 3600;
                 let minutes = Math.floor(totalSeconds / 60);
                 let seconds = Math.floor(totalSeconds % 60);
-                let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
+                let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds!`;
                 const infoEmbed = {
                     color: 0x0099ff,
                     title: 'Bot info',
                     fields: [
                         {
-                            name: 'Invite me',
-                            value: '[Click here](https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847)',
-                            inline: true,
-                        },
-                        {
-                            name: 'My website',
-                            value: '[Click here](http://mikebot.byethost6.com/)',
-                            inline: true,
-                        },
-                        {
                             name: 'Bot version',
                             value: version,
+                            inline: true,
+                        },
+                        {
+                            name: 'Bot uptime',
+                            value: uptime,
                             inline: true,
                         },
                         {
@@ -155,19 +150,24 @@ client.on('message', message=>{
                             inline: true,
                         },
                         {
-                            name: 'Server count',
+                            name: 'Servercount',
                             value: `${client.guilds.cache.size} servers`,
+                            inline: true,
+                        },
+                        {
+                            name: 'Invite me',
+                            value: '[Click here](https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847)',
+                            inline: false,
+                        },
+                        {
+                            name: 'My website',
+                            value: '[Click here](https://wombat24455.github.io/mikebot.github.io/)',
                             inline: true,
                         },
                         {
                             name: 'My Discord',
                             value: 'Coming soon',
                             inline: true,
-                        },
-                        {
-                            name: 'Bot uptime',
-                            value: uptime,
-                            inline: false,
                         },
                     ],
                 };
@@ -193,7 +193,7 @@ client.on('message', message=>{
                     fields: [
                         {
                             name: 'More commands',
-                            value: 'I don\'t have many commands rn but more will be added as development continues.',
+                            value: 'I don\'t have many commands rn but more will be added soon.',
                         },
                         {
                             name: 'Better website functionality',
@@ -212,7 +212,7 @@ client.on('message', message=>{
                 const websiteEmbed = {
                     color: 0x0099ff,
                     title: 'My website:',
-                    description: 'http://mikebot.byethost6.com/ (website can\'t be https yet lol)',
+                    description: 'https://wombat24455.github.io/mikebot.github.io/',
                     timestamp: new Date(),
                 };
                 message.channel.send({ embed: websiteEmbed });
