@@ -193,7 +193,7 @@ client.on('message', message=>{
                     fields: [
                         {
                             name: 'More commands',
-                            value: 'I don\'t have many commands rn but more will be added soon.',
+                            value: 'As time goes on I will be worked on and more commands will be added',
                         },
                         {
                             name: 'Better website functionality',
@@ -202,6 +202,10 @@ client.on('message', message=>{
                         {
                             name: 'Discord server',
                             value: 'As of right now there is no official/current server for me but one will be created in the near future hopefully.',
+                        },
+                        {
+                            name: 'Bot response on mention',
+                            value: 'I will respond to you when you @ me',
                         },
                     ],
                     timestamp: new Date(),
