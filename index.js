@@ -6,7 +6,7 @@ prefix = '$';
 
 // bot version
 // format: major.minor.patch
-var version = '1.9.10';
+var version = '1.10.10';
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
@@ -197,7 +197,7 @@ client.on('message', message=>{
                         },
                         {
                             name: 'Better website functionality',
-                            value: 'Not much of the website works rn lol (mostly the top part) so I will work on those at some point.',
+                            value: 'Not much of the website works rn lol (mostly the top part) so it will work on those at some point.',
                         },
                         {
                             name: 'Discord server',
