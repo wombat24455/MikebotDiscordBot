@@ -230,6 +230,11 @@ client.on('message', message=>{
                 };
                 message.channel.send({ embed: servercountEmbed });
             break;
+            case 'say':
+                const sayMessage = args.join(" ");
+                message.delete().catch(O_o=>{}); 
+                message.channel.send(sayMessage);
+            break;
     }
 })
 client.login(process.env.token);
