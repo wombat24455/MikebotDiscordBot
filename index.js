@@ -217,10 +217,10 @@ client.on('message', message=>{
                 message.channel.send({ embed: servercountEmbed });
             break;
             case 'say':
-                const sayMessage = args.splice(0, 1); 
-                const sayMessage = args.join(" ");
-                message.delete().catch(O_o=>{}); 
-                message.channel.send(sayMessage);
+                let botmessage = args.join(" ");
+                message.delete().catch();
+                message.channel.send(botmessage)
+            break;
             break;
     }
 })
