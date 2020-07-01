@@ -214,7 +214,7 @@ client.on('message', message=>{
                 message.channel.send({ embed: servercountEmbed });
             break;
             case 'say':
-                message.channel.send('this command doesnt work yet', {files: ['https://imgur.com/gallery/oRnYS98']})
+                message.channel.send('this command doesnt work yet', {files: ['https://i.imgur.com/BJes1uq.jpg']})
             break;
     }
 })
