@@ -76,22 +76,8 @@ client.on('message', message=>{
             message.channel.send({ embed: helpEmbed });
             break;
         case 'ping':
-            var ping = Date.now() - message.createdTimestamp + " ms";
-            const pingEmbed = {
-                color: 0x0099ff,
-                title: 'Your ping is:',
-                fields: [
-                    {
-                        name: ping,
-                        value: 'Might not be 100% accurate',
-                    },
-                ],
-                timestamp: new Date(),
-                footer: {
-                    text: 'Nothin down here buddy'
-                },
-            };
-            message.channel.send({ embed: pingEmbed });
+            const msg = await message.channel.send('Pinging...')
+            msg.edit(`Your ping is ${Math.floor(msg.createdAt - message.createdAt)}ms\nAPI ping is ${Math.round(client.ping)}ms`)
             break;
         case 'invite':
             message.channel.send('Invite me using this link: https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847')
