@@ -77,7 +77,7 @@ client.on('message', message=>{
             break;
         case 'ping':
             const msg = message.channel.send('Pinging...').then((msg)=>{
-                msg.edit(`Your ping is ${Math.floor(msg.createdAt - message.createdAt)}ms\nAPI ping is ${Math.round(client.ping)}ms`)
+                msg.edit(`Your ping is **${Math.floor(msg.createdAt - message.createdAt)}ms**`)
             })
             break;
         case 'invite':
