@@ -6,7 +6,7 @@ prefix = '$';
 
 // bot version
 // format: major.minor.patch
-var version = '1.10.11';
+var version = '1.9.10';
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
@@ -76,7 +76,7 @@ client.on('message', message=>{
             message.channel.send({ embed: helpEmbed });
             break;
         case 'ping':
-            const msg = message.channel.send('Pinging...')
+            const msg = await message.channel.send('Pinging...')
             msg.edit(`Your ping is ${Math.floor(msg.createdAt - message.createdAt)}ms\nAPI ping is ${Math.round(client.ping)}ms`)
             break;
         case 'invite':
@@ -179,19 +179,15 @@ client.on('message', message=>{
                     fields: [
                         {
                             name: 'More commands',
-                            value: 'As time goes on I will be worked on and more commands will be added',
+                            value: 'I don\'t have many commands rn but more will be added soon.',
                         },
                         {
                             name: 'Better website functionality',
-                            value: 'Not much of the website works rn lol (mostly the top part) so it will work on it at some point.',
+                            value: 'Not much of the website works rn lol (mostly the top part) so I will work on those at some point.',
                         },
                         {
                             name: 'Discord server',
                             value: 'As of right now there is no official/current server for me but one will be created in the near future hopefully.',
-                        },
-                        {
-                            name: 'Bot response on mention',
-                            value: 'I will respond to you when you @ me',
                         },
                     ],
                     timestamp: new Date(),
@@ -217,10 +213,7 @@ client.on('message', message=>{
                 message.channel.send({ embed: servercountEmbed });
             break;
             case 'say':
-                let botmessage = args.join(" ");
-                message.delete().catch();
-                message.channel.send(botmessage)
-            break;
+                message.channel.send('this command doesnt work yet', {files: ['https://imgur.com/gallery/oRnYS98']})
             break;
     }
 })
