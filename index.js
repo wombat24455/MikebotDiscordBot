@@ -76,7 +76,7 @@ client.on('message', message=>{
             message.channel.send({ embed: helpEmbed });
             break;
         case 'ping':
-            const msg = await message.channel.send('Pinging...')
+            const msg = message.channel.send('Pinging...')
             msg.edit(`Your ping is ${Math.floor(msg.createdAt - message.createdAt)}ms\nAPI ping is ${Math.round(client.ping)}ms`)
             break;
         case 'invite':
