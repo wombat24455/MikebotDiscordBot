@@ -139,7 +139,7 @@ client.on('message', message=>{
                         {
                             name: 'Bot uptime',
                             value: uptime,
-                            inline: true,
+                            inline: false,
                         },
                         {
                             name: 'Invite me',
