@@ -164,13 +164,15 @@ client.on('message', message=>{
             }
             break;
             case 'del':
-                if(!args[1]) return message.reply('You need to tell me the number of messages you want to delete you numpty.')
+                if(message.member.hasPermission("MANAGE_MESSAGES")){
+                    if(!args[1]) return message.reply('You need to tell me the number of messages you want to delete you numpty.')
                     var newamount = Number(args[1]) + Number(1);
                     message.channel.bulkDelete(newamount);
-                    message.channel.send('I yeeted ' + args[1] + ' messages into the void.').then(msg => {
+                    message.channel.send('Deleted ' + args[1] + ' messages.').then(msg => {
                         msg.delete({ timeout: 3000 })
                     })
                     .catch(console.error);
+                }
             break;
             case 'features':
                 const featureEmbed = {
