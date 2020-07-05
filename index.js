@@ -10,8 +10,7 @@ var version = '1.12.11';
 
 // Outputs in console when bot code is run
 client.on('ready', () =>{
-    console.log('Bot logged in as ' + client.user.tag)
-    console.log(`Server count: ${client.guilds.cache.size}`);
+    console.log('Bot logged in as ' + client.user.tag + `, watching ${client.guilds.cache.size} servers`);
     client.user.setActivity("you in disappointment", { type: "WATCHING"});
 })
 
@@ -175,7 +174,7 @@ client.on('message', message=>{
                     if(!args[1]) return message.reply('You need to tell me the number of messages you want to delete you numpty.')
                     var newamount = Number(args[1]) + Number(1);
                     message.channel.bulkDelete(newamount);
-                    message.channel.send('Yeeted ' + args[1] + ' messages out of the space time continuum.').then(msg => {
+                    message.channel.send('Yeeted ' + args[1] + ' messages into the void.').then(msg => {
                         msg.delete({ timeout: 3000 })
                     })
                     .catch(console.error);
