@@ -15,7 +15,7 @@ client.on('ready', () =>{
 })
 
 // Extracts the required classes from the discord.js module
-const { client, MessageEmbed } = require('discord.js');
+const { Client, MessageEmbed } = require('discord.js');
 
 // Responds on bot mention
 client.on('message', message => {
