@@ -10,7 +10,7 @@ var version = '1.12.11';
 
 // Outputs in console when bot code is run
 client.on('ready', () =>{
-    console.log('Bot logged in as' + client.user.tag)
+    console.log('Bot logged in as ' + client.user.tag)
     console.log(`Server count: ${client.guilds.cache.size}`);
     client.user.setActivity("you in disappointment", { type: "WATCHING"});
 })
@@ -27,7 +27,7 @@ client.on('message', message => {
 
 // Commands
 client.on('message', message=>{
-    if(!message.content.startsWith(prefix) || message.author.client) return;
+    if(!message.content.startsWith(prefix)) return;
     
     let args = message.content.substring(prefix.length).split(" ");
 
