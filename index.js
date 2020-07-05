@@ -10,7 +10,7 @@ var version = '1.11.11';
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
-    console.log('Bot logged in as ${bot.user.tag}')
+    console.log('Bot logged in as ${client.user.tag}')
     console.log(`Server count: ${client.guilds.cache.size}`);
     client.user.setActivity("you in disappointment", { type: "WATCHING"});
 })
@@ -20,7 +20,7 @@ const { Client, MessageEmbed } = require('discord.js');
 
 // Responds on bot mention
 client.on('message', message => {
-   if (message.mentions.has(bot.user)) {
+   if (message.mentions.has(client.user)) {
        message.channel.send(`my prefix is ` + prefix + ` buddy.`);
    }
 });
