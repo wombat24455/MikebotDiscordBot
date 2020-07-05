@@ -69,6 +69,14 @@ client.on('message', message=>{
                         value: 'I tell you how many servers I am currently in',
                     },
                     {
+                        name: '$say [args]',
+                        value: 'I\'ll say whatever you tell me to say like $say hi',
+                    },
+                    {
+                        name: '$roadmap',
+                        value: 'I send the link to my development roadmap',
+                    },
+                    {
                         name: 'Nothing here yet buddy',
                         value: 'This part is coming soon:tm:',
                     },
