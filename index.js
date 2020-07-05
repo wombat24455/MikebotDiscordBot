@@ -159,7 +159,7 @@ client.on('message', message=>{
                         },
                         {
                             name: 'My Discord',
-                            value: 'Coming soon',
+                            value: 'Coming soon:tm:',
                             inline: true,
                         },
                     ],
