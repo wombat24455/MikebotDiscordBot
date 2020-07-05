@@ -216,7 +216,9 @@ client.on('message', message=>{
                 message.channel.send({ embed: servercountEmbed });
             break;
             case 'say':
-                message.channel.send('this command doesnt work yet', {files: ['https://i.imgur.com/BJes1uq.jpg']})
+                const sayMessage = args.slice(1).join(' ');
+                message.delete();
+                message.channel.send(sayMessage);
             break;
     }
 })
