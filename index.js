@@ -6,7 +6,7 @@ prefix = '$';
 
 // bot version
 // format: major.minor.patch
-var version = '1.10.11';
+var version = '1.11.11';
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
@@ -168,7 +168,7 @@ client.on('message', message=>{
                     if(!args[1]) return message.reply('You need to tell me the number of messages you want to delete you numpty.')
                     var newamount = Number(args[1]) + Number(1);
                     message.channel.bulkDelete(newamount);
-                    message.channel.send('Deleted ' + args[1] + ' messages.').then(msg => {
+                    message.channel.send('Yeeted ' + args[1] + ' messages out of the space time continuum.').then(msg => {
                         msg.delete({ timeout: 3000 })
                     })
                     .catch(console.error);
