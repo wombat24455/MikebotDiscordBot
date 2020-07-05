@@ -20,7 +20,7 @@ const { Client, MessageEmbed } = require('discord.js');
 
 // Replies to mention of bot
 client.on('message', message=> {
-    if (message.isMemberMentioned(client.user)) {
+    if (message.mentions.has(bot.user)) {
         message.channel.send('my prefix is `$` buddy.');
     }
 });
