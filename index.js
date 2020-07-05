@@ -10,24 +10,26 @@ var version = '1.11.11';
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
-    console.log('Bot ready')
+    console.log('Bot logged in as ${bot.user.tag}')
     console.log(`Server count: ${client.guilds.cache.size}`);
     client.user.setActivity("you in disappointment", { type: "WATCHING"});
 })
 
-// Extract the required classes from the discord.js module
+// Extracts the required classes from the discord.js module
 const { Client, MessageEmbed } = require('discord.js');
+
+client.on('message', message => {
+   if (message.mentions.has(bot.user)) {
+       message.channel.send(`my prefix is ` + prefix + ` buddy.');
+   }
+});
 
 // Commands
 client.on('message', message=>{
-    if(!message.content.startsWith(prefix)) return;
+    if(!message.content.startsWith(prefix) || message.author.client) return;
     
     let args = message.content.substring(prefix.length).split(" ");
-    
-    if (message.mentions.has(client.user)) {
-        message.channel.send('my prefix is `$` buddy.');
-    }
-    
+
     switch(args[0]){
         case 'help':
             const helpEmbed = {
