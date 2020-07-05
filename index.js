@@ -6,7 +6,7 @@ prefix = '$';
 
 // Bot version
 // Format: major.minor.patch
-var version = '1.12.11';
+var version = '1.13.11';
 
 // Outputs in console when bot code is run
 client.on('ready', () =>{
@@ -207,7 +207,7 @@ client.on('message', message=>{
                 const websiteEmbed = {
                     color: 0x0099ff,
                     title: 'My website:',
-                    description: 'https://wombat24455.github.io/mikebot.github.io/',
+                    description: 'My website can be found [here](https://wombat24455.github.io/mikebot.github.io/)',
                     timestamp: new Date(),
                 };
                 message.channel.send({ embed: websiteEmbed });
@@ -225,6 +225,14 @@ client.on('message', message=>{
                 const sayMessage = args.slice(1).join(' ');
                 message.delete();
                 message.channel.send(sayMessage);
+            break;
+            case 'roadmap':
+                const roadmapEmbed = {
+                    color: 0x0099ff,
+                    title: 'MikeBot Development',
+                    description: 'My development roadmap can be found [here](https://github.com/wombat24455/MikebotDiscordBot/projects/1)',
+                };
+                message.channel.send({ embed: roadmapEmbed })
             break;
     }
 })
