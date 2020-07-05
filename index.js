@@ -18,7 +18,14 @@ client.on('ready', () =>{
 // Extract the required classes from the discord.js module
 const { Client, MessageEmbed } = require('discord.js');
 
-// commands
+// Replies to mention of bot
+client.on('message', message=> {
+    if (message.isMentioned(client.user)) {
+    message.channel.send('my prefix is `$` buddy.');
+}
+});
+
+// Commands
 client.on('message', message=>{
     if(!message.content.startsWith(prefix)) return;
     
