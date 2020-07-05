@@ -1,5 +1,9 @@
 # MikeBot
-MikeBot is a multipurpose discord bot which has a mix of fun features and administration features. Although MikeBot doesn't have many features at the moment you can still invite the bot through [the website](https://wombat24455.github.io/mikebot.github.io/) or [directly](https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847).
+[![GitHub stars](https://img.shields.io/github/stars/wombat24455/MikebotDiscordBot.svg?style=social&label=Stars&style=flat)](https://github.com/wombat24455/MikebotDiscordBot/stargazers)
+[![CodeFactor](https://www.codefactor.io/repository/github/wombat24455/mikebotdiscordbot/badge/master)](https://www.codefactor.io/repository/github/wombat24455/mikebotdiscordbot/overview/master)  
+
+
+MikeBot is a multipurpose discord bot which has a mix of fun features and administration features. Although MikeBot doesn't have many features at the moment you can still invite the bot through the [website](https://wombat24455.github.io/mikebot.github.io/) or [directly](https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847). The bot is being developed constantly by the bot owner (me) and tested by a few of the bot owner's friends.
 # [MikeBot Wiki](https://github.com/wombat24455/MikebotDiscordBot/wiki)
 ## [Development of MikeBot and website](https://github.com/wombat24455/MikebotDiscordBot/wiki/Development-of-MikeBot-and-MikeBot-website)  
 ## [MikeBot commands](https://github.com/wombat24455/MikebotDiscordBot/wiki/MikeBot-commands)  
