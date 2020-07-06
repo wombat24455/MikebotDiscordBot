@@ -6,7 +6,7 @@ prefix = '>$';
 
 // bot version
 // format: major.minor.patch
-var version = '1.14.11';
+var version = '1.14.12';
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
@@ -132,7 +132,7 @@ client.on('message', message=>{
                 totalSeconds %= 3600;
                 let minutes = Math.floor(totalSeconds / 60);
                 let seconds = Math.floor(totalSeconds % 60);
-                let uptime = `${days}d, ${hours}h, ${minutes}m ${seconds}s`;
+                let uptime = `${days}d, ${hours}h, ${minutes}m and ${seconds}s`;
                 const infoEmbed = {
                     color: 0x0099ff,
                     title: 'Bot info',
@@ -160,7 +160,7 @@ client.on('message', message=>{
                         {
                             name: 'Bot uptime',
                             value: uptime,
-                            inline: false,
+                            inline: true,
                         },
                         {
                             name: 'Invite me',
@@ -185,7 +185,12 @@ client.on('message', message=>{
                         {
                             name: 'Bot owner ID',
                             value: '546107653718540298',
-                            inline: true,
+                            inline: false,
+                        },
+                        {
+                            name: 'Bot prefix',
+                            value: '$',
+                            inline: false,
                         },
                     ],
                 };
@@ -199,7 +204,7 @@ client.on('message', message=>{
                     if(!args[1]) return message.reply('You need to tell me the number of messages you want to delete you numpty.')
                     var newamount = Number(args[1]) + Number(1);
                     message.channel.bulkDelete(newamount);
-                    message.channel.send('Deleted ' + args[1] + ' messages.').then(message => {
+                    message.channel.send('Yeeted ' + args[1] + ' messages into the void.').then(message => {
                         message.delete({ timeout: 3000 })
                     })
                     .catch(console.error);
