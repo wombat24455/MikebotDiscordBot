@@ -93,7 +93,7 @@ client.on('message', message=>{
             message.channel.send("Pinging...").then(m =>{
                 var ping = m.createdTimestamp - message.createdTimestamp;
                 var botPing = Math.round(client.ping);
-                m.edit(`:ping_pong: Pong! Your Ping is: **${ping}ms**\n Bot Ping is: **${botPing}`);
+                m.edit(`:ping_pong: Pong! Your Ping is: **${ping}ms**`);
             });
             break;
         case 'invite':
@@ -109,7 +109,7 @@ client.on('message', message=>{
                 totalSeconds %= 3600;
                 let minutes = Math.floor(totalSeconds / 60);
                 let seconds = Math.floor(totalSeconds % 60);
-                let uptime = `${days}d, ${hours}h, ${minutes}m ${seconds}s`;
+                let uptime = `${days}d, ${hours}h, ${minutes}m and ${seconds}s`;
                 const uptimeEmbed = {
                     color: 0x0099ff,
                     title: 'I have been awake for',
