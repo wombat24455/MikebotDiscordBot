@@ -159,7 +159,19 @@ client.on('message', message=>{
                         {
                             name: 'Bot uptime',
                             value: uptime,
-                            inline: true,
+                            inline: false,
+                        },
+                        {
+                            name: 'Bot owner',
+                            value: 'AM FREEGe (wombat)#1521',
+                        },
+                        {
+                            name: 'Bot owner ID',
+                            value: '546107653718540298',
+                        },
+                        {
+                            name: 'Bot prefix',
+                            value: '>$',
                         },
                         {
                             name: 'Invite me',
@@ -175,21 +187,6 @@ client.on('message', message=>{
                             name: 'My Discord',
                             value: 'Coming soon',
                             inline: true,
-                        },
-                        {
-                            name: 'Bot owner',
-                            value: 'AM FREEGe (wombat)#1521',
-                            inline: false,
-                        },
-                        {
-                            name: 'Bot owner ID',
-                            value: '546107653718540298',
-                            inline: false,
-                        },
-                        {
-                            name: 'Bot prefix',
-                            value: '$',
-                            inline: false,
                         },
                     ],
                 };
