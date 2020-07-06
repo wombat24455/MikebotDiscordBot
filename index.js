@@ -210,9 +210,6 @@ const roadmapEmbed = {
     description: 'My development roadmap can be found [here](https://github.com/wombat24455/MikebotDiscordBot/projects/1)',
 };
 
-// removes the "say" from the command reply
-const sayMessage = args.slice(1).join(' ');
-
 // commands
 client.on('message', message=>{
     if (!message.content.startsWith(prefix)) return;
@@ -264,6 +261,7 @@ client.on('message', message=>{
                 message.channel.send({ embed: servercountEmbed });
             break;
             case 'say':
+                const sayMessage = args.slice(1).join(' ');
                 message.delete();
                 message.channel.send(sayMessage);
             break;
