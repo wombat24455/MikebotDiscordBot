@@ -106,6 +106,13 @@ const uptimeEmbed = {
 };
 
 // info embed
+let totalSeconds = (client.uptime / 1000);
+let days = Math.floor(totalSeconds / 86400);
+let hours = Math.floor(totalSeconds / 3600);
+totalSeconds %= 3600;
+let minutes = Math.floor(totalSeconds / 60);
+let seconds = Math.floor(totalSeconds % 60);
+let uptime = `${days}d, ${hours}h, ${minutes}m and ${seconds}s`;
 const infoEmbed = {
     color: 0x0099ff,
     title: 'Bot info',
@@ -261,7 +268,6 @@ client.on('message', message=>{
                 message.channel.send({ embed: servercountEmbed });
             break;
             case 'say':
-                const sayMessage = args.slice(1).join(' ');
                 message.delete();
                 message.channel.send(sayMessage);
             break;
