@@ -92,7 +92,6 @@ client.on('message', message=>{
         case 'ping':
             message.channel.send("Pinging...").then(m =>{
                 var ping = m.createdTimestamp - message.createdTimestamp;
-                var botPing = Math.round(client.ping);
                 m.edit(`:ping_pong: Pong! Your Ping is: **${ping}ms**`);
             });
             break;
