@@ -90,9 +90,11 @@ client.on('message', message=>{
             message.channel.send({ embed: helpEmbed });
             break;
         case 'ping':
-            const msg = message.channel.send('Pinging...').then((msg)=>{
-                msg.edit(`Your ping is **${Math.floor(msg.createdAt - message.createdAt)}ms**`)
-            })
+            message.channel.send("Pinging...").then(m =>{
+                var ping = m.createdTimestamp - message.createdTimestamp;
+                var botPing = Math.round(client.ping);
+                m.edit(`:ping_pong: Pong! Your Ping is: **${ping}ms**\n Bot Ping is: **${botPing}`);
+            });
             break;
         case 'invite':
             message.channel.send('Invite me using this link: https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847')
@@ -107,7 +109,7 @@ client.on('message', message=>{
                 totalSeconds %= 3600;
                 let minutes = Math.floor(totalSeconds / 60);
                 let seconds = Math.floor(totalSeconds % 60);
-                let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds!`;
+                let uptime = `${days}d, ${hours}h, ${minutes}m ${seconds}s`;
                 const uptimeEmbed = {
                     color: 0x0099ff,
                     title: 'I have been awake for',
@@ -130,7 +132,7 @@ client.on('message', message=>{
                 totalSeconds %= 3600;
                 let minutes = Math.floor(totalSeconds / 60);
                 let seconds = Math.floor(totalSeconds % 60);
-                let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds!`;
+                let uptime = `${days}d, ${hours}h, ${minutes}m ${seconds}s`;
                 const infoEmbed = {
                     color: 0x0099ff,
                     title: 'Bot info',
@@ -197,8 +199,8 @@ client.on('message', message=>{
                     if(!args[1]) return message.reply('You need to tell me the number of messages you want to delete you numpty.')
                     var newamount = Number(args[1]) + Number(1);
                     message.channel.bulkDelete(newamount);
-                    message.channel.send('Deleted ' + args[1] + ' messages.').then(msg => {
-                        msg.delete({ timeout: 3000 })
+                    message.channel.send('Deleted ' + args[1] + ' messages.').then(message => {
+                        message.delete({ timeout: 3000 })
                     })
                     .catch(console.error);
                 }
