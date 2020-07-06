@@ -10,7 +10,7 @@ var version = '1.14.12';
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
-    console.log('Bot logged in as ' + client.user.tag);
+    console.log('Bot logged in as ' + client.user.tag + `, watching ${client.guilds.cache.size} servers`);
     client.user.setActivity("you in disappointment", { type: "WATCHING"});
 })
 
@@ -95,7 +95,7 @@ const uptimeEmbed = {
     title: 'I have been awake for',
     fields: [
         {
-            name: `${uptime}`,
+            name: uptime,
             value: 'I tend to sleep every now and then',
         },
     ],
@@ -132,7 +132,7 @@ const infoEmbed = {
         },
         {
             name: 'Bot uptime',
-            value: `${uptime}`,
+            value: `${days}d, ${hours}h, ${minutes}m and ${seconds}s`,
             inline: false,
         },
         {
