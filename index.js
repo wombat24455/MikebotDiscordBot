@@ -2,33 +2,33 @@ const Discord = require('discord.js');
 const client = new Discord.Client()
 
 // bot prefix
-prefix = '$';
+prefix = '>$';
 
-// Bot version
-// Format: major.minor.patch
-var version = '1.13.11';
+// bot version
+// format: major.minor.patch
+var version = '1.14.11';
 
-// Outputs in console when bot code is run
+// outputs in console when bot code is run
 client.on('ready', () =>{
     console.log('Bot logged in as ' + client.user.tag + `, watching ${client.guilds.cache.size} servers`);
     client.user.setActivity("you in disappointment", { type: "WATCHING"});
 })
 
-// Extracts the required classes from the discord.js module
+// Extract the required classes from the discord.js module
 const { Client, MessageEmbed } = require('discord.js');
 
-// Responds on bot mention
-client.on('message', message => {
-   if (message.mentions.has(client.user)) {
-       message.channel.send(`my prefix is $ buddy.`);
-   }
+// Replies to mention of bot
+client.on('message', message=> {
+    if (message.mentions.has(bot.user)) {
+        message.channel.send(`my prefix is >$ buddy.`);
+    }
 });
 
-// Commands
+// commands
 client.on('message', message=>{
-    if(!message.content.startsWith(prefix)) return;
+    if (!message.content.startsWith(prefix)) return;
     
-    let args = message.content.substring(prefix.length).split(" ");
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
 
     switch(args[0]){
         case 'help':
@@ -41,39 +41,39 @@ client.on('message', message=>{
                 },
                 fields: [
                     {
-                        name: '$ping',
+                        name: '>$ping',
                         value: 'I reply with the response time.. you already knew that already didn\'t ya',
                     },
                     {
-                        name: '$invite',
+                        name: '>$invite',
                         value: 'I give you the link to add me to your server',
                     },
                     {
-                        name: '$info [query]',
+                        name: '>$info [query]',
                         value: 'Available info about me (replace [query] with version or uptime)',
                     },
                     {
-                        name: '$del [amount]',
+                        name: '>$del [amount]',
                         value: 'I bulk delete the amount of messages you tell me to delete',
                     },
                     {
-                        name: '$features',
+                        name: '>$features',
                         value: 'I reply with a list of stuff that I will be able to do in the future',
                     },
                     {
-                        name: '$website',
+                        name: '>$website',
                         value: 'I send a link to my website (not 100% functional)',
                     },
                     {
-                        name: '$servercount',
+                        name: '>$servercount',
                         value: 'I tell you how many servers I am currently in',
                     },
                     {
-                        name: '$say [args]',
+                        name: '>$say [args]',
                         value: 'I\'ll say whatever you tell me to say like $say hi',
                     },
                     {
-                        name: '$roadmap',
+                        name: '>$roadmap',
                         value: 'I send the link to my development roadmap',
                     },
                     {
@@ -90,9 +90,11 @@ client.on('message', message=>{
             message.channel.send({ embed: helpEmbed });
             break;
         case 'ping':
-            const msg = message.channel.send('Pinging...').then((msg)=>{
-                msg.edit(`Your ping is **${Math.floor(msg.createdAt - message.createdAt)}ms**`)
-            })
+            message.channel.send("Pinging...").then(m =>{
+                var ping = m.createdTimestamp - message.createdTimestamp;
+                var botPing = Math.round(client.ping);
+                m.edit(`:ping_pong: Pong! Your Ping is: **${ping}ms**\n Bot Ping is: **${botPing}`);
+            });
             break;
         case 'invite':
             message.channel.send('Invite me using this link: https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847')
@@ -107,7 +109,7 @@ client.on('message', message=>{
                 totalSeconds %= 3600;
                 let minutes = Math.floor(totalSeconds / 60);
                 let seconds = Math.floor(totalSeconds % 60);
-                let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds!`;
+                let uptime = `${days}d, ${hours}h, ${minutes}m ${seconds}s`;
                 const uptimeEmbed = {
                     color: 0x0099ff,
                     title: 'I have been awake for',
@@ -130,7 +132,7 @@ client.on('message', message=>{
                 totalSeconds %= 3600;
                 let minutes = Math.floor(totalSeconds / 60);
                 let seconds = Math.floor(totalSeconds % 60);
-                let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds!`;
+                let uptime = `${days}d, ${hours}h, ${minutes}m ${seconds}s`;
                 const infoEmbed = {
                     color: 0x0099ff,
                     title: 'Bot info',
@@ -151,6 +153,11 @@ client.on('message', message=>{
                             inline: true,
                         },
                         {
+                            name: 'Bot framework',
+                            value: 'Discord.js',
+                            inline: true,
+                        },
+                        {
                             name: 'Bot uptime',
                             value: uptime,
                             inline: false,
@@ -167,14 +174,24 @@ client.on('message', message=>{
                         },
                         {
                             name: 'My Discord',
-                            value: 'Coming soon:tm:',
+                            value: 'Coming soon',
+                            inline: true,
+                        },
+                        {
+                            name: 'Bot owner',
+                            value: 'AM FREEGe (wombat)#1521',
+                            inline: false,
+                        },
+                        {
+                            name: 'Bot owner ID',
+                            value: '546107653718540298',
                             inline: true,
                         },
                     ],
                 };
                 message.channel.send({ embed: infoEmbed });
             }else{
-                message.channel.send('Bro do ``$help`` so you know how to use the damn command.');
+                message.channel.send('Bro do ``>$help`` so you know how to use the damn command.');
             }
             break;
             case 'del':
@@ -182,8 +199,8 @@ client.on('message', message=>{
                     if(!args[1]) return message.reply('You need to tell me the number of messages you want to delete you numpty.')
                     var newamount = Number(args[1]) + Number(1);
                     message.channel.bulkDelete(newamount);
-                    message.channel.send('Yeeted ' + args[1] + ' messages into the void.').then(msg => {
-                        msg.delete({ timeout: 3000 })
+                    message.channel.send('Deleted ' + args[1] + ' messages.').then(message => {
+                        message.delete({ timeout: 3000 })
                     })
                     .catch(console.error);
                 }
