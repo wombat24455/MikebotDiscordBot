@@ -282,7 +282,7 @@ client.on('message', message=>{
                 message.channel.startTyping();
 
                 randomPuppy(subreddit).then(async url => {
-                    await message.channel.send("Meme stolen from" + subreddit)){
+                    await message.channel.send({
                         files: [{
                             attachment: url,
                             name: 'meme.png'
