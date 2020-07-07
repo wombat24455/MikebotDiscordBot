@@ -275,7 +275,8 @@ client.on('message', message=>{
                     "NoahGetTheBoat",
                     "blursedimages",
                     "cursedimages",
-                    "animenocontext"
+                    "animenocontext",
+                    "HolUp"
                 ]
 
                 let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
