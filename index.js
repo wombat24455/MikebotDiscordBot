@@ -280,7 +280,7 @@ client.on('message', message=>{
                 let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
 
                 message.channel.startTyping();
-                message.channel.send('I stole this meme from' + subreddit)
+                message.channel.send('I stole this meme from r/' + subreddit)
             
                 randomPuppy(subreddit).then(async url => {
                     await message.channel.send({
