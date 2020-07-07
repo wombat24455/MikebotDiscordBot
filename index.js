@@ -287,7 +287,7 @@ client.on('message', message=>{
                     await message.channel.send({
                         files: [{
                             attachment: url,
-                            name: 'url'
+                            name: 'meme.png'
                         }]
                     })
                 }).catch(err => console.error(err));
