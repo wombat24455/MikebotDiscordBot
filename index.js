@@ -7,7 +7,7 @@ prefix = '>$';
 
 // bot version
 // format: major.minor.patch
-var version = '1.14.12';
+var version = '1.15.12';
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
@@ -71,6 +71,10 @@ const helpEmbed = {
         {
             name: '>$roadmap',
             value: 'I send the link to my development roadmap',
+        },
+        {
+            name: '>$givmeme',
+            value: 'I steal memes from reddit lol\n credit to a friend for suggesting this command',
         },
         {
             name: 'Nothing here yet buddy',
@@ -263,9 +267,14 @@ client.on('message', message=>{
             break;
             case 'givmeme':
                 let reddit = [
-                    "meme",
+                    "memes",
                     "dankmemes",
-                    "dankmeme"
+                    "sbubby",
+                    "bonehurtingjuice",
+                    "antimeme",
+                    "NoahGetTheBoat",
+                    "blursedimages",
+                    "cursedimages"
                 ]
 
                 let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
