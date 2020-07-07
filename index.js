@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client()
+const randomPuppy = require('random-puppy');
 
 // bot prefix
 prefix = '>$';
@@ -259,6 +260,26 @@ client.on('message', message=>{
             break;
             case 'roadmap':
                 message.channel.send({ embed: roadmapEmbed })
+            break;
+            case 'givmeme':
+                let reddit = [
+                    "meme",
+                    "dankmemes",
+                    "dankmeme"
+                ]
+
+                let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
+
+                message.channel.startTyping();
+
+                randomPuppy(subreddit).then(async url => {
+                    await message.channel.send({
+                        files: [{
+                            attachment: url,
+                            name: 'meme.png'
+                        }]
+                    }).then(() => message.channel.stopTyping());
+                }).catch(err => console.error(err));
             break;
     }
 })
