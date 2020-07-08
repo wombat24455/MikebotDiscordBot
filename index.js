@@ -289,17 +289,16 @@ client.on('message', message=>{
                 ]
 
                 let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
-
-                message.channel.send('I stole this from r/' + subreddit)
             
                 randomPuppy(subreddit).then(async url => {
-                    await message.channel.send({
-                        files: [{
-                            attachment: url,
-                            name: 'meme.png'
-                        }]
-                    })
-                }).catch(err => console.error(err));
+                    const memeEmbed = {
+                        color: 0x0099ff,
+                        title: 'this meme was stolen from r/',
+                        image: {
+                          url: url,
+                        },
+                    };
+                    message.channel.send({ embed: memeEmbed })});
             break;
     }
 })
