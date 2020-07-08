@@ -293,7 +293,7 @@ client.on('message', message=>{
                 randomPuppy(subreddit).then(async url => {
                     const memeEmbed = {
                         color: 0x0099ff,
-                        title: 'this meme was stolen from r/' + subreddit,
+                        title: 'this was stolen from r/' + subreddit,
                         url: `https://www.reddit.com/r/${subreddit}`,
                         image: {
                           url: url,
