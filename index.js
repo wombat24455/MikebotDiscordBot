@@ -267,6 +267,7 @@ client.on('message', message=>{
                 message.channel.send({ embed: servercountEmbed });
             break;
             case 'say':
+                const sayMessage = args.slice(1).join(' ');
                 message.delete();
                 message.channel.send(sayMessage);
             break;
