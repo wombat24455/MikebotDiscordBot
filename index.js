@@ -294,7 +294,7 @@ client.on('message', message=>{
                     const memeEmbed = {
                         color: 0x0099ff,
                         title: 'this was stolen from r/' + subreddit,
-                        attachment: {
+                        image: {
                           url: url,
                         },
                     };
