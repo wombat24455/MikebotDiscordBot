@@ -46,7 +46,7 @@ const helpEmbed = {
         },
         {
             name: '>$info [query]',
-            value: 'Available info about me (replace [query] with version or uptime)',
+            value: 'Available info about me (replace [query] with all, version or uptime)',
         },
         {
             name: '>$del [amount]',
