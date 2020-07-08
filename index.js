@@ -116,6 +116,14 @@ const roadmapEmbed = {
     description: 'My development roadmap can be found [here](https://github.com/wombat24455/MikebotDiscordBot/projects/1)',
 };
 
+// website embed
+const websiteEmbed = {
+    color: 0x0099ff,
+    title: 'My website:',
+    description: 'My website can be found [here](https://wombat24455.github.io/mikebot.github.io/)',
+    timestamp: new Date(),
+};
+
 // commands
 client.on('message', message=>{
     if (!message.content.startsWith(prefix)) return;
