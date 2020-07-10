@@ -301,6 +301,10 @@ client.on('message', message=>{
                     };
                     message.channel.send({ embed: memeEmbed })});
             break;
+            case 'suggest':
+                suggestion = args.slice(1).join(' ');
+                client.channels.cache.get('731267852564430882').send(suggestion)
+            break;
     }
 })
 client.login(process.env.token);
