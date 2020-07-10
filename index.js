@@ -77,6 +77,10 @@ const helpEmbed = {
             value: 'I steal memes from reddit lol\n credit to a friend for suggesting this command',
         },
         {
+            name: '>$suggest',
+            value: 'Suggest stuff that should be added. Usernames are sent along with the suggestion so don\'t abuse the command',
+        },
+        {
             name: 'Nothing here yet buddy',
             value: 'This part is coming soon:tm:',
         },
