@@ -303,7 +303,7 @@ client.on('message', message=>{
             break;
             case 'suggest':
                 suggestion = args.slice(1).join(' ');
-                client.channels.cache.get('731267852564430882').send(suggestion + " - Suggested by " + `<@message.author.id>`)
+                client.channels.cache.get('731267852564430882').send(suggestion + " - Suggested by " + message.author.id)
             break;
     }
 })
