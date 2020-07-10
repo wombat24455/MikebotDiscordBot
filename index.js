@@ -95,7 +95,7 @@ const helpEmbed = {
 const featureEmbed = {
     color: 0x0099ff,
     title: 'This stuff be coming soon',
-    description: 'The stuff listed here might be added soon.',
+    description: 'The stuff listed here might be worked on soon.',
     fields: [
         {
             name: 'More commands',
@@ -107,7 +107,7 @@ const featureEmbed = {
         },
         {
             name: 'Discord server',
-            value: 'As of right now there is no official/current server for me but one will be created in the near future hopefully.',
+            value: 'There is an official server but it is still in development and is not available to the public as of right now.',
         },
     ],
     timestamp: new Date(),
