@@ -298,6 +298,7 @@ client.on('message', message=>{
                     const memeEmbed = {
                         color: 0x0099ff,
                         title: 'this was stolen from r/' + subreddit,
+                        description: `[Open in browser](${url})`,
                         url: `https://www.reddit.com/r/${subreddit}`,
                         image: {
                           url: url,
