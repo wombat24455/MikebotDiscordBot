@@ -7,7 +7,7 @@ prefix = '>$';
 
 // bot version
 // format: major.minor.patch
-var version = '1.16.12';
+var version = '1.16.13';
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
@@ -15,7 +15,7 @@ client.on('ready', () =>{
     client.user.setActivity("you in disappointment", { type: "WATCHING"});
 })
 
-// Extract the required classes from the discord.js module
+// Extracts the required classes from the discord.js module
 const { Client, MessageEmbed } = require('discord.js');
 
 // Replies to mention of bot
@@ -25,6 +25,7 @@ client.on('message', message=> {
     }
 });
 
+// Prevents usage of @everyone and @here in >$say or >$suggestion messages
 const nonoWord = "@everyone";
 const nonoWord2 = "@here"
 
@@ -79,7 +80,7 @@ const helpEmbed = {
             value: 'I steal memes from reddit lol\n credit to a friend for suggesting this command',
         },
         {
-            name: '>$suggest',
+            name: '>$suggest [suggestion]',
             value: 'Suggest stuff that should be added. Usernames are sent along with the suggestion so don\'t abuse the command',
         },
         {
