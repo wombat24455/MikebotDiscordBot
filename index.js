@@ -25,8 +25,10 @@ client.on('message', message=> {
     }
 });
 
-// Embed messages
+const nonoWord = "@everyone";
+const nonoWord2 = "@here"
 
+// Embed messages
 //help embed
 const helpEmbed = {
     color: 0x0099ff,
@@ -253,7 +255,10 @@ client.on('message', message=>{
                         message.delete({ timeout: 3000 })
                     })
                     .catch(console.error);
+                }else{
+                    message.reply('How about no')
                 }
+
             break;
             case 'features':
                 message.channel.send({ embed: featureEmbed });
@@ -272,8 +277,12 @@ client.on('message', message=>{
             break;
             case 'say':
                 const sayMessage = args.slice(1).join(' ');
-                message.delete();
-                message.channel.send(sayMessage);
+                if(message.content.includes(nonoWord, nonoWord2)){
+                    message.reply("Nice try buckaroo you can\'t get me to mention everyone")
+                }else{
+                    message.delete();
+                    message.channel.send(sayMessage);
+                }
             break;
             case 'roadmap':
                 message.channel.send({ embed: roadmapEmbed })
@@ -308,7 +317,11 @@ client.on('message', message=>{
             break;
             case 'suggest':
                 suggestion = args.slice(1).join(' ');
-                client.channels.cache.get('731267852564430882').send(suggestion + " - Suggested by user: " + message.author.username + "#" + message.author.discriminator)
+                if(message.content.includes(nonoWord, nonoWord2)){
+                    message.reply("Nice try buckaroo you can\'t get me to mention everyone")
+                }else{
+                    client.channels.cache.get('731267852564430882').send(suggestion + " - Suggested by user: " + message.author.username + "#" + message.author.discriminator)
+                }
             break;
     }
 })
