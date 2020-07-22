@@ -12,7 +12,7 @@ var version = '1.16.13';
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
-    console.log('Bot logged in as ' + client.user.tag + `, watching ${client.guilds.cache.size} servers, for a total of  users`);
+    console.log('Bot logged in as ' + client.user.tag + `, watching ${client.guilds.cache.size} servers, also watching over  users`);
 
     client.user.setActivity("you in disappointment", { type: "WATCHING"});
 })
