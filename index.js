@@ -1,20 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client()
 const randomPuppy = require('random-puppy');
-const fetch = require('node-fetch');
-
-
-fetch('https://wombat24455.github.io/mikebot.github.io/')
-	.then(function(res) {
-		return res.text();
-	}).then(function(body) {
-		console.log(body);
-});
+//const fetch = require('node-fetch'); - Disabled for now
 
 // bot prefix
 prefix = '>$';
-
-const totUsers = client.users
 
 // bot version
 // format: major.minor.patch
@@ -22,7 +12,7 @@ var version = '1.16.13';
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
-    console.log('Bot logged in as ' + client.user.tag + `, watching ${client.guilds.cache.size} servers, for a total of ${totUsers} users`);
+    console.log('Bot logged in as ' + client.user.tag + `, watching ${client.guilds.cache.size} servers, for a total of  users`);
 
     client.user.setActivity("you in disappointment", { type: "WATCHING"});
 })
