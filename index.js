@@ -1,7 +1,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client()
 const randomPuppy = require('random-puppy');
-//const fetch = require('node-fetch'); - Disabled for now
+const express = require('express')
+const app = express()
+const port = 80
+
+app.get('/', (req, res) => res.send('Testing'))
+
+app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
 
 // bot prefix
 prefix = '>$';
