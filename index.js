@@ -3,7 +3,7 @@ const client = new Discord.Client()
 const randomPuppy = require('random-puppy');
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT
 
 app.get('/', (req, res) => res.send('Testing'))
 
