@@ -7,7 +7,7 @@ const port = process.env.PORT
 
 app.get('/', (req, res) => res.send('Testing'))
 
-app.listen(port, () => console.log(client.user.tag + ` listening at http://localhost:${port}`))
+app.listen(port, () => console.log(`listening at http://localhost:${port}`))
 
 // bot prefix
 prefix = '>$';
