@@ -337,9 +337,7 @@ client.on('message', message=>{
                 }
             break;
             case 'reload':
-                //
-                let isBotOwner = message.author.id == '546107653718540298';
-                if (!isBotOwner){
+                if(message.author.id == '546107653718540298'){
                     message.channel.send('Deleting search history...').then(m => {
                         client.destroy().then(() => {
                           client.login(process.env.token);
