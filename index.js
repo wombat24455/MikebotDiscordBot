@@ -4,6 +4,7 @@ const randomPuppy = require('random-puppy');
 const express = require('express')
 const app = express()
 const port = process.env.PORT
+const isBotOwner = message.author.id == '546107653718540298';
 
 app.get('/', (req, res) => res.send('Testing'))
 
@@ -18,7 +19,7 @@ var version = '1.16.13';
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
-    console.log('Bot logged in as ' + client.user.tag + `, watching ${client.guilds.cache.size} servers, and serving over ${client.guilds.reduce((c, p) => c + p.memberCount, 0)} users`);
+    console.log('Bot logged in as ' + client.user.tag + `, watching ${client.guilds.cache.size} servers, and serving over  users`);
 
     client.user.setActivity("you in disappointment", { type: "WATCHING"});
 })
@@ -223,7 +224,7 @@ client.on('message', message=>{
                         },
                         {
                             name: 'Bot owner',
-                            value: 'AM FREEGe (wombat)#1521',
+                            value: 'AM GAMOr (wombat)#1521',
                         },
                         {
                             name: 'Bot owner ID',
@@ -334,6 +335,17 @@ client.on('message', message=>{
                     message.reply("Nice try buckaroo you can\'t get me to mention here")
                 }else{
                     client.channels.cache.get('731267852564430882').send(suggestion + " - Suggested by user: " + message.author.username + "#" + message.author.discriminator)
+                }
+            break;
+            case 'reload':
+                if (!isBotOwner){
+                    message.channel.send('Deleting search history...').then(m => {
+                        client.destroy().then(() => {
+                          client.login(process.env.token);
+                        });
+                      });
+                }else{
+                    message.channel.send('You don\'t look like the owner of the bot')
                 }
             break;
     }
