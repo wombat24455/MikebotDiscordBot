@@ -337,16 +337,18 @@ client.on('message', message=>{
                 }
             break;
             case 'reload':
-                isBotOwner = message.author.id == '546107653718540298';
+                //
+                let isBotOwner = message.author.id == '546107653718540298';
                 if (!isBotOwner){
                     message.channel.send('Deleting search history...').then(m => {
                         client.destroy().then(() => {
                           client.login(process.env.token);
                         });
                       });
-                }else{
-                    message.channel.send('You don\'t look like the owner of the bot')
-                }
+                    }else{
+                        message.channel.send('Instructions unclear search history was not deleted')
+                        .catch(console.error);
+                    }
             break;
     }
 })
