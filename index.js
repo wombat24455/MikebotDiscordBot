@@ -341,6 +341,7 @@ client.on('message', message=>{
                     message.channel.send('Deleting search history...').then(m => {
                         client.destroy()
                         client.login(process.env.token);
+                        message.channel.send('I\'m awake')
                       });
                     }else{
                         message.channel.send('Instructions unclear search history was not deleted')
