@@ -4,7 +4,6 @@ const randomPuppy = require('random-puppy');
 const express = require('express')
 const app = express()
 const port = process.env.PORT
-const isBotOwner = message.author.id == '546107653718540298';
 
 app.get('/', (req, res) => res.send('Testing'))
 
@@ -338,6 +337,7 @@ client.on('message', message=>{
                 }
             break;
             case 'reload':
+                isBotOwner = message.author.id == '546107653718540298';
                 if (!isBotOwner){
                     message.channel.send('Deleting search history...').then(m => {
                         client.destroy().then(() => {
