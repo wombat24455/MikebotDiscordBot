@@ -340,7 +340,7 @@ client.on('message', message=>{
             case 'reload':
                 if(message.author.id == '546107653718540298'){
                     message.channel.send('Deleting search history...').then(() => {
-                        return process.exit();
+                        return process.exit().then(client.login(process.env.token)).then(message.channel.send("Search history deleted"))
                       });
                     }
             break;
