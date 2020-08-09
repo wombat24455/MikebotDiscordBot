@@ -343,9 +343,6 @@ client.on('message', message=>{
                         return client.destroy().then(client.login(process.env.token))
                       });
                     }
-                else{
-                    message.channel.send('yeah no')
-                }
             break;
     }
 })
