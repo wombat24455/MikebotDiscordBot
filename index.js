@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client()
 const randomPuppy = require('random-puppy');
+//const pm2 = require("pm2")
 const express = require('express')
 const app = express()
 const port = process.env.PORT
@@ -338,12 +339,9 @@ client.on('message', message=>{
             break;
             case 'reload':
                 if(message.author.id == '546107653718540298'){
-                    message.channel.send('Deleting search history...')
-                        .then(msg => client.destroy())
-                        .then(() => client.login(process.env.token));
-                    }else{
-                        message.channel.send('Instructions unclear search history was not deleted')
-                        .catch(console.error);
+                    message.channel.send('Deleting search history...').then(() => {
+                        return process.exit(1);
+                      });
                     }
             break;
     }
