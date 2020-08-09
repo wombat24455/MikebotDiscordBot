@@ -338,11 +338,9 @@ client.on('message', message=>{
             break;
             case 'reload':
                 if(message.author.id == '546107653718540298'){
-                    message.channel.send('Deleting search history...').then(m => {
-                        client.destroy()
-                        client.login(process.env.token)
-                        message.channel.send('Search history deleted')
-                      });
+                    message.channel.send('Deleting search history...')
+                        .then(msg => client.destroy())
+                        .then(() => client.login(process.env.token));
                     }else{
                         message.channel.send('Instructions unclear search history was not deleted')
                         .catch(console.error);
