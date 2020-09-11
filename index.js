@@ -17,9 +17,11 @@ prefix = '>$';
 // format: major.minor.patch
 var version = '1.16.13';
 
+user_count = client.guilds.cache.map((g) => g.memberCount).reduce((a, b) => a+b);
+
 // outputs in console when bot code is run
 client.on('ready', () =>{
-    console.log('Bot logged in as ' + client.user.tag + `, watching ${client.guilds.cache.size} servers, and serving over  users`);
+    console.log('Bot logged in as ' + client.user.tag + `, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
 
     client.user.setActivity("you in disappointment", { type: "WATCHING"});
 })
