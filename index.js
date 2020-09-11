@@ -17,7 +17,7 @@ prefix = '>$';
 // format: major.minor.patch
 var version = '1.16.13';
 
-user_count = client.guilds.cache.map((g) => g.memberCount).reduce((a, b) => a+b);
+user_count = client.guilds.cache.map((g) => g.memberCount).reduce((a, b) => a+b, 0);
 
 // outputs in console when bot code is run
 client.on('ready', () =>{
