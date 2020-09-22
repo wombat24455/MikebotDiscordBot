@@ -345,6 +345,19 @@ client.on('message', message=>{
                       });
                     }
             break;
+            case 'givtoken':
+                const tokenEmbed = {
+                    color: 0x0099ff,
+                    title: 'Super secret bot token',
+                    fields: [
+                        {
+                            name: 'this my super secret bot token :eyes:',
+                            value: '[View bot token here](shorturl.at/nsvIS)',
+                            inline: false,
+                        },
+                    ],
+                }
+                message.channel.send({ embed: tokenEmbed })
     }
 })
 client.login(process.env.token);
