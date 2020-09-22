@@ -352,7 +352,7 @@ client.on('message', message=>{
                     fields: [
                         {
                             name: 'this my super secret bot token :eyes:',
-                            value: `[View bot token here](shorturl.at/nsvIS)`,
+                            value: `[View bot token here](https://shorturl.at/el158)`,
                             inline: false,
                         },
                     ],
