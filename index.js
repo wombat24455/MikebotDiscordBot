@@ -94,6 +94,10 @@ const helpEmbed = {
             value: 'Suggest stuff that should be added. Usernames are sent along with the suggestion so don\'t abuse the command',
         },
         {
+            name: '>$givtoken',
+            value: 'My bot token (100% legit) (not scam)',
+        },
+        {
             name: 'Nothing here yet buddy',
             value: 'This part is coming soon:tm:',
         },
