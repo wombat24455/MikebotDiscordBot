@@ -5,6 +5,7 @@ const randomPuppy = require('random-puppy');
 const express = require('express')
 const app = express()
 const port = process.env.PORT
+const guildNames = client.guilds.cache.map(g => g.name).join("\n")
 
 app.get('/', (req, res) => res.send('Testing'))
 
@@ -21,6 +22,7 @@ var version = '1.16.14';
 client.on('ready', () =>{
     user_count = client.guilds.cache.map((g) => g.memberCount).reduce((a, b) => a+b);
     console.log('Bot logged in as ' + client.user.tag + `, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
+    console.log(`I am currently in:\n${guildnames}`);
 
     client.user.setActivity("you in disappointment", { type: "WATCHING"});
 })
@@ -37,7 +39,7 @@ client.on('message', message=> {
 
 // Prevents usage of @everyone and @here in >$say or >$suggestion messages
 const nonoWord = "@everyone";
-const nonoWord2 = "@here"
+const nonoWord2 = "@here";
 
 // Embed messages
 //help embed
@@ -332,6 +334,20 @@ client.on('message', message=>{
                     };
                     message.channel.send({ embed: memeEmbed })});
             break;
+            case 'actinsusngl':
+                let amongUsSubreddit = "AmongUs";
+                randomPuppy(AmongUs).then(async url => {
+                    const amongUsmemeEmbed = {
+                        color: 0x0099ff,
+                        title: 'this was stolen from r/' + amongUsSubreddit,
+                        description: `[Open in browser](${url})`,
+                        url: `https://www.reddit.com/r/${amongUsSubreddit}`,
+                        image: {
+                          url: url,
+                        },
+                    };
+                    message.channel.send({ embed: amongUsmemeEmbed })});
+            break;
             case 'suggest':
                 suggestion = args.slice(1).join(' ');
                 if(message.content.includes(nonoWord)){
@@ -362,6 +378,8 @@ client.on('message', message=>{
                     ],
                 }
                 message.channel.send({ embed: tokenEmbed })
+            break;
+            //make bot log the server name and server ID
     }
 })
 client.login(process.env.token);
