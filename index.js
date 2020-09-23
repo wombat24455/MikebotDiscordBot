@@ -22,7 +22,7 @@ var version = '1.16.14';
 client.on('ready', () =>{
     user_count = client.guilds.cache.map((g) => g.memberCount).reduce((a, b) => a+b);
     console.log('Bot logged in as ' + client.user.tag + `, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
-    console.log(`I am currently in:\n${guildnames}`);
+    console.log(`I am currently in:\n${guildNames}`);
 
     client.user.setActivity("you in disappointment", { type: "WATCHING"});
 })
