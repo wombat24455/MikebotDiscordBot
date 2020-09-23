@@ -5,7 +5,6 @@ const randomPuppy = require('random-puppy');
 const express = require('express')
 const app = express()
 const port = process.env.PORT
-const guildNames = client.guilds.cache.map(g => g.name).join("\n")
 
 app.get('/', (req, res) => res.send('Testing'))
 
@@ -21,6 +20,7 @@ var version = '1.16.14';
 // outputs in console when bot code is run
 client.on('ready', () =>{
     user_count = client.guilds.cache.map((g) => g.memberCount).reduce((a, b) => a+b);
+    guildNames = client.guilds.cache.map(g => g.name).join("\n")
     console.log('Bot logged in as ' + client.user.tag + `, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
     console.log(`I am currently in:\n${guildNames}`);
 
