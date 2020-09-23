@@ -336,7 +336,7 @@ client.on('message', message=>{
             break;
             case 'actinsusngl':
                 let amongUsSubreddit = "AmongUs";
-                randomPuppy(AmongUs).then(async url => {
+                randomPuppy(amongUsSubreddit).then(async url => {
                     const amongUsmemeEmbed = {
                         color: 0x0099ff,
                         title: 'this was stolen from r/' + amongUsSubreddit,
