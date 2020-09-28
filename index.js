@@ -376,7 +376,7 @@ client.on('message', message=>{
                     fields: [
                         {
                             name: 'this my super secret bot token :eyes:',
-                            value: `[View bot token here](https://shorturl.at/el158)`,
+                            value: process.env.token,
                             inline: false,
                         },
                     ],
