@@ -1,10 +1,12 @@
 const Discord = require('discord.js');
 const client = new Discord.Client()
 const randomPuppy = require('random-puppy');
-//const pm2 = require("pm2")
 const express = require('express')
 const app = express()
 const port = process.env.PORT
+
+// Extracts the required classes from the discord.js module
+const { Client, MessageEmbed } = require('discord.js');
 
 app.get('/', (req, res) => res.send('Testing'))
 
@@ -21,14 +23,11 @@ var version = '1.16.14';
 client.on('ready', () =>{
     user_count = client.guilds.cache.map((g) => g.memberCount).reduce((a, b) => a+b);
     guildNames = client.guilds.cache.map(g => g.name).join("\n");
-    console.log('Bot logged in as ' + client.user.tag + `, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
+    console.log(`Bot logged in as ${client.user.tag}, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
     console.log(`I am currently in:\n${guildNames}`);
 
     client.user.setActivity("you in disappointment", { type: "WATCHING"});
 })
-
-// Extracts the required classes from the discord.js module
-const { Client, MessageEmbed } = require('discord.js');
 
 // Replies to mention of bot
 client.on('message', message=> {
@@ -383,7 +382,6 @@ client.on('message', message=>{
                 }
                 message.channel.send({ embed: tokenEmbed })
             break;
-            //make bot log the server name and server ID
     }
 })
 client.login(process.env.token);
