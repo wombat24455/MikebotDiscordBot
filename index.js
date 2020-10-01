@@ -146,8 +146,8 @@ const websiteEmbed = {
 
 // commands
 client.on('message', message=>{
-    if (!message.content.startsWith(prefix)) return;
-    
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
+
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
 
     switch(args[0]){
@@ -187,7 +187,7 @@ client.on('message', message=>{
                     footer: {
                         text: 'Nothin down here buddy'
                     },
-                };                
+                };
                 message.channel.send({ embed: uptimeEmbed });
             }else if (args[1] === 'all'){
                 let totalSeconds = (client.uptime / 1000);
@@ -254,7 +254,7 @@ client.on('message', message=>{
                             inline: true,
                         },
                     ],
-                };                
+                };
                 message.channel.send({ embed: infoEmbed });
             }else{
                 message.channel.send('Bro do ``>$help`` so you know how to use the damn command.');
@@ -318,7 +318,7 @@ client.on('message', message=>{
                 ]
 
                 let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
-            
+
                 randomPuppy(subreddit).then(async url => {
                     const memeEmbed = {
                         color: 0x0099ff,
