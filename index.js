@@ -432,7 +432,7 @@ client.on('message', async message => {
                         text: message.author.tag,
                     },
                 };
-                client.channels.cache.get(731267961435717642).send({ embed: reportEmbed });
+                client.channels.cache.get('731267961435717642').send({ embed: reportEmbed });
                 message.channel.send("Reported!")
             } else {
                 let bug = reportBugArgs.join(" ")
@@ -457,7 +457,7 @@ client.on('message', async message => {
                         text: message.author.tag,
                     },
                 };
-                client.channels.cache.get(731267961435717642).send({ embed: reportEmbed });
+                client.channels.cache.get('731267961435717642').send({ embed: reportEmbed });
                 message.channel.send("Reported!");
             }
             break;
