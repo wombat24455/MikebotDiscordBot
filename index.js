@@ -278,8 +278,8 @@ client.on('message', async message => {
                 message.channel.bulkDelete(newamount);
                 message.channel.send('Yeeted ' + args[1] + ' messages into the void.').then(message => {
                     message.delete({ timeout: 3000 });
-                });
-                    .catch(console.error)
+                })
+                    .catch(console.error);
             } else {
                 message.reply('How about no');
             };
@@ -393,7 +393,7 @@ client.on('message', async message => {
             async function prompt(message, msg) {
                 const filter = (response) => response.author.id === message.author.id;
                 message.channel.send(msg)
-                return message.channel.awaitMessages(filter, { max: 1, time: 60000, errors: ['time'] });
+                return message.channel.awaitMessages(filter, { max: 1, time: 60000, errors: ['time'] })
                     .then(collected => {
                         const content = collected.first().content;
                         return content;
