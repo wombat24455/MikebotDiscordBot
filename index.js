@@ -20,11 +20,11 @@ client.on('ready', () =>{
     console.log(`Bot logged in as ${client.user.tag}, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
     console.log(`I am currently in:\n${guildNames}`);
 
-    bot.user.setPresence({
+    client.user.setPresence({
     status: 'online',
     activity: {
         name: 'Watching Everyone On Planet Earth',
-        type: 'PLAYING',
+        type: 'STREAMING',
         url: 'https://www.cwavs.xyz'
     }
 })
