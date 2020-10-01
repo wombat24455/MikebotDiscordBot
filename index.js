@@ -23,9 +23,8 @@ client.on('ready', () =>{
     client.user.setPresence({
     status: 'online',
     activity: {
-        name: 'Everyone On Planet Earth',
-            type: 'WATCHING',
-        url: 'https://www.cwavs.xyz'
+        name: 'https://www.cwavs.xyz',
+        type: 'WATCHING',
     }
 })
 
