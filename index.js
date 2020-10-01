@@ -289,7 +289,6 @@ client.on('message', message=>{
                 };
                 message.channel.send({ embed: servercountEmbed });
             break;
-                    message.reply("Nice try buckaroo you can\'t get me to mention here")
             //case 'say':
             //    const sayMessage = args.slice(1).join(' ');
             //    if(message.content.includes(nonoWord)){
