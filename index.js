@@ -14,25 +14,25 @@ prefix = '>$';
 var version = '1.16.14';
 
 // outputs in console when bot code is run
-client.on('ready', () =>{
-    user_count = client.guilds.cache.map((g) => g.memberCount).reduce((a, b) => a+b);
+client.on('ready', () => {
+    user_count = client.guilds.cache.map((g) => g.memberCount).reduce((a, b) => a + b);
     guildNames = client.guilds.cache.map(g => g.name).join("\n");
     console.log(`Bot logged in as ${client.user.tag}, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
     console.log(`I am currently in:\n${guildNames}`);
 
     client.user.setPresence({
-    status: 'online',
-    activity: {
-        name: 'https://www.cwavs.xyz',
-        type: 'WATCHING',
-    }
-})
+        status: 'online',
+        activity: {
+            name: 'https://www.cwavs.xyz',
+            type: 'WATCHING',
+        }
+    })
 
 
 })
 
 // Replies to mention of bot
-client.on('message', message=> {
+client.on('message', message => {
     if (message.mentions.has(client.user)) {
         message.channel.send(`my prefix is >$ buddy.`);
     }
@@ -108,6 +108,10 @@ const helpEmbed = {
             name: 'Nothing here yet buddy',
             value: 'This part is coming soon:tm:',
         },
+        {
+            name: ">$reportbug",
+            value: "Report a bug."
+        },
     ],
     timestamp: new Date(),
     footer: {
@@ -153,17 +157,17 @@ const websiteEmbed = {
 };
 
 // commands
-client.on('message', message=>{
+client.on('message', async message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
 
-    switch(args[0]){
+    switch (args[0]) {
         case 'help':
             message.channel.send({ embed: helpEmbed });
             break;
         case 'ping':
-            message.channel.send("Pinging...").then(m =>{
+            message.channel.send("Pinging...").then(m => {
                 var ping = m.createdTimestamp - message.createdTimestamp;
                 m.edit(`:ping_pong: Pong! Your Ping is: **${ping}ms**`);
             });
@@ -172,9 +176,9 @@ client.on('message', message=>{
             message.channel.send('Invite me using this link: https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847')
             break;
         case 'info':
-            if(args[1] === 'version'){
+            if (args[1] === 'version') {
                 message.channel.send('Bot version: ' + version);
-            }else if (args[1] === 'uptime'){
+            } else if (args[1] === 'uptime') {
                 let totalSeconds = (client.uptime / 1000);
                 let days = Math.floor(totalSeconds / 86400);
                 let hours = Math.floor(totalSeconds / 3600);
@@ -197,7 +201,7 @@ client.on('message', message=>{
                     },
                 };
                 message.channel.send({ embed: uptimeEmbed });
-            }else if (args[1] === 'all'){
+            } else if (args[1] === 'all') {
                 let totalSeconds = (client.uptime / 1000);
                 let days = Math.floor(totalSeconds / 86400);
                 let hours = Math.floor(totalSeconds / 3600);
@@ -264,125 +268,175 @@ client.on('message', message=>{
                     ],
                 };
                 message.channel.send({ embed: infoEmbed });
-            }else{
+            } else {
                 message.channel.send('Bro do ``>$help`` so you know how to use the damn command.');
             }
             break;
-            case 'del':
-                if(message.member.hasPermission("MANAGE_MESSAGES")){
-                    if(!args[1]) return message.reply('You need to tell me the number of messages you want to delete you numpty.')
-                    var newamount = Number(args[1]) + Number(1);
-                    message.channel.bulkDelete(newamount);
-                    message.channel.send('Yeeted ' + args[1] + ' messages into the void.').then(message => {
-                        message.delete({ timeout: 3000 })
-                    })
+        case 'del':
+            if (message.member.hasPermission("MANAGE_MESSAGES")) {
+                if (!args[1]) return message.reply('You need to tell me the number of messages you want to delete you numpty.')
+                var newamount = Number(args[1]) + Number(1);
+                message.channel.bulkDelete(newamount);
+                message.channel.send('Yeeted ' + args[1] + ' messages into the void.').then(message => {
+                    message.delete({ timeout: 3000 })
+                })
                     .catch(console.error);
-                }else{
-                    message.reply('How about no')
-                }
+            } else {
+                message.reply('How about no')
+            }
 
             break;
-            case 'features':
-                message.channel.send({ embed: featureEmbed });
+        case 'features':
+            message.channel.send({ embed: featureEmbed });
             break;
-            case 'website':
-                message.channel.send({ embed: websiteEmbed });
+        case 'website':
+            message.channel.send({ embed: websiteEmbed });
             break;
-            case 'servercount':
-                const servercountEmbed = {
+        case 'servercount':
+            const servercountEmbed = {
+                color: 0x0099ff,
+                title: 'I am currently in',
+                description: `${client.guilds.cache.size} servers`,
+                timestamp: new Date(),
+            };
+            message.channel.send({ embed: servercountEmbed });
+            break;
+        case 'say':
+            const sayMessage = args.slice(1).join(' ');
+            if (message.content.includes(nonoWord)) {
+                message.reply("Nice try buckaroo you can\'t get me to mention everyone")
+            } else if (message.content.includes(nonoWord2)) {
+                message.reply("Nice try buckaroo you can\'t get me to mention here")
+            } else {
+                message.delete();
+                message.channel.send(sayMessage);
+            }
+            break;
+        case 'roadmap':
+            message.channel.send({ embed: roadmapEmbed })
+            break;
+        case 'givmeme':
+            let reddit = [
+                "memes",
+                "dankmemes",
+                "sbubby",
+                "bonehurtingjuice",
+                "antimeme",
+                "NoahGetTheBoat",
+                "blursedimages",
+                "cursedimages",
+                "animenocontext",
+                "HolUp"
+            ]
+
+            let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
+
+            randomPuppy(subreddit).then(async url => {
+                const memeEmbed = {
                     color: 0x0099ff,
-                    title: 'I am currently in',
-                    description: `${client.guilds.cache.size} servers`,
-                    timestamp: new Date(),
+                    title: 'this was stolen from r/' + subreddit,
+                    description: `[Open in browser](${url})`,
+                    url: `https://www.reddit.com/r/${subreddit}`,
+                    image: {
+                        url: url,
+                    },
                 };
-                message.channel.send({ embed: servercountEmbed });
+                message.channel.send({ embed: memeEmbed })
+            });
             break;
-            case 'say':
-                const sayMessage = args.slice(1).join(' ');
-                if(message.content.includes(nonoWord)){
-                    message.reply("Nice try buckaroo you can\'t get me to mention everyone")
-                }else if(message.content.includes(nonoWord2)){
-                    message.reply("Nice try buckaroo you can\'t get me to mention here")
-                }else{
-                    message.delete();
-                    message.channel.send(sayMessage);
-                }
-            break;
-            case 'roadmap':
-                message.channel.send({ embed: roadmapEmbed })
-            break;
-            case 'givmeme':
-                let reddit = [
-                    "memes",
-                    "dankmemes",
-                    "sbubby",
-                    "bonehurtingjuice",
-                    "antimeme",
-                    "NoahGetTheBoat",
-                    "blursedimages",
-                    "cursedimages",
-                    "animenocontext",
-                    "HolUp"
-                ]
-
-                let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
-
-                randomPuppy(subreddit).then(async url => {
-                    const memeEmbed = {
-                        color: 0x0099ff,
-                        title: 'this was stolen from r/' + subreddit,
-                        description: `[Open in browser](${url})`,
-                        url: `https://www.reddit.com/r/${subreddit}`,
-                        image: {
-                          url: url,
-                        },
-                    };
-                    message.channel.send({ embed: memeEmbed })});
-            break;
-            case 'actinsusngl':
-                let amongUsSubreddit = "AmongUs";
-                randomPuppy(amongUsSubreddit).then(async url => {
-                    const amongUsmemeEmbed = {
-                        color: 0x0099ff,
-                        title: 'this was stolen from r/' + amongUsSubreddit,
-                        description: `[Open in browser](${url})`,
-                        url: `https://www.reddit.com/r/${amongUsSubreddit}`,
-                        image: {
-                          url: url,
-                        },
-                    };
-                    message.channel.send({ embed: amongUsmemeEmbed })});
-            break;
-            case 'suggest':
-                suggestion = args.slice(1).join(' ');
-                if(message.content.includes(nonoWord)){
-                    message.reply("Nice try buckaroo you can\'t get me to mention everyone")
-                }else if(message.content.includes(nonoWord2)){
-                    message.reply("Nice try buckaroo you can\'t get me to mention here")
-                }else{
-                    client.channels.cache.get('731267852564430882').send(suggestion + " - Suggested by user: " + message.author.username + "#" + message.author.discriminator)
-                }
-            break;
-            case 'reload':
-                if(message.author.id == '546107653718540298'){
-                    message.channel.send('Deleting search history...').then(() => {
-                        return client.destroy().then(client.login(process.env.token))
-                      });
-                    }
-            break;
-            case 'givtoken':
-                const tokenEmbed = {
+        case 'actinsusngl':
+            let amongUsSubreddit = "AmongUs";
+            randomPuppy(amongUsSubreddit).then(async url => {
+                const amongUsmemeEmbed = {
                     color: 0x0099ff,
-                    title: 'Super secret bot token',
-                    fields: [
-                        {
-                            name: 'this my super secret bot token :eyes:',
-                            value: `[View bot token here](https://shorturl.at/el158)`,
-                            inline: false,
-                        },
-                    ],
-                }
-                message.channel.send({ embed: tokenEmbed })
+                    title: 'this was stolen from r/' + amongUsSubreddit,
+                    description: `[Open in browser](${url})`,
+                    url: `https://www.reddit.com/r/${amongUsSubreddit}`,
+                    image: {
+                        url: url,
+                    },
+                };
+                message.channel.send({ embed: amongUsmemeEmbed })
+            });
+            break;
+        case 'suggest':
+            suggestion = args.slice(1).join(' ');
+            if (message.content.includes(nonoWord)) {
+                message.reply("Nice try buckaroo you can\'t get me to mention everyone")
+            } else if (message.content.includes(nonoWord2)) {
+                message.reply("Nice try buckaroo you can\'t get me to mention here")
+            } else {
+                client.channels.cache.get('731267852564430882').send(suggestion + " - Suggested by user: " + message.author.username + "#" + message.author.discriminator)
+            }
+            break;
+        case 'reload':
+            if (message.author.id == '546107653718540298') {
+                message.channel.send('Deleting search history...').then(() => {
+                    return client.destroy().then(client.login(process.env.token))
+                });
+            }
+            break;
+        case 'givtoken':
+            const tokenEmbed = {
+                color: 0x0099ff,
+                title: 'Super secret bot token',
+                fields: [
+                    {
+                        name: 'this my super secret bot token :eyes:',
+                        value: `[View bot token here](https://shorturl.at/el158)`,
+                        inline: false,
+                    },
+                ],
+            }
+            message.channel.send({ embed: tokenEmbed })
+            break;
+        case 'reportbug':
+            async function prompt(message, msg) {
+                const filter = (response) => response.author.id === message.author.id;
+                message.channel.send(msg)
+                return message.channel.awaitMessages(filter, { max: 1, time: 60000, errors: ['time'] })
+                    .then(collected => {
+                        const content = collected.first().content;
+                        return content;
+                    })
+                    .catch(_ => {
+                        console.log(_)
+                        return message.channel.send("You ran out of time! (1m)")
+                    });
+            }
+            //remove this if the commandName isnt in the arguments
+            let reportBugArgs = args.slice(1)
+
+            let reportChannelID = "757343040573800448"
+            let embedColor = "#ff0800"
+            if (!reportBugArgs || reportBugArgs.length == 0) {
+               
+             
+                const bug = await prompt(message, "What is the bug?")
+                if (bug.length > 1024) return message.channel.send("Please shorten the bug to 1024 characters or shorter.")
+                const desc = await prompt(message, "Please explain the bug or steps to reproduce.")
+                if (desc.length > 1024) return message.channel.send("Please shorten the description to 1024 characters or shorter.")
+                let reportEmbed = new MessageEmbed()
+                    .setTitle("Report")
+                    .addField("Bug", bug)
+                    .addField("Description/Steps to produce", desc)
+                    .setColor(embedColor)
+                    .setFooter(message.author.tag)
+                message.channel.send("Reported!")
+                client.channels.cache.get(reportChannelID).send({ embed: reportEmbed })
+            } else {
+                let bug = reportBugArgs.join(" ")
+                const desc = await prompt(message, "Please explain the bug or steps to reproduce.")
+                if (desc.length > 1024) return message.channel.send("Please shorten the description to 1024 characters or shorter.")
+                let reportEmbed = new MessageEmbed()
+                    .setTitle("Report")
+                    .addField("Bug", bug)
+                    .addField("Description/Steps to produce", desc)
+                    .setColor(embedColor)
+                    .setFooter(message.author.tag)
+                message.channel.send("Reported!")
+                client.channels.cache.get(reportChannelID).send({ embed: reportEmbed })
+            }
             break;
     }
 })
