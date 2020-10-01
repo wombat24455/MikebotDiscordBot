@@ -93,7 +93,7 @@ const helpEmbed = {
             value: 'My bot token (100% legit) (not scam)',
         },
         {
-            name: '>$actingsusngl',
+            name: '>$actinsusngl',
             value: 'A command dedicated to providing Among Us related memes and images from the r/AmongUs subreddit',
         },
         {
