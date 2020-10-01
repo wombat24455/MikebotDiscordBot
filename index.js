@@ -81,7 +81,7 @@ const helpEmbed = {
             value: 'I tell you how many servers I am currently in',
         },
         {
-            name: '>$say [args] (TEMP DISABLED)',
+            name: '>$say [args]',
             value: 'I\'ll say whatever you tell me to say like $say hi',
         },
         {
@@ -93,7 +93,7 @@ const helpEmbed = {
             value: 'I steal memes from reddit lol\n credit to a friend for suggesting this command',
         },
         {
-            name: '>$suggest [suggestion] (TEMP DISABLED)',
+            name: '>$suggest [suggestion]',
             value: 'Suggest stuff that should be added. Usernames are sent along with the suggestion so don\'t abuse the command',
         },
         {
@@ -105,12 +105,12 @@ const helpEmbed = {
             value: 'A command dedicated to providing Among Us related memes and images from the r/AmongUs subreddit',
         },
         {
-            name: 'Nothing here yet buddy',
-            value: 'This part is coming soon:tm:',
-        },
-        {
             name: ">$reportbug",
             value: "Report a bug."
+        },
+        {
+            name: 'Nothing here yet buddy',
+            value: 'This part is coming soon:tm:',
         },
     ],
     timestamp: new Date(),
