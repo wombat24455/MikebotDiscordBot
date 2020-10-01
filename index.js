@@ -408,7 +408,6 @@ client.on('message', async message => {
             let reportBugArgs = args.slice(1)
 
             let reportChannelID = "731267961435717642"
-            let embedColor = "#ff0800"
             if (!reportBugArgs || reportBugArgs.length == 0) {
                
              
@@ -416,26 +415,52 @@ client.on('message', async message => {
                 if (bug.length > 1024) return message.channel.send("Please shorten the bug to 1024 characters or shorter.")
                 const desc = await prompt(message, "Please explain the bug or steps to reproduce.")
                 if (desc.length > 1024) return message.channel.send("Please shorten the description to 1024 characters or shorter.")
-                let reportEmbed = new MessageEmbed()
-                    .setTitle("Report")
-                    .addField("Bug", bug)
-                    .addField("Description/Steps to produce", desc)
-                    .setColor(embedColor)
-                    .setFooter(message.author.tag)
+                const reportEmbed = {
+                    color: 0xff0800,
+                    title: 'Bug Report',
+                    fields: [
+                        {
+                            name: 'Bug',
+                            value: bug,
+                        },
+                        {
+                            name: 'Description/Steps to produce',
+                            value: desc,
+                            inline: false,
+                        },
+                    ],
+                    timestamp: new Date(),
+                    footer: {
+                        text: message.author.tag,
+                    },
+                };
+                client.channels.cache.get(reportChannelID).send(reportEmbed);
                 message.channel.send("Reported!")
-                client.channels.cache.get(reportChannelID).send({ embed: reportEmbed })
             } else {
                 let bug = reportBugArgs.join(" ")
                 const desc = await prompt(message, "Please explain the bug or steps to reproduce.")
                 if (desc.length > 1024) return message.channel.send("Please shorten the description to 1024 characters or shorter.")
-                let reportEmbed = new MessageEmbed()
-                    .setTitle("Report")
-                    .addField("Bug", bug)
-                    .addField("Description/Steps to produce", desc)
-                    .setColor(embedColor)
-                    .setFooter(message.author.tag)
-                message.channel.send("Reported!")
-                client.channels.cache.get(reportChannelID).send({ embed: reportEmbed })
+                const reportEmbed = {
+                    color: 0xff0800,
+                    title: 'Bug Report',
+                    fields: [
+                        {
+                            name: 'Bug',
+                            value: bug,
+                        },
+                        {
+                            name: 'Description/Steps to produce',
+                            value: desc,
+                            inline: false,
+                        },
+                    ],
+                    timestamp: new Date(),
+                    footer: {
+                        text: message.author.tag,
+                    },
+                };
+                client.channels.cache.get(reportChannelID).send(reportEmbed);
+                message.channel.send("Reported!");
             }
             break;
     }
