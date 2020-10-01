@@ -279,7 +279,7 @@ client.on('message', async message => {
                 message.channel.send('Yeeted ' + args[1] + ' messages into the void.').then(message => {
                     message.delete({ timeout: 3000 });
                 });
-                    .catch(console.error);
+                    .catch(console.error)
             } else {
                 message.reply('How about no');
             };
