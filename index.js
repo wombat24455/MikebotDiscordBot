@@ -73,7 +73,7 @@ const helpEmbed = {
             value: 'I tell you how many servers I am currently in',
         },
         {
-            name: '>$say [args]',
+            name: '>$say [args] (TEMP DISABLED)',
             value: 'I\'ll say whatever you tell me to say like $say hi',
         },
         {
@@ -85,7 +85,7 @@ const helpEmbed = {
             value: 'I steal memes from reddit lol\n credit to a friend for suggesting this command',
         },
         {
-            name: '>$suggest [suggestion]',
+            name: '>$suggest [suggestion] (TEMP DISABLED)',
             value: 'Suggest stuff that should be added. Usernames are sent along with the suggestion so don\'t abuse the command',
         },
         {
@@ -289,17 +289,18 @@ client.on('message', message=>{
                 };
                 message.channel.send({ embed: servercountEmbed });
             break;
-            case 'say':
-                const sayMessage = args.slice(1).join(' ');
-                if(message.content.includes(nonoWord)){
-                    message.reply("Nice try buckaroo you can\'t get me to mention everyone")
-                }else if(message.content.includes(nonoWord2)){
                     message.reply("Nice try buckaroo you can\'t get me to mention here")
-                }else{
-                    message.delete();
-                    message.channel.send(sayMessage);
-                }
-            break;
+            //case 'say':
+            //    const sayMessage = args.slice(1).join(' ');
+            //    if(message.content.includes(nonoWord)){
+            //        message.reply("Nice try buckaroo you can\'t get me to mention everyone")
+            //    }else if(message.content.includes(nonoWord2)){
+            //        message.reply("Nice try buckaroo you can\'t get me to mention here")
+            //    }else{
+            //        message.delete();
+            //        message.channel.send(sayMessage);
+            //    }
+            //break;
             case 'roadmap':
                 message.channel.send({ embed: roadmapEmbed })
             break;
@@ -345,16 +346,16 @@ client.on('message', message=>{
                     };
                     message.channel.send({ embed: amongUsmemeEmbed })});
             break;
-            case 'suggest':
-                suggestion = args.slice(1).join(' ');
-                if(message.content.includes(nonoWord)){
-                    message.reply("Nice try buckaroo you can\'t get me to mention everyone")
-                }else if(message.content.includes(nonoWord2)){
-                    message.reply("Nice try buckaroo you can\'t get me to mention here")
-                }else{
-                    client.channels.cache.get('731267852564430882').send(suggestion + " - Suggested by user: " + message.author.username + "#" + message.author.discriminator)
-                }
-            break;
+            //case 'suggest':
+            //    suggestion = args.slice(1).join(' ');
+            //    if(message.content.includes(nonoWord)){
+            //        message.reply("Nice try buckaroo you can\'t get me to mention everyone")
+            //    }else if(message.content.includes(nonoWord2)){
+            //        message.reply("Nice try buckaroo you can\'t get me to mention here")
+            //    }else{
+            //        client.channels.cache.get('731267852564430882').send(suggestion + " - Suggested by user: " + message.author.username + "#" + message.author.discriminator)
+            //    }
+            //break;
             case 'reload':
                 if(message.author.id == '546107653718540298'){
                     message.channel.send('Deleting search history...').then(() => {
