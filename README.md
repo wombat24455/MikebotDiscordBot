@@ -6,7 +6,7 @@ MikeBot is a multipurpose discord bot which has a mix of fun features and admini
 <img src="https://img.shields.io/github/license/wombat24455/MikebotDiscordBot">
 </p>
 
-#Contribute
+# Contribute
 If you would like to contribute a change, please do so to the dev branch. We do this so that potential errors can be fixed before it is merged into the main repo (which is live).
 
 # [MikeBot Wiki](https://github.com/wombat24455/MikebotDiscordBot/wiki)
