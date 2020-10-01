@@ -24,7 +24,7 @@ client.on('ready', () =>{
     status: 'online',
     activity: {
         name: 'Watching Everyone On Planet Earth',
-        type: 'STREAMING',
+        type: 'PLAYING',
         url: 'https://www.cwavs.xyz'
     }
 })
