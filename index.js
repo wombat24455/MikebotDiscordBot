@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const client = new Discord.Client()
 const randomPuppy = require('random-puppy');
 
 // Extracts the required classes from the discord.js module
@@ -459,8 +459,8 @@ client.on('message', async message => {
                 };
                 client.channels.cache.get('731267961435717642').send({ embed: reportEmbed });
                 message.channel.send("Reported!");
-            };
+            }
             break;
-    };
-});
+    }
+})
 client.login(process.env.token);
