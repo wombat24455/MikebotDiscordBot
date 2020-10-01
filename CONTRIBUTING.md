@@ -2,7 +2,7 @@
 If you wanna contribute to the development of [MikeBot](https://github.com/wombat24455/MikebotDiscordBot) read the stuff below I guess lol.
 
 ## Code of conduct
-Read the stuff about Code of Conduct [here](https://github.com/wombat24455/MikebotDiscordBot/blob/master/CODE_OF_CONDUCT.md). If you want to report abuse or innapropriate behavior shoot an email to Mikeb0tsupp0rt@gmail.com and i'll reply as soon as possible. (no spam emails pls :C )
+Read the stuff about Code of Conduct [here](https://github.com/wombat24455/MikebotDiscordBot/blob/master/CODE_OF_CONDUCT.md). If you want to report abuse or inappropriate behaviour shoot an email to Mikeb0tsupp0rt@gmail.com and I'll reply as soon as possible. (no spam emails pls :C )
 
 ## Want something to be added to MikeBot?
 Well you've come to the right place... to be told to go create an [issue](https://github.com/wombat24455/MikebotDiscordBot/issues) or use the **>$suggest** command, either way I will take a look at your requests.
