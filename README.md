@@ -1,5 +1,5 @@
 # MikeBot
-MikeBot is a multipurpose discord bot which has a mix of fun features and administration features. Although MikeBot doesn't have many features at the moment you can still invite the bot through the [website](https://wombat24455.github.io/mikebot.github.io/) or [directly](https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847). The bot is being developed constantly by the bot owner (me) and tested by a few of the bot owner's friends.
+MikeBot is a multipurpose discord bot which has a mix of fun features and administration features. Although MikeBot doesn't have many features at the moment you can still invite the bot through the [website](https://wombat24455.github.io/mikebot.github.io/) or [directly](https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847). The bot is being developed constantly by the bot developers: wombat24455, Cwavs and Jacket-Chan.
 <p align="center">
 <img src="https://img.shields.io/github/stars/wombat24455/MikebotDiscordBot">
 <img src="https://www.codefactor.io/repository/github/wombat24455/mikebotdiscordbot/badge/master">
