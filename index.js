@@ -407,7 +407,7 @@ client.on('message', async message => {
             //remove this if the commandName isnt in the arguments
             let reportBugArgs = args.slice(1)
 
-            let reportChannelID = "757343040573800448"
+            let reportChannelID = "731267961435717642"
             let embedColor = "#ff0800"
             if (!reportBugArgs || reportBugArgs.length == 0) {
                
