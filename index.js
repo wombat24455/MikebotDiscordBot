@@ -20,7 +20,7 @@ client.on('ready', () =>{
     console.log(`Bot logged in as ${client.user.tag}, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
     console.log(`I am currently in:\n${guildNames}`);
 
-    client.user.setActivity("you in disappointment", { type: "WATCHING"});
+    client.user.setActivity("https://www.cwavs.xyz", { type: "STREAMING"});
 })
 
 // Replies to mention of bot
