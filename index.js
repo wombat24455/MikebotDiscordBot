@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
-const client = new Discord.Client()
+const client = new Discord.Client();
 const randomPuppy = require('random-puppy');
-const port = process.env.PORT
 
 // Extracts the required classes from the discord.js module
 const { Client, MessageEmbed } = require('discord.js');
@@ -11,7 +10,7 @@ prefix = '>$';
 
 // bot version
 // format: major.minor.patch
-var version = '1.16.14';
+var version = '1.17.15';
 
 // outputs in console when bot code is run
 client.on('ready', () => {
@@ -173,7 +172,7 @@ client.on('message', async message => {
             });
             break;
         case 'invite':
-            message.channel.send('Invite me using this link: https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847')
+            message.channel.send('Invite me using this link: https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847');
             break;
         case 'info':
             if (args[1] === 'version') {
@@ -278,12 +277,12 @@ client.on('message', async message => {
                 var newamount = Number(args[1]) + Number(1);
                 message.channel.bulkDelete(newamount);
                 message.channel.send('Yeeted ' + args[1] + ' messages into the void.').then(message => {
-                    message.delete({ timeout: 3000 })
-                })
+                    message.delete({ timeout: 3000 });
+                });
                     .catch(console.error);
             } else {
-                message.reply('How about no')
-            }
+                message.reply('How about no');
+            };
 
             break;
         case 'features':
@@ -304,16 +303,16 @@ client.on('message', async message => {
         case 'say':
             const sayMessage = args.slice(1).join(' ');
             if (message.content.includes(nonoWord)) {
-                message.reply("Nice try buckaroo you can\'t get me to mention everyone")
+                message.reply("Nice try buckaroo you can\'t get me to mention everyone");
             } else if (message.content.includes(nonoWord2)) {
-                message.reply("Nice try buckaroo you can\'t get me to mention here")
+                message.reply("Nice try buckaroo you can\'t get me to mention here");
             } else {
                 message.delete();
                 message.channel.send(sayMessage);
             }
             break;
         case 'roadmap':
-            message.channel.send({ embed: roadmapEmbed })
+            message.channel.send({ embed: roadmapEmbed });
             break;
         case 'givmeme':
             let reddit = [
@@ -327,7 +326,7 @@ client.on('message', async message => {
                 "cursedimages",
                 "animenocontext",
                 "HolUp"
-            ]
+            ];
 
             let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
 
@@ -341,7 +340,7 @@ client.on('message', async message => {
                         url: url,
                     },
                 };
-                message.channel.send({ embed: memeEmbed })
+                message.channel.send({ embed: memeEmbed });
             });
             break;
         case 'actinsusngl':
@@ -356,23 +355,23 @@ client.on('message', async message => {
                         url: url,
                     },
                 };
-                message.channel.send({ embed: amongUsmemeEmbed })
+                message.channel.send({ embed: amongUsmemeEmbed });
             });
             break;
         case 'suggest':
             suggestion = args.slice(1).join(' ');
             if (message.content.includes(nonoWord)) {
-                message.reply("Nice try buckaroo you can\'t get me to mention everyone")
+                message.reply("Nice try buckaroo you can\'t get me to mention everyone");
             } else if (message.content.includes(nonoWord2)) {
-                message.reply("Nice try buckaroo you can\'t get me to mention here")
+                message.reply("Nice try buckaroo you can\'t get me to mention here");
             } else {
-                client.channels.cache.get('731267852564430882').send(suggestion + " - Suggested by user: " + message.author.username + "#" + message.author.discriminator)
-            }
+                client.channels.cache.get('731267852564430882').send(suggestion + " - Suggested by user: " + message.author.username + "#" + message.author.discriminator);
+            };
             break;
         case 'reload':
             if (message.author.id == '546107653718540298') {
                 message.channel.send('Deleting search history...').then(() => {
-                    return client.destroy().then(client.login(process.env.token))
+                    return client.destroy().then(client.login(process.env.token));
                 });
             }
             break;
@@ -387,33 +386,33 @@ client.on('message', async message => {
                         inline: false,
                     },
                 ],
-            }
-            message.channel.send({ embed: tokenEmbed })
+            };
+            message.channel.send({ embed: tokenEmbed });
             break;
         case 'reportbug':
             async function prompt(message, msg) {
                 const filter = (response) => response.author.id === message.author.id;
                 message.channel.send(msg)
-                return message.channel.awaitMessages(filter, { max: 1, time: 60000, errors: ['time'] })
+                return message.channel.awaitMessages(filter, { max: 1, time: 60000, errors: ['time'] });
                     .then(collected => {
                         const content = collected.first().content;
                         return content;
                     })
                     .catch(_ => {
                         console.log(_)
-                        return message.channel.send("You ran out of time! (1m)")
+                        return message.channel.send("You ran out of time! (1m)");
                     });
-            }
+            };
             //remove this if the commandName isnt in the arguments
-            let reportBugArgs = args.slice(1)
+            let reportBugArgs = args.slice(1);
 
             if (!reportBugArgs || reportBugArgs.length == 0) {
-               
-             
+
+
                 const bug = await prompt(message, "What is the bug?")
-                if (bug.length > 1024) return message.channel.send("Please shorten the bug to 1024 characters or shorter.")
-                const desc = await prompt(message, "Please explain the bug or steps to reproduce.")
-                if (desc.length > 1024) return message.channel.send("Please shorten the description to 1024 characters or shorter.")
+                if (bug.length > 1024) return message.channel.send("Please shorten the bug to 1024 characters or shorter.");
+                const desc = await prompt(message, "Please explain the bug or steps to reproduce.");
+                if (desc.length > 1024) return message.channel.send("Please shorten the description to 1024 characters or shorter.");
                 const reportEmbed = {
                     color: 0xff0800,
                     title: 'Bug Report',
@@ -437,8 +436,8 @@ client.on('message', async message => {
                 message.channel.send("Reported!")
             } else {
                 let bug = reportBugArgs.join(" ")
-                const desc = await prompt(message, "Please explain the bug or steps to reproduce.")
-                if (desc.length > 1024) return message.channel.send("Please shorten the description to 1024 characters or shorter.")
+                const desc = await prompt(message, "Please explain the bug or steps to reproduce.");
+                if (desc.length > 1024) return message.channel.send("Please shorten the description to 1024 characters or shorter.");
                 const reportEmbed = {
                     color: 0xff0800,
                     title: 'Bug Report',
@@ -460,8 +459,8 @@ client.on('message', async message => {
                 };
                 client.channels.cache.get('731267961435717642').send({ embed: reportEmbed });
                 message.channel.send("Reported!");
-            }
+            };
             break;
-    }
-})
+    };
+});
 client.login(process.env.token);
