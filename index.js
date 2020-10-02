@@ -50,13 +50,6 @@ client.on('message', message => {
 const nonoWord = "@everyone";
 const nonoWord2 = "@here";
 
-// roadmap embed
-const roadmapEmbed = {
-    color: 0x0099ff,
-    title: 'MikeBot Development',
-    description: 'My development roadmap can be found [here](https://github.com/wombat24455/MikebotDiscordBot/projects/1)',
-};
-
 // commands
 client.on('message', async message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
