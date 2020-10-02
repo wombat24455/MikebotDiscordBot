@@ -388,7 +388,6 @@ client.on('message', async message => {
                 ], 
             };
             message.channel.send({ embed: tokenEmbed });
-            message.channel.send(process.env.token);
             break;
         case 'reportbug':
             async function prompt(message, msg) {
