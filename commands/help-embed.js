@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'ping',
 	description: 'Ping!',
-	execute(message, args) {
+	execute(message) {
     const helpEmbed = {
         color: 0x0099ff,
         title: 'MikeBot Command List',
