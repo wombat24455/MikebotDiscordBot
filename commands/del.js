@@ -12,6 +12,6 @@ module.exports = {
             .catch(console.error);
     } else {
         message.reply('How about no');
-    };
+    }
 	},
 };
