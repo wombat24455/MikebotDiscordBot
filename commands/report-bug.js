@@ -26,7 +26,8 @@ module.exports = {
 
 				let desc = await prompt(message, "Please explain the bug or steps to reproduce.");
 				while(desc.length > 1024)
-					desc = await prompt(message, "Please shorten the description to 1024 characters or shorter");
+				desc = await prompt(message, "Please shorten the description to 1024 characters or shorter");
+
         const reportEmbed = {
             color: 0xff0800,
             title: 'Bug Report',
