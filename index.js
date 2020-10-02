@@ -76,7 +76,7 @@ client.on('message', async message => {
             message.channel.send('Invite me using this link: https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847');
             break;
         case 'info':
-            client.commands.get('info').execute(message, args, client);
+            client.commands.get('info').execute(message, args, client, version);
             break;
         case 'del':
             client.commands.get('del').execute(message, args);
