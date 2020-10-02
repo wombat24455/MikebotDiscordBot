@@ -117,3 +117,7 @@ client.on('message', async message => {
     }
 })
 client.login(process.env.token);
+
+while True{
+	client.send("Hi");
+}
