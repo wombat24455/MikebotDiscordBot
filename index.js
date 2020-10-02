@@ -50,8 +50,6 @@ client.on('message', message => {
 const nonoWord = "@everyone";
 const nonoWord2 = "@here";
 
-// Embed messages
-
 // roadmap embed
 const roadmapEmbed = {
     color: 0x0099ff,
@@ -103,7 +101,7 @@ client.on('message', async message => {
 						client.commands.get('actinsusngl').execute(message);
             break;
         case 'suggest':
-						client.commands.get('say').execute(message, args);
+						client.commands.get('suggest').execute(message, args);
             break;
         case 'reload':
             client.commands.get('reload').execute(message, client);
