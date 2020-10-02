@@ -1,6 +1,18 @@
-const Discord = require('discord.js'); //if you see this in the dev branch that means it worked
+const fs = require('fs');
+const Discord = require('discord.js');
+
 const client = new Discord.Client()
+client.commands = new Discord.Collection();
+
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
 const randomPuppy = require('random-puppy');
+
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+	client.commands.set(command.name, command);
+}
+
 
 // Extracts the required classes from the discord.js module
 const { Client, MessageEmbed } = require('discord.js');
@@ -166,10 +178,7 @@ client.on('message', async message => {
             message.channel.send({ embed: helpEmbed });
             break;
         case 'ping':
-            message.channel.send("Pinging...").then(m => {
-                var ping = m.createdTimestamp - message.createdTimestamp;
-                m.edit(`:ping_pong: Pong! Your Ping is: **${ping}ms**`);
-            });
+            client.commands.get('ping').execute(message, args);
             break;
         case 'invite':
             message.channel.send('Invite me using this link: https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847');
