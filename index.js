@@ -19,6 +19,9 @@ const { Client, MessageEmbed } = require('discord.js');
 // bot prefix
 prefix = '>$';
 
+//bot token
+token = process.env.token
+
 // bot version
 // format: major.minor.patch
 var version = '1.17.15';
@@ -107,4 +110,4 @@ client.on('message', async message => {
             break;
     }
 })
-client.login(process.env.token);
+client.login(token);
