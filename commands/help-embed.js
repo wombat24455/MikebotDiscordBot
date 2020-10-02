@@ -1,6 +1,6 @@
 module.exports = {
-	name: 'ping',
-	description: 'Ping!',
+	name: 'help',
+	description: 'Displays the help embed.',
 	execute(message) {
     const helpEmbed = {
         color: 0x0099ff,
