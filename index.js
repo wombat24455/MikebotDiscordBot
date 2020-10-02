@@ -63,7 +63,7 @@ client.on('message', async message => {
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
 
-    switch (args[0]) {
+    switch (args[0]) { // this will be changed at some point
         case 'help':
             client.commands.get('help').execute(message);
             break;
@@ -101,7 +101,7 @@ client.on('message', async message => {
 						client.commands.get('actinsusngl').execute(message);
             break;
         case 'suggest':
-						client.commands.get('suggest').execute(message, args);
+						client.commands.get('suggest').execute(message, args, nonoWord, nonoWord2);
             break;
         case 'reload':
             client.commands.get('reload').execute(message, client);
