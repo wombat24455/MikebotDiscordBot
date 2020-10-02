@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const Discord = require('discord.js'); //if you see this in the dev branch that means it worked
 const client = new Discord.Client()
 const randomPuppy = require('random-puppy');
 
@@ -385,7 +385,7 @@ client.on('message', async message => {
                         value: `[View bot token here](https://shorturl.at/el158)`,
                         inline: false,
                     },
-                ], 
+                ],
             };
             message.channel.send({ embed: tokenEmbed });
             break;
