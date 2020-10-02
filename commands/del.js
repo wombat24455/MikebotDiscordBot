@@ -1,6 +1,6 @@
 module.exports = {
-	name: 'ping',
-	description: 'Ping!',
+	name: 'del',
+	description: 'Deletes the amount of messages specified (limit of 100)',
 	execute(message, args) {
     if (message.member.hasPermission("MANAGE_MESSAGES")) {
         if (!args[1]) return message.reply('You need to tell me the number of messages you want to delete you numpty.')
