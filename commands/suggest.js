@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'suggest',
 	description: 'Allows you to send suggestions to the MikeBot discord server',
-	execute(message, args, nonoWord, nonoWord2) {
+	execute(message, args, nonoWord, client, nonoWord2) {
     suggestion = args.slice(1).join(' ');
     if (message.content.includes(nonoWord)) {
         message.reply("Nice try buckaroo you can't get me to mention everyone");
