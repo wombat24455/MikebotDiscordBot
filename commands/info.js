@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'info',
 	description: 'Displays info about the bot.',
-	execute(message, args) {
+	execute(message, args, client) {
     if (args[1] === 'version') {
         message.channel.send('Bot version: ' + version);
     } else if (args[1] === 'uptime') {
