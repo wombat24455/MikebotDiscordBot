@@ -1,8 +1,8 @@
 module.exports = {
 	name: 'reportbug',
 	description: 'Let us know if you find any bugs with the bot using this command.',
-	execute(message, args) {
-    async function prompt(message, msg) {
+	async execute(message, args) {
+    function prompt(message, msg) {
         const filter = (response) => response.author.id === message.author.id;
         message.channel.send(msg)
         return message.channel.awaitMessages(filter, { max: 1, time: 60000, errors: ['time'] })
