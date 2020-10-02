@@ -76,7 +76,7 @@ client.on('message', async message => {
             message.channel.send('Invite me using this link: https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847');
             break;
         case 'info':
-            client.commands.get('info').execute(message, args);
+            client.commands.get('info').execute(message, args, client);
             break;
         case 'del':
             client.commands.get('del').execute(message, args);
@@ -88,7 +88,7 @@ client.on('message', async message => {
             client.commands.get('website').execute(message);
             break;
         case 'servercount':
-						client.commands.get('servercount').execute(message);
+						client.commands.get('servercount').execute(message, client);
             break;
         case 'say':
 						client.commands.get('say').execute(message, args);
@@ -106,13 +106,13 @@ client.on('message', async message => {
 						client.commands.get('say').execute(message, args);
             break;
         case 'reload':
-            client.commands.get('reload').execute(message);
+            client.commands.get('reload').execute(message, client);
             break;
         case 'givtoken':
 						client.commands.get('reload').execute(message);
             break;
         case 'reportbug':
-						client.commands.get('reportbug').execute(message, args);
+						client.commands.get('reportbug').execute(message, args, client);
             break;
     }
 })
