@@ -9,6 +9,6 @@ module.exports = {
         message.reply("Nice try buckaroo you can't get me to mention here");
     } else {
         client.channels.cache.get('731267852564430882').send(suggestion + " - Suggested by user: " + message.author.username + "#" + message.author.discriminator);
-    };
+    }
 	},
 };
