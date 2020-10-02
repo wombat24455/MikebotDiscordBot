@@ -37,8 +37,6 @@ client.on('ready', () => {
             type: 'WATCHING',
         }
     })
-
-
 })
 
 // Replies to mention of bot
@@ -102,7 +100,7 @@ client.on('message', async message => {
             client.commands.get('help').execute(message);
             break;
         case 'ping':
-            client.commands.get('ping').execute(message, args);
+            client.commands.get('ping').execute(message);
             break;
         case 'invite':
             message.channel.send('Invite me using this link: https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847');
