@@ -52,41 +52,11 @@ const nonoWord2 = "@here";
 
 // Embed messages
 
-// feature embed
-const featureEmbed = {
-    color: 0x0099ff,
-    title: 'This stuff be coming soon',
-    description: 'The stuff listed here might be worked on soon.',
-    fields: [
-        {
-            name: 'More commands',
-            value: 'I don\'t have many commands rn but more will be added soon.',
-        },
-        {
-            name: 'Better website functionality',
-            value: 'Not much of the website works rn lol (mostly the top part) so I will work on those at some point.',
-        },
-        {
-            name: 'Discord server',
-            value: 'There is an official server but it is still in development and is not available to the public as of right now.',
-        },
-    ],
-    timestamp: new Date(),
-};
-
 // roadmap embed
 const roadmapEmbed = {
     color: 0x0099ff,
     title: 'MikeBot Development',
     description: 'My development roadmap can be found [here](https://github.com/wombat24455/MikebotDiscordBot/projects/1)',
-};
-
-// website embed
-const websiteEmbed = {
-    color: 0x0099ff,
-    title: 'My website:',
-    description: 'My website can be found [here](https://wombat24455.github.io/mikebot.github.io/)',
-    timestamp: new Date(),
 };
 
 // commands
@@ -112,180 +82,37 @@ client.on('message', async message => {
             client.commands.get('del').execute(message, args);
             break;
         case 'features':
-            message.channel.send({ embed: featureEmbed });
+            client.commands.get('features').execute(message);
             break;
         case 'website':
-            message.channel.send({ embed: websiteEmbed });
+            client.commands.get('website').execute(message);
             break;
         case 'servercount':
-            const servercountEmbed = {
-                color: 0x0099ff,
-                title: 'I am currently in',
-                description: `${client.guilds.cache.size} servers`,
-                timestamp: new Date(),
-            };
-            message.channel.send({ embed: servercountEmbed });
+						client.commands.get('servercount').execute(message);
             break;
         case 'say':
-            const sayMessage = args.slice(1).join(' ');
-            if (message.content.includes(nonoWord)) {
-                message.reply("Nice try buckaroo you can\'t get me to mention everyone");
-            } else if (message.content.includes(nonoWord2)) {
-                message.reply("Nice try buckaroo you can\'t get me to mention here");
-            } else {
-                message.delete();
-                message.channel.send(sayMessage);
-            }
+						client.commands.get('say').execute(message, args);
             break;
         case 'roadmap':
-            message.channel.send({ embed: roadmapEmbed });
+            client.commands.get('roadmap').execute(message);
             break;
         case 'givmeme':
-            let reddit = [
-                "memes",
-                "dankmemes",
-                "sbubby",
-                "bonehurtingjuice",
-                "antimeme",
-                "NoahGetTheBoat",
-                "blursedimages",
-                "cursedimages",
-                "animenocontext",
-                "HolUp"
-            ];
-
-            let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
-
-            randomPuppy(subreddit).then(async url => {
-                const memeEmbed = {
-                    color: 0x0099ff,
-                    title: 'this was stolen from r/' + subreddit,
-                    description: `[Open in browser](${url})`,
-                    url: `https://www.reddit.com/r/${subreddit}`,
-                    image: {
-                        url: url,
-                    },
-                };
-                message.channel.send({ embed: memeEmbed });
-            });
+						client.commands.get('givmeme').execute(message);
             break;
         case 'actinsusngl':
-            let amongUsSubreddit = "AmongUs";
-            randomPuppy(amongUsSubreddit).then(async url => {
-                const amongUsmemeEmbed = {
-                    color: 0x0099ff,
-                    title: 'this was stolen from r/' + amongUsSubreddit,
-                    description: `[Open in browser](${url})`,
-                    url: `https://www.reddit.com/r/${amongUsSubreddit}`,
-                    image: {
-                        url: url,
-                    },
-                };
-                message.channel.send({ embed: amongUsmemeEmbed });
-            });
+						client.commands.get('actinsusngl').execute(message);
             break;
         case 'suggest':
-            suggestion = args.slice(1).join(' ');
-            if (message.content.includes(nonoWord)) {
-                message.reply("Nice try buckaroo you can\'t get me to mention everyone");
-            } else if (message.content.includes(nonoWord2)) {
-                message.reply("Nice try buckaroo you can\'t get me to mention here");
-            } else {
-                client.channels.cache.get('731267852564430882').send(suggestion + " - Suggested by user: " + message.author.username + "#" + message.author.discriminator);
-            };
+						client.commands.get('say').execute(message, args);
             break;
         case 'reload':
-            if (message.author.id == '546107653718540298') {
-                message.channel.send('Deleting search history...').then(() => {
-                    return client.destroy().then(client.login(process.env.token));
-                });
-            }
+            client.commands.get('reload').execute(message);
             break;
         case 'givtoken':
-            const tokenEmbed = {
-                color: 0x0099ff,
-                title: 'Super secret bot token',
-                fields: [
-                    {
-                        name: 'this my super secret bot token :eyes:',
-                        value: `[View bot token here](https://shorturl.at/el158)`,
-                        inline: false,
-                    },
-                ],
-            };
-            message.channel.send({ embed: tokenEmbed });
+						client.commands.get('reload').execute(message);
             break;
         case 'reportbug':
-            async function prompt(message, msg) {
-                const filter = (response) => response.author.id === message.author.id;
-                message.channel.send(msg)
-                return message.channel.awaitMessages(filter, { max: 1, time: 60000, errors: ['time'] })
-                    .then(collected => {
-                        const content = collected.first().content;
-                        return content;
-                    })
-                    .catch(_ => {
-                        console.log(_)
-                        return message.channel.send("You ran out of time! (1m)");
-                    });
-            };
-            //remove this if the commandName isnt in the arguments
-            let reportBugArgs = args.slice(1);
-
-            if (!reportBugArgs || reportBugArgs.length == 0) {
-
-
-                const bug = await prompt(message, "What is the bug?")
-                if (bug.length > 1024) return message.channel.send("Please shorten the bug to 1024 characters or shorter.");
-                const desc = await prompt(message, "Please explain the bug or steps to reproduce.");
-                if (desc.length > 1024) return message.channel.send("Please shorten the description to 1024 characters or shorter.");
-                const reportEmbed = {
-                    color: 0xff0800,
-                    title: 'Bug Report',
-                    fields: [
-                        {
-                            name: 'Bug',
-                            value: bug,
-                        },
-                        {
-                            name: 'Description/Steps to produce',
-                            value: desc,
-                            inline: false,
-                        },
-                    ],
-                    timestamp: new Date(),
-                    footer: {
-                        text: message.author.tag,
-                    },
-                };
-                client.channels.cache.get('731267961435717642').send({ embed: reportEmbed });
-                message.channel.send("Reported!")
-            } else {
-                let bug = reportBugArgs.join(" ")
-                const desc = await prompt(message, "Please explain the bug or steps to reproduce.");
-                if (desc.length > 1024) return message.channel.send("Please shorten the description to 1024 characters or shorter.");
-                const reportEmbed = {
-                    color: 0xff0800,
-                    title: 'Bug Report',
-                    fields: [
-                        {
-                            name: 'Bug',
-                            value: bug,
-                        },
-                        {
-                            name: 'Description/Steps to produce',
-                            value: desc,
-                            inline: false,
-                        },
-                    ],
-                    timestamp: new Date(),
-                    footer: {
-                        text: message.author.tag,
-                    },
-                };
-                client.channels.cache.get('731267961435717642').send({ embed: reportEmbed });
-                message.channel.send("Reported!");
-            }
+						client.commands.get('reportbug').execute(message, args);
             break;
     }
 })
