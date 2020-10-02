@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'reportbug',
 	description: 'Let us know if you find any bugs with the bot using this command.',
-	async execute(message, args) {
+	async execute(message, args, client) {
     function prompt(message, msg) {
         const filter = (response) => response.author.id === message.author.id;
         message.channel.send(msg)
