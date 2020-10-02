@@ -1,4 +1,4 @@
-const Discord = require('discord.js'); //if you see this in the dev branch that means it worked
+const Discord = require('discord.js');
 const client = new Discord.Client()
 const randomPuppy = require('random-puppy');
 
