@@ -99,7 +99,7 @@ client.on('message', async message => {
 
     switch (args[0]) {
         case 'help':
-            client.commands.get('help-embed').execute(message, args);
+            client.commands.get('help-embed').execute(message);
             break;
         case 'ping':
             client.commands.get('ping').execute(message, args);
