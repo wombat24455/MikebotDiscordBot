@@ -18,7 +18,7 @@ for (const file of commandFiles) {
 const { Client, MessageEmbed } = require('discord.js');
 
 // bot prefix
-prefix = '$';
+prefix = '>$';
 
 // bot version
 // format: major.minor.patch
@@ -33,41 +33,40 @@ client.on('ready', () => {
     console.log(`Bot logged in as ${client.user.tag}, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
     console.log(`I am currently in:\n${guildNames}`);
 
-    client.user.setPresence({
-        status: 'online',
-        activity: {
-            name: 'my developers fail',
-            type: 'WATCHING',
-        }
-    })
+	client.user.setPresence({
+		status: 'online',
+		activity: {
+			name: 'https://cwavs.xyz',
+			type: 'WATCHING',
+		}
+	})
 })
 
 // Replies to mention of bot
 client.on('message', message => {
-    if (message.mentions.has(client.user)) {
-        message.channel.send(`my prefix is ${prefix} buddy.`);
-    }
+  if (message.mentions.has(client.user)) {
+    message.channel.send(`my prefix is ${prefix} buddy.`);
+  }
 });
 
 // Prevents usage of @everyone and @here in >$say or >$suggestion messages
 const nonoWord = "@everyone";
 const nonoWord2 = "@here";
 
-// commands
-client.on('message', async message => {
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
+// listens for commands
+client.on('message', message => {
+	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+	const args = message.content.slice(prefix.length).trim().split(/ +/);
 	const command = args.shift().toLowerCase();
 
 	if (!client.commands.has(command)) return;
 
 	try {
         client.commands.get(command).execute(message, args, client);
-        
 	} catch (error) {
 		console.error(error);
-        message.reply('there was an error trying to execute that command!');
-    }
+		message.reply('there was an error trying to execute that command!');
+	}
 });
 client.login(token);
