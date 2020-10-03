@@ -22,16 +22,16 @@ prefix = '>$';
 
 // bot version
 // format: major.minor.patch
-var version = '1.17.15';
+var version = '1.17.16';
 
 // outputs in console when bot code is run
 client.on('ready', () => {
-    let user_count = 0;
-    client.guilds.cache.each((g) => user_count += g.memberCount);
-    let guildNames = client.guilds.cache.map(g => g.name).join("\n");
+  let user_count = 0;
+  client.guilds.cache.each((g) => user_count += g.memberCount);
+  let guildNames = client.guilds.cache.map(g => g.name).join("\n");
     
-    console.log(`Bot logged in as ${client.user.tag}, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
-    console.log(`I am currently in:\n${guildNames}`);
+  console.log(`Bot logged in as ${client.user.tag}, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
+  console.log(`I am currently in:\n${guildNames}`);
 
 	client.user.setPresence({
 		status: 'online',
@@ -53,11 +53,11 @@ client.on('message', message => {
 const nonoWord = "@everyone";
 const nonoWord2 = "@here";
 
-// listens for commands
-client.on('message', message => {
-	if (!message.content.startsWith(prefix) || message.author.bot) return;
+// commands
+client.on('message', async message => {
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-	const args = message.content.slice(prefix.length).trim().split(/ +/);
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
 
 	if (!client.commands.has(command)) return;
@@ -66,7 +66,7 @@ client.on('message', message => {
         client.commands.get(command).execute(message, args, client);
 	} catch (error) {
 		console.error(error);
-		message.reply('there was an error trying to execute that command!');
-	}
+        message.reply('there was an error trying to execute that command!');
+    }
 });
 client.login(token);
