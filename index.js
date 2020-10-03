@@ -1,6 +1,5 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-const token = require('./token.json');
 
 const client = new Discord.Client()
 client.commands = new Discord.Collection();
@@ -19,6 +18,8 @@ const { Client, MessageEmbed } = require('discord.js');
 
 // bot prefix
 prefix = '>$';
+
+token = process.env.token
 
 // bot version
 // format: major.minor.patch
