@@ -1,10 +1,10 @@
 const package = require('../package.json');
 const version = package.version;
 
-function printVersion(message, args, client) {
+function printVersion(message) {
     message.channel.send('Bot version: ' + version);
 }
-function printUptime(message, args, client) {
+function printUptime(message, client) {
     let totalSeconds = (client.uptime / 1000);
     let days = Math.floor(totalSeconds / 86400);
     let hours = Math.floor(totalSeconds / 3600);
@@ -28,7 +28,7 @@ function printUptime(message, args, client) {
     };
     message.channel.send({ embed: uptimeEmbed });
 }
-function printAll(message, args, client) {
+function printAll(message, client) {
     let totalSeconds = (client.uptime / 1000);
     let days = Math.floor(totalSeconds / 86400);
     let hours = Math.floor(totalSeconds / 3600);
@@ -103,11 +103,11 @@ module.exports = {
 	execute(message, args, client) {
         switch(args[0]){
             case 'version':
-                return printVersion(message, args, client);
+                return printVersion(message);
             case 'uptime':
-                return printUptime(message, args, client);
+                return printUptime(message, client);
             case 'all':
-                return printAll(message, args, client);
+                return printAll(message, client);
             default: 
                 message.channel.send(`Bro do \`\`${prefix}help\`\` so you know how to use the damn command.`);
                 break;
