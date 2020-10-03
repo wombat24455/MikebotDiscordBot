@@ -26,8 +26,10 @@ var version = '1.17.15';
 
 // outputs in console when bot code is run
 client.on('ready', () => {
-    user_count = client.guilds.cache.map((g) => g.memberCount).reduce((a, b) => a + b);
-    guildNames = client.guilds.cache.map(g => g.name).join("\n");
+    let user_count = 0;
+    client.guilds.cache.each((g) => user_count += g.memberCount);
+    let guildNames = client.guilds.cache.map(g => g.name).join("\n");
+    
     console.log(`Bot logged in as ${client.user.tag}, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
     console.log(`I am currently in:\n${guildNames}`);
 
@@ -43,7 +45,7 @@ client.on('ready', () => {
 // Replies to mention of bot
 client.on('message', message => {
     if (message.mentions.has(client.user)) {
-        message.channel.send(`my prefix is >$ buddy.`);
+        message.channel.send(`my prefix is ${prefix} buddy.`);
     }
 });
 
