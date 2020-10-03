@@ -1,4 +1,3 @@
-
 module.exports = {
 	name: 'servercount',
 	description: 'Displays the number of servers the bot is in',
