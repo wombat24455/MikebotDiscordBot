@@ -20,7 +20,7 @@ const { Client, MessageEmbed } = require('discord.js');
 prefix = '$';
 
 //bot token
-token = "NzYxMTc0NTc2MTkzMDc3MjYw.X3WxEA.M1xQK2ahiCzZUbhoYZcMfBYwbmM"
+token = process.env.token
 
 // bot version
 // format: major.minor.patch
