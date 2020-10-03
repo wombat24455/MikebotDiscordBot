@@ -22,7 +22,7 @@ prefix = '>$';
 
 // bot version
 // format: major.minor.patch
-var version = '1.17.15';
+var version = '1.17.16';
 
 // outputs in console when bot code is run
 client.on('ready', () => {
