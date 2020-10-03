@@ -76,6 +76,8 @@ module.exports = {
             text: 'Commands are prob valid as of',
         },
     };
+    console.log("Command author: " + message.author.tag)
+    console.log("Channel ID: " + message.channel)
     message.channel.send({ embed: helpEmbed });
 	},
 };

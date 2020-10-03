@@ -1,5 +1,6 @@
 const fs = require('fs');
 const Discord = require('discord.js');
+const token = require('./token.json');
 
 const client = new Discord.Client()
 client.commands = new Discord.Collection();
@@ -19,12 +20,9 @@ const { Client, MessageEmbed } = require('discord.js');
 // bot prefix
 prefix = '>$';
 
-//bot token
-token = process.env.token
-
 // bot version
 // format: major.minor.patch
-var version = '1.17.15';
+var version = '1.17.16';
 
 // outputs in console when bot code is run
 client.on('ready', () => {
@@ -36,7 +34,7 @@ client.on('ready', () => {
     client.user.setPresence({
         status: 'online',
         activity: {
-            name: 'https://www.cwavs.xyz',
+            name: 'my developers fail',
             type: 'WATCHING',
         }
     })
@@ -58,56 +56,16 @@ client.on('message', async message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
+	const command = args.shift().toLowerCase();
 
-    switch (args[0]) { // this will be changed at some point (looks disgusting af lmao)
-        case 'help':
-            client.commands.get('help').execute(message);
-            break;
-        case 'ping':
-            client.commands.get('ping').execute(message);
-            break;
-        case 'invite':
-            client.commands.get('invite').execute(message);
-            break;
-        case 'info':
-            client.commands.get('info').execute(message, args, client, version);
-            break;
-        case 'del':
-            client.commands.get('del').execute(message, args);
-            break;
-        case 'features':
-            client.commands.get('features').execute(message);
-            break;
-        case 'website':
-            client.commands.get('website').execute(message);
-            break;
-        case 'servercount':
-						client.commands.get('servercount').execute(message, client);
-            break;
-        case 'say':
-						client.commands.get('say').execute(message, args, nonoWord, nonoWord2);
-            break;
-        case 'roadmap':
-            client.commands.get('roadmap').execute(message);
-            break;
-        case 'givmeme':
-						client.commands.get('givmeme').execute(message);
-            break;
-        case 'actinsusngl':
-						client.commands.get('actinsusngl').execute(message);
-            break;
-        case 'suggest':
-						client.commands.get('suggest').execute(message, args, nonoWord, client, nonoWord2);
-            break;
-        case 'reload':
-            client.commands.get('reload').execute(message, client);
-            break;
-        case 'givtoken':
-						client.commands.get('reload').execute(message);
-            break;
-        case 'reportbug':
-						client.commands.get('reportbug').execute(message, args, client);
-            break;
+	if (!client.commands.has(command)) return;
+
+	try {
+        client.commands.get(command).execute(message, args);
+
+	} catch (error) {
+		console.error(error);
+        message.reply('there was an error trying to execute that command!');
     }
-})
+});
 client.login(token);
