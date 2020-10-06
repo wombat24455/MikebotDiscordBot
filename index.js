@@ -51,8 +51,8 @@ client.on('message', message => {
 });
 
 // Prevents usage of @everyone and @here in >$say or >$suggestion messages
-const nonoWord = "@everyone";
-const nonoWord2 = "@here";
+everyonePing = process.env.everyone;
+herePing = process.env.here;
 
 // commands
 client.on('message', async message => {
