@@ -27,7 +27,7 @@ module.exports = {
                 url: url,
             },
         };
-        message.channel.send({ embed: memeEmbed });
     });
+		message.channel.send({ embed: memeEmbed });
 	},
 };
