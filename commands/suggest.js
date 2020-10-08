@@ -2,7 +2,7 @@ module.exports = {
 	name: 'suggest',
 	description: 'Allows you to send suggestions to the MikeBot discord server',
 	execute(message, args, everyonePing, client, herePing) {
-    suggestion = args.slice(1).join(' ');
+    suggestion = args.join(' ');
     if (message.content.includes(everyonePing)) {
         message.reply("Nice try buckaroo you can't get me to mention everyone");
     } else if (message.content.includes(herePing)) {
