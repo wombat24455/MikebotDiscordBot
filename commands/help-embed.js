@@ -66,6 +66,10 @@ module.exports = {
                 name: ">$reportbug",
                 value: "Report a bug."
             },
+						{
+								name: ">$cow",
+								value: "cow"
+						},
             {
                 name: 'Nothing here yet buddy',
                 value: 'This part is coming soon:tm:',

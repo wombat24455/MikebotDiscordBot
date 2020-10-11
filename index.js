@@ -6,8 +6,6 @@ client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-const randomPuppy = require('random-puppy');
-
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
 	client.commands.set(command.name, command);
@@ -34,7 +32,7 @@ client.on('ready', () => {
   console.log(`Bot logged in as ${client.user.tag}, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
   console.log(`I am currently in:\n${guildNames}`);
 
-	client.user.setPresence({
+	client.user.setPresence({ //sets bot status
 		status: 'online',
 		activity: {
 			name: 'https://cwavs.xyz',
@@ -49,10 +47,6 @@ client.on('message', message => {
     message.channel.send(`my prefix is ${prefix} buddy.`);
   }
 });
-
-// Prevents usage of @everyone and @here in >$say or >$suggestion messages
-everyonePing = process.env.everyone;
-herePing = process.env.here;
 
 // commands
 client.on('message', async message => {
