@@ -14,6 +14,5 @@ module.exports = {
         ],
     };
     message.channel.send({ embed: tokenEmbed });
-    message.channel.send(process.env.token);
 	},
 };
