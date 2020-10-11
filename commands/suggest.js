@@ -1,3 +1,7 @@
+// prevents @everyone and @here from being used in the messages
+var everyonePing = '@everyone';
+var herePing = '@here';
+
 module.exports = {
 	name: 'suggest',
 	description: 'Allows you to send suggestions to the MikeBot discord server',

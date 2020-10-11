@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'ping',
-	description: 'Ping!',
+	description: 'yeah idk how this works',
 	execute(message) {
     message.channel.send("Pinging...").then(m => {
         var ping = m.createdTimestamp - message.createdTimestamp;
