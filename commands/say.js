@@ -15,7 +15,7 @@ module.exports = {
 	    message.reply("Nice try buckaroo you can't get me to mention here");
     } else {
 	    message.delete();
-			message.channel.send(sayMessage);
+	    message.channel.send(sayMessage);
 		}
 	},
 };
