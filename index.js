@@ -50,18 +50,20 @@ client.on('message', message => {
 
 // commands
 client.on('message', async message => {
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+	if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
 
 	if (!client.commands.has(command)) return;
 
 	try {
-        client.commands.get(command).execute(message, args, client);
+		client.commands.get(command).execute(message, args, client);
 	} catch (error) {
 		console.error(error);
-        message.reply('Oi mate somefing wrong innit bruv, this command wont work bruv');
-    }
+		message.reply('Oi mate somefing wrong innit bruv, this command wont work bruv');
+	}
 });
 client.login(token);
+// nice
