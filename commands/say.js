@@ -8,9 +8,9 @@ module.exports = {
 	execute(message, args) {
     const sayMessage = args.join(' ');
     if (message.content.includes(everyonePing)) {
-	    message.reply("Nice try buckaroo you can't get me to mention everyone");
+	    message.reply("Nice try buckaroo you can't get me to mention everyone @everyone");
     } else if (message.content.includes(herePing)) {
-	    message.reply("Nice try buckaroo you can't get me to mention here");
+	    message.reply("Nice try buckaroo you can't get me to mention here @here");
     } else {
 	    message.delete();
 			message.channel.send(sayMessage);
