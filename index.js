@@ -43,6 +43,8 @@ client.on('ready', () => {
 
 // Replies to mention of bot
 client.on('message', message => {
+  if (!message.content.startsWith(message.author.bot)) return;
+	
   if (message.content.includes(client.user.id)) {
     message.channel.send(`my prefix is ${prefix} buddy.`);
   }
