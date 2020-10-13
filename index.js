@@ -44,7 +44,8 @@ client.on('ready', () => {
 // Replies to mention of bot
 client.on('message', message => {
   if (message.content.includes(client.user.id)) {
-    message.channel.send(`my prefix is ${prefix} buddy. <@639421464185143301>`);
+    msg = message.channel.send(`my prefix is ${prefix} buddy. <@639421464185143301>`);
+    msg.delete();
   }
 });
 
