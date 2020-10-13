@@ -45,7 +45,6 @@ client.on('ready', () => {
 client.on('message', message => {
   if (message.content.includes(client.user.id)) {
     msg = message.channel.send(`my prefix is ${prefix} buddy. <@639421464185143301>`);
-    msg.delete();
   }
 });
 
