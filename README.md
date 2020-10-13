@@ -1,5 +1,5 @@
 # MikeBot
-MikeBot is a multipurpose discord bot which has a mix of fun features and administration features. Although MikeBot doesn't have many features at the moment you can still invite the bot through the [website](https://wombat24455.github.io/mikebot.github.io/) or [directly](https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847). The bot is being developed by the bot developers: wombat24455, Jacket-Chan, Cwavs and Crazy Teacup.
+MikeBot is a multipurpose discord bot which has a mix of fun features and administration features. Although MikeBot doesn't have many features at the moment you can still invite the bot through the [website](https://wombat24455.github.io/mikebot.github.io/) or [directly](https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847). The bot is being developed by the bot developers: wombat24455, Jacket-Chan, ~Cwavs~ and Crazy Teacup. Cwavs has decided to step down from his position.
 <p align="center">
 <img src="https://img.shields.io/github/stars/wombat24455/MikebotDiscordBot">
 <img src="https://www.codefactor.io/repository/github/wombat24455/mikebotdiscordbot/badge/master">
@@ -9,7 +9,7 @@ MikeBot is a multipurpose discord bot which has a mix of fun features and admini
 # MikeBot Dev Team
 - [Wombat](https://github.com/wombat24455) - Bot owner, bot host manager and main developer.
 - [Jacket-Chan](https://github.com/Jacket-Chan) - Manages backend systems for the bot, bot developer.
-- [Cwavs](https://github.com/Cwavs) - Bug finder (breaks shit), Bot crasher, Contributions manager, partial bot developer, ex-contributor.
+- [Cwavs](https://github.com/Cwavs) - Bug finder (breaks shit), Bot crasher, ex-contributions manager, ex-partial bot developer, ex-contributor.
 - [Crazy Teacup](https://github.com/Tea-Cup) - They're crazy, and a teacup.
 
 # Contribute
