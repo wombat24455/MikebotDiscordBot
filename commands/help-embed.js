@@ -70,6 +70,10 @@ module.exports = {
 								name: ">$cow",
 								value: "cow"
 						},
+						{
+								name: ">$simonstupid",
+								value: "can only be used by 2 specific people :>"
+						},
             {
                 name: 'Nothing here yet buddy',
                 value: 'This part is coming soon:tm:',
@@ -80,8 +84,7 @@ module.exports = {
             text: 'Commands are prob valid as of',
         },
     };
-    console.log("Command author: " + message.author.tag)
-    console.log("Channel ID: " + message.channel)
+    console.log("Command author: " + message.author.tag\n"Channel ID: " + message.channel)
     message.channel.send({ embed: helpEmbed });
 	},
 };
