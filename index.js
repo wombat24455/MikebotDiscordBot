@@ -67,4 +67,4 @@ client.on('message', async message => {
 	}
 });
 client.login(token);
-// nice
+// hello fellow user
