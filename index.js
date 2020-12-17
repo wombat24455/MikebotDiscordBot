@@ -25,6 +25,7 @@ var version = '1.17.17';
 
 // outputs in console when bot code is run
 client.on('ready', () => {
+	var isUsed = false;
   let user_count = 0;
   client.guilds.cache.each((g) => user_count += g.memberCount);
   let guildNames = client.guilds.cache.map(g => g.name).join("\n");
@@ -32,13 +33,26 @@ client.on('ready', () => {
   console.log(`Bot logged in as ${client.user.tag}, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
   console.log(`I am currently in:\n${guildNames}`);
 
-	client.user.setPresence({ //sets bot status
-		status: 'online',
+	setInterval(() => { //switches bot status every 2 mins
+	if (isUsed) {
+	client.user.setPresence({
+		status: `online`,
 		activity: {
-			name: 'https://cwavs.xyz',
-			type: 'WATCHING',
+			name: `https://cwavs.xyz`,
+			type: `WATCHING`,
 		}
 	})
+	isUsed = false;
+	} else {
+	client.user.setPresence({
+		status: `online`,
+		activity: {
+			name: `the world burn`,
+			type: `WATCHING`,
+		}
+	})
+	isUsed = true;
+	}}, 120000);
 })
 
 // Replies to mention of bot
@@ -66,5 +80,6 @@ client.on('message', async message => {
 		message.reply('Oi mate somefing wrong innit bruv, this command wont work bruv');
 	}
 });
+
 client.login(token);
 // hello fellow user
