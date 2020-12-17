@@ -7,8 +7,8 @@ client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
-	client.commands.set(command.name, command);
+    const command = require(`./commands/${file}`);
+    client.commands.set(command.name, command);
 }
 
 // Extracts the required classes from the discord.js module
@@ -25,35 +25,35 @@ var version = '1.18.18';
 
 // outputs in console when bot code is run
 client.on('ready', () => {
-	var isUsed = false;
-  let user_count = 0;
-  client.guilds.cache.each((g) => user_count += g.memberCount);
-  let guildNames = client.guilds.cache.map(g => g.name).join("\n");
+    var isUsed = false;
+    let user_count = 0;
+    client.guilds.cache.each((g) => user_count += g.memberCount);
+    let guildNames = client.guilds.cache.map(g => g.name).join("\n");
 
-  console.log(`Bot logged in as ${client.user.tag}, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
-  console.log(`I am currently in:\n${guildNames}`);
+    console.log(`Bot logged in as ${client.user.tag}, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
+    console.log(`I am currently in:\n${guildNames}`);
 
-	setInterval(() => {
-	    if (isUsed) {
-	        client.user.setPresence({
-	            status: `online`,
-	            activity: {
-	                name: `https://cwavs.xyz`,
-	                type: `WATCHING`,
-	            }
-	        })
-	        isUsed = false;
-	    } else {
-	        client.user.setPresence({
-	            status: `online`,
-	            activity: {
-	                name: `the world burn`,
-	                type: `WATCHING`,
-	            }
-	        })
-	        isUsed = true;
-	    }
-	}, 120000);
+    setInterval(() => {
+        if (isUsed) {
+            client.user.setPresence({
+                status: `online`,
+                activity: {
+                    name: `https://cwavs.xyz`,
+                    type: `WATCHING`,
+                }
+            })
+            isUsed = false;
+        } else {
+            client.user.setPresence({
+                status: `online`,
+                activity: {
+                    name: `the world burn`,
+                    type: `WATCHING`,
+                }
+            })
+            isUsed = true;
+        }
+    }, 120000);
 })
 
 // Replies to mention of bot
