@@ -66,10 +66,11 @@ client.on('message', message => {
 });
 
 //not important
-client.on('message', message => {
-    if (message.author.id === 765874143064358923) return;
-    message.react('😡');
-});
+//client.on('message', message => {
+//    if (message.author.id === 765874143064358923) return;
+//    message.react('😡');
+//});
+
 
 // commands
 client.on('message', async message => {
