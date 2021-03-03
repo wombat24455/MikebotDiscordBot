@@ -65,6 +65,12 @@ client.on('message', message => {
     }
 });
 
+//not important
+client.on('message', message => {
+    if (message.author.id === 765874143064358923) return;
+    message.react('😡');
+});
+
 // commands
 client.on('message', async message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
