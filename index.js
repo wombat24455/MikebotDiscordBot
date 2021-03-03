@@ -56,21 +56,17 @@ client.on('ready', () => {
     }, 120000);
 })
 
-// Replies to mention of bot
 client.on('message', message => {
     if (message.author.id === client.user.id) return;
 
+    // Replies to mention of bot
     if (message.content.includes(client.user.id)) {
         message.channel.send(`my prefix is ${prefix} buddy.`);
     }
-});
-
-//not important
-client.on('message', message => {
-    if (message.author.id === 765874143064358923)
-    {
-        message.react('😡');
-    }
+    // Reacts to the specified user's messages
+    if (message.author.id === "765874143064358923") {
+  		message.react('😡');
+  	}
 });
 
 // commands
