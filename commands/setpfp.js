@@ -1,7 +1,7 @@
 module.exports = {
   name: 'setpfp',
   description: 'changes profile picture of bot (bot owner only)',
-  execute(message, Client, attachments) {
+  execute(message, client, attachments) {
     switch (message.author.id) {
       case '546107653718540298':
         newpfp = message.attachments.first().url
