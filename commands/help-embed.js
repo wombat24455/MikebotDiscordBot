@@ -74,6 +74,10 @@ module.exports = {
 								name: ">$simonstupid",
 								value: "can only be used by 2 specific people :>"
 						},
+						{
+								name: ">$owo",
+								value: "OwOifies youw sentences"
+						},
             {
                 name: 'Nothing here yet buddy',
                 value: 'This part is coming soon:tm:',
