@@ -66,7 +66,7 @@ client.on('message', message => {
     // Reacts to the specified user's messages
     if (message.author.id === "765874143064358923") {
   		message.react('😡');
-  	}
+  	} // nice
 });
 
 // commands
