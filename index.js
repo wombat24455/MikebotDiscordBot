@@ -56,6 +56,12 @@ client.on('ready', () => {
     }, 120000);
 })
 
+client.on('guildCreate', guild => {
+  const channel = guild.channels.cache.find(channel => channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'));
+  console.log(`Joined a new server: ${guild.name}`);
+  channel.send("yoyooyoyoyo wassup my broddas");
+})
+
 client.on('message', message => {
     if (message.author.id === client.user.id) return;
 
