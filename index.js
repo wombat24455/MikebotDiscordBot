@@ -1,10 +1,10 @@
 const fs = require('fs');
 const Discord = require('discord.js');
+const botIntents = new Intents();
+botIntents.add(Intents.FLAGS.GUILD_PRESENCES, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES);
 const client = new Discord.Client({ intents: botIntents });
 
 client.commands = new Discord.Collection();
-const botIntents = new Intents();
-botIntents.add(Intents.FLAGS.GUILD_PRESENCES, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES);
 
 const { Client, Intents } = require('discord.js');
 const { MessageEmbed } = require('discord.js');
