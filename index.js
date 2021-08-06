@@ -77,7 +77,6 @@ client.on('message', message => {
 
 // commands
 client.on('message', async message => {
-
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -94,4 +93,4 @@ client.on('message', async message => {
 });
 
 client.login(token);
-// nice
+// hello fellow user
