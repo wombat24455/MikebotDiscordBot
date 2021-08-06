@@ -1,8 +1,10 @@
 const fs = require('fs');
 
 const Discord = require('discord.js');
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+const client = new Client({ intents: botIntents });
 client.commands = new Discord.Collection();
+const botIntents = new Intents();
+botIntents.add(Intents.FLAGS.GUILD_PRESENCES, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES);
 
 const { Client, Intents } = require('discord.js');
 const { Client, MessageEmbed } = require('discord.js');
@@ -13,6 +15,8 @@ for (const file of commandFiles) {
   const command = require(`./commands/${file}`);
   client.commands.set(command.name, command);
 }
+
+
 
 // bot prefix
 prefix = '>$';
