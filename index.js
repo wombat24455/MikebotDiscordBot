@@ -1,5 +1,6 @@
 const fs = require('fs');
 const Discord = require('discord.js');
+new Discord.Intents(11);
 
 const client = new Discord.Client()
 client.commands = new Discord.Collection();
@@ -77,7 +78,6 @@ client.on('message', message => {
 
 // commands
 client.on('message', async message => {
-
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
