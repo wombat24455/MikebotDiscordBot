@@ -16,8 +16,6 @@ for (const file of commandFiles) {
   client.commands.set(command.name, command);
 }
 
-
-
 // bot prefix
 prefix = '>$';
 
