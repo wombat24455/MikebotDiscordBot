@@ -1,9 +1,8 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const { Client, Intents } = require('discord.js');
-const botIntents = new Intents();
-botIntents.add(Intents.FLAGS.GUILD_PRESENCES, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES);
-const client = new Discord.Client({ intents: botIntents });
+const botIntents = new Discord.Intents(32767);
+const client = new Discord.Client({ botIntents });
 
 client.commands = new Discord.Collection();
 
