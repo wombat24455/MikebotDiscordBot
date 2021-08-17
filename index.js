@@ -34,29 +34,9 @@ client.on('ready', () => {
 
   setInterval(() => {
     if (isUsed) {
-      /*
-      client.user.setActivity({
-        status: `online`,
-        activites: [{
-          name: `https://cwavs.xyz`,
-          type: `WATCHING`,
-        }]
-      })
-      */
-
       client.user.setActivity('https://cwavs.xyz/', { type: 'WATCHING' });
       isUsed = false;
     } else {
-      /*
-      client.user.setActivity({
-        status: `online`,
-        activites: [{
-          name: `the world burn`,
-          type: `WATCHING`,
-        }]
-      })
-      */
-
       client.user.setActivity('the world burn', { type: 'WATCHING' });
       isUsed = true;
     }

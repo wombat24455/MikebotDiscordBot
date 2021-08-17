@@ -4,7 +4,7 @@ module.exports = {
 	execute(message) {
     message.channel.send("Pinging...").then(m => {
         var ping = m.createdTimestamp - message.createdTimestamp;
-        m.edit(`:ping_pong: Pong! Your Ping is: **${ping}ms**`);
+        m.edit(`Roundtrip latency: **${m.createdTimestamp - message.createdTimestamp}ms**\nWebsocket heartbeat: ${client.ws.ping}ms.`);
     });
 	},
 };
