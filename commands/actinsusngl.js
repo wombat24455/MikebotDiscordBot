@@ -16,7 +16,7 @@ module.exports = {
             },
         };
        // message.channel.send({ embed: amongUsmemeEmbed });
-       channel.send({ embeds: [exampleEmbed] });
+       message.channel.send({ embeds: [amongUsmemeEmbed] });
     });
 	},
 };
