@@ -20,7 +20,7 @@ token = process.env.token
 
 // bot version
 // format: major.minor.patch
-var version = '1.2.0';
+var version = '1.2.1';
 
 // outputs in console when bot code is run
 client.on('ready', () => {
@@ -29,12 +29,12 @@ client.on('ready', () => {
   client.guilds.cache.each((g) => user_count += g.memberCount);
   let guildNames = client.guilds.cache.map(g => g.name).join("\n");
 
-  console.log(`Bot logged in as ${client.user.tag}, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
+  console.log(`Bot logged in as ${client.user.tag} v${version}, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
   console.log(`I am currently in:\n${guildNames}`);
 
   setInterval(() => {
     if (isUsed) {
-      client.user.setActivity('https://cwavs.xyz/', { type: 'WATCHING' });
+      client.user.setActivity('https://www.cwavs.xyz/', { type: 'WATCHING' });
       isUsed = false;
     } else {
       client.user.setActivity('the world burn', { type: 'WATCHING' });

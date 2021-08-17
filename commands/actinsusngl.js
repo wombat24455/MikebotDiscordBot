@@ -1,4 +1,4 @@
-const randomPuppy = require('random-puppy'); //will probably be moved to a seperate file at some point
+const randomPuppy = require('random-puppy');
 
 module.exports = {
 	name: 'actinsusngl',
@@ -15,7 +15,8 @@ module.exports = {
                 url: url,
             },
         };
-        message.channel.send({ embed: amongUsmemeEmbed });
+       // message.channel.send({ embed: amongUsmemeEmbed });
+       channel.send({ embeds: [exampleEmbed] });
     });
 	},
 };
