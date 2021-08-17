@@ -7,6 +7,6 @@ module.exports = {
         title: 'MikeBot Development',
         description: 'My development roadmap can be found [here](https://github.com/wombat24455/MikebotDiscordBot/projects/1)',
     };
-    message.channel.send({ embed: [roadmapEmbed] });
+    message.channel.send({ embeds: [roadmapEmbed] });
 	},
 };

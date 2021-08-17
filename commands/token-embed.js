@@ -13,6 +13,6 @@ module.exports = {
             },
         ],
     };
-    message.channel.send({ embed: [tokenEmbed] });
+    message.channel.send({ embeds: [tokenEmbed] });
 	},
 };

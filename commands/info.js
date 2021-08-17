@@ -94,7 +94,7 @@ function printAll(message, client) {
             },
         ],
     };
-    message.channel.send({ embed: [infoEmbed] });
+    message.channel.send({ embeds: [infoEmbed] });
 }
 
 module.exports = {
