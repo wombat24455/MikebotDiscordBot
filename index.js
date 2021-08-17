@@ -1,7 +1,6 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-const intents = new Discord.Intents(32767);
-const client = new Discord.Client({ intents });
+const client = new Discord.Client({ intents: 14023 });
 
 client.commands = new Discord.Collection();
 
