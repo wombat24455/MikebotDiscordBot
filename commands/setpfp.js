@@ -4,7 +4,7 @@ module.exports = {
   execute(message/*, client*/) {
     switch (message.author.id) {
       case '546107653718540298':
-        newpfp = args[0]
+        newpfp = args.join(' ');
         //client.user.setAvatar(newpfp);
         console.log(newpfp)
         //console.log("new avatar set!");
