@@ -8,6 +8,6 @@ module.exports = {
         description: 'My website can be found [here](https://wombat24455.github.io/mikebot.github.io/)',
         timestamp: new Date(),
     };
-    message.channel.send({ embed: websiteEmbed });
+    message.channel.send({ embed: [websiteEmbed] });
 	},
 };

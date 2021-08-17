@@ -8,6 +8,6 @@ module.exports = {
         description: `${client.guilds.cache.size} servers`,
         timestamp: new Date(),
     };
-    message.channel.send({ embed: servercountEmbed });
+    message.channel.send({ embed: [servercountEmbed] });
 	},
 };

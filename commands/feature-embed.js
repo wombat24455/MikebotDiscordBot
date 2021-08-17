@@ -22,6 +22,6 @@ module.exports = {
         ],
         timestamp: new Date(),
     };
-    message.channel.send({ embed: featureEmbed });
+    message.channel.send({ embed: [featureEmbed] });
 	},
 };

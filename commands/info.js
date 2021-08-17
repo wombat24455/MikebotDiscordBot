@@ -26,7 +26,7 @@ function printUptime(message, client) {
             text: 'Nothin down here buddy'
         },
     };
-    message.channel.send({ embed: uptimeEmbed });
+    message.channel.send({ embed: [uptimeEmbed] });
 }
 function printAll(message, client) {
     let totalSeconds = (client.uptime / 1000);
@@ -94,7 +94,7 @@ function printAll(message, client) {
             },
         ],
     };
-    message.channel.send({ embed: infoEmbed });
+    message.channel.send({ embed: [infoEmbed] });
 }
 
 module.exports = {
@@ -108,7 +108,7 @@ module.exports = {
                 return printUptime(message, client);
             case 'all':
                 return printAll(message, client);
-            default: 
+            default:
                 message.channel.send(`Bro do \`\`${prefix}help\`\` so you know how to use the damn command.`);
                 break;
         }
