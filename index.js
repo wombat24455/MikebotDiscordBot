@@ -20,7 +20,7 @@ token = process.env.token
 
 // bot version
 // format: major.minor.patch
-var version = '1.18.18';
+var version = '1.2.0';
 
 // outputs in console when bot code is run
 client.on('ready', () => {
@@ -34,22 +34,30 @@ client.on('ready', () => {
 
   setInterval(() => {
     if (isUsed) {
-      client.user.setPresence({
+      /*
+      client.user.setActivity({
         status: `online`,
         activites: [{
           name: `https://cwavs.xyz`,
           type: `WATCHING`,
         }]
       })
+      */
+
+      client.user.setActivity('https://cwavs.xyz/', { type: 'WATCHING' });
       isUsed = false;
     } else {
-      client.user.setPresence({
+      /*
+      client.user.setActivity({
         status: `online`,
         activites: [{
           name: `the world burn`,
           type: `WATCHING`,
         }]
       })
+      */
+
+      client.user.setActivity('the world burn', { type: 'WATCHING' });
       isUsed = true;
     }
   }, 120000);
@@ -61,7 +69,7 @@ client.on('guildCreate', guild => {
   channel.send("yoyooyoyoyo wassup my broddas");
 })
 
-client.on('message', message => {
+client.on('messageCreate', message => {
   if (message.author.id === client.user.id) return;
 
   // Replies to mention of bot
@@ -75,7 +83,7 @@ client.on('message', message => {
 });
 
 // commands
-client.on('message', async message => {
+client.on('messageCreate', async message => {
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
