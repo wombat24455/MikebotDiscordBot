@@ -89,6 +89,6 @@ module.exports = {
         },
     };
     //console.log(`Command author: ${message.author.tag}\nChannel ID: ${message.channel}`)
-    message.channel.send({ embed: [helpEmbed] });
+    message.channel.send({ embeds: [helpEmbed] });
 	},
 };
