@@ -1,9 +1,9 @@
 module.exports = {
 	name: 'ping',
 	description: 'yeah idk how this works',
-	execute(message/*, client*/) {
+	execute(message) {
     message.channel.send("Pinging...").then(m => {
-        m.edit(`Roundtrip latency: ``${m.createdTimestamp - message.createdTimestamp} ms```);
+        m.edit(`Roundtrip latency: \`${m.createdTimestamp - message.createdTimestamp}\` ms`);
     });
 	},
 };
