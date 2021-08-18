@@ -18,6 +18,8 @@ prefix = '>$';
 
 token = process.env.token
 
+let guildNum = client.guilds.cache.size;
+
 // bot version
 // format: major.minor.patch
 var version = '1.2.2';
@@ -25,8 +27,7 @@ var version = '1.2.2';
 // outputs in console when bot code is run
 client.on('ready', () => {
   var isUsed = false;
-  let user_count = 0;
-  let guildNum = client.guilds.cache.size;
+  let user_count = 0
 
   client.guilds.cache.each((g) => user_count += g.memberCount);
   let guildNames = client.guilds.cache.map(g => g.name).join("\n");
