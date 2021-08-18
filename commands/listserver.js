@@ -1,6 +1,6 @@
 const index = require('../index.js');
 const guilds = index.guildNames;
-const guildNum = index
+const guildNum = index.guildNum;
 
 module.exports = {
 	name: 'invite',
@@ -17,7 +17,7 @@ module.exports = {
             ],
             timestamp: new Date(),
             footer: {
-                text: 'that is a total of'
+                text: `A total of ${guildNum} servers`
             },
         };
         message.channel.send({ embed: [guildList] });
