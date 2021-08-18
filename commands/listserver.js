@@ -3,8 +3,8 @@ const guilds = index.guildNames;
 const guildNum = index.guildNum;
 
 module.exports = {
-	name: 'invite',
-	description: 'invite me using this pls',
+	name: 'listguilds',
+	description: 'lists guilds I am in (bot owner only)',
 	execute(message) {
         const guildList = {
             color: 0x0099ff,
