@@ -18,7 +18,7 @@ prefix = '>$';
 
 token = process.env.token
 
-let guildNum = client.guilds.cache.size;
+var guildNum = client.guilds.cache.size;
 
 // bot version
 // format: major.minor.patch
@@ -27,12 +27,12 @@ var version = '1.2.2';
 // outputs in console when bot code is run
 client.on('ready', () => {
   var isUsed = false;
-  let user_count = 0
-
+  let user_count = 0;
+  
   client.guilds.cache.each((g) => user_count += g.memberCount);
   let guildNames = client.guilds.cache.map(g => g.name).join("\n");
 
-  console.log(`Bot logged in as ${client.user.tag} v${version}, watching ${guildNum} servers, and serving over ${user_count} users`);
+  console.log(`Bot logged in as ${client.user.tag} v${version}, watching ${client.guilds.cache.size} servers, and serving over ${user_count} users`);
   console.log(`I am currently in:\n${guildNames}`);
 
   setInterval(() => {
