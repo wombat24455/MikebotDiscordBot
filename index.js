@@ -65,8 +65,8 @@ client.on('messageCreate', message => {
 });
 
 /* command handler */
-client.on('messageCreate', async message => { // nice
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
+client.on('messageCreate', async message => {
+  if (!message.content.startsWith(prefix) || message.author.bot) return; // nice
 
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
