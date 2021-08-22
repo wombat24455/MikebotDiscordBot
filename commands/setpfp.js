@@ -7,7 +7,7 @@ module.exports = {
         newpfp = args.join(' ');
         client.user.setAvatar(newpfp);
         //console.log(newpfp)
-        console.log("new avatar set!");
+        console.log(`Bot avatar set to ${newpfp}`);
         break;
       default:
         message.channel.send("no");
