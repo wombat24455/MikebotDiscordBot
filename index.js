@@ -32,7 +32,6 @@ client.on('ready', () => {
   let guildNum = client.guilds.cache.size;
 
   console.log(`Bot logged in as ${client.user.tag} v${version}, watching ${guildNum} servers, and serving over ${user_count} users`);
-  /* console.log(`whatever this is: ${Object.keys(client)}`) */
   console.log(`I am currently in:\n${guildNames}`);
 
   setInterval(() => {
