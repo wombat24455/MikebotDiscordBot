@@ -16,7 +16,7 @@ for (const file of commandFiles) {
 // bot prefix
 prefix = '>$';
 
-token = process.env.token
+BotToken = process.env.token
 
 // bot version
 // format: major.minor.patch
@@ -82,5 +82,5 @@ client.on('messageCreate', async message => {
   }
 });
 
-client.login(token);
+client.login(BotToken);
 // hello fellow user
