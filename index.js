@@ -13,16 +13,16 @@ for (const file of commandFiles) {
   client.commands.set(command.name, command);
 }
 
-// bot prefix
+/* bot prefix */
 prefix = '>$';
 
 BotToken = process.env.token
 
-// bot version
-// format: major.minor.patch
+/* bot version */
+/* format: major.minor.patch */
 var version = '1.2.2';
 
-// outputs in console when bot code is run
+/* outputs in console when bot code is run */
 client.on('ready', () => {
   var isUsed = false;
   let user_count = 0;
@@ -32,7 +32,7 @@ client.on('ready', () => {
   let guildNum = client.guilds.cache.size;
 
   console.log(`Bot logged in as ${client.user.tag} v${version}, watching ${guildNum} servers, and serving over ${user_count} users`);
-  console.log(`whatever this is: ${Object.keys(client)}`)
+  /* console.log(`whatever this is: ${Object.keys(client)}`) */
   console.log(`I am currently in:\n${guildNames}`);
 
   setInterval(() => {
@@ -55,18 +55,18 @@ client.on('guildCreate', guild => {
 client.on('messageCreate', message => {
   if (message.author.id === client.user.id) return;
 
-  // Replies to mention of bot
-  if (message.content.includes(client.user.id)) { // nice
+  /* Replies to mention of bot */
+  if (message.content.includes(client.user.id)) {
     message.channel.send(`my prefix is ${prefix} buddy.`);
   }
-  // Reacts to the specified user's messages
+  /* Reacts to the specified user's messages */
   if (message.author.id === "765874143064358923") {
     message.react('😡');
   }
 });
 
-// commands
-client.on('messageCreate', async message => {
+/* command handler */
+client.on('messageCreate', async message => { // nice
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
