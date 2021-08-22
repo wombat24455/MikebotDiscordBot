@@ -30,9 +30,9 @@ client.on('ready', () => {
   client.guilds.cache.each((g) => user_count += g.memberCount);
   let guildNames = client.guilds.cache.map(g => g.name).join("\n");
   let guildNum = client.guilds.cache.size;
-  
+
   console.log(`Bot logged in as ${client.user.tag} v${version}, watching ${guildNum} servers, and serving over ${user_count} users`);
-  console.log(`client constructor: ${client.constructor.name}`)
+  console.log(`whatever this is: ${Object.keys(client)}`)
   console.log(`I am currently in:\n${guildNames}`);
 
   setInterval(() => {
