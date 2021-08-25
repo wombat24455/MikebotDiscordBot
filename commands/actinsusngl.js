@@ -1,4 +1,4 @@
-export const name = 'actinsusngl';
+export const name = 'cow1';
 export const description = 'gets memes from r/AmongUs';
 export function execute(message) {
   message.reply('It broked D:');
