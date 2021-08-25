@@ -1,12 +1,9 @@
-export const name = 'cow1';
-export const description = 'gets memes from r/AmongUs';
+export const name = 'actinsusngl';
+export const description = 'sussy';
 export function execute(message) {
-  message.reply('It broked D:');
-  /*
   import randomPuppy from 'random-puppy';
 
-  let amongUsSubreddit = "AmongUs";
-  randomPuppy(amongUsSubreddit).then(async (url) => {
+  randomPuppy("AmongUs").then(async (url) => {
     const amongUsmemeEmbed = {
       color: 0x0099ff,
       title: 'this was stolen from r/' + amongUsSubreddit,
@@ -18,5 +15,4 @@ export function execute(message) {
     };
     message.channel.send({eds: [amongUsmemeEmbed]});
   });
-  */
 }
