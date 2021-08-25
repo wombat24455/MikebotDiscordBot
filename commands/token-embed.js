@@ -1,7 +1,6 @@
-module.exports = {
-	name: 'givtoken',
-	description: 'gives you the bot token?? whaaaat!?!?!?',
-	execute(message) {
+export const name = 'givtoken';
+export const description = 'gives you the bot token?? whaaaat!?!?!?';
+export function execute(message) {
     const tokenEmbed = {
         color: 0x0099ff,
         title: 'Super secret bot token',
@@ -14,5 +13,4 @@ module.exports = {
         ],
     };
     message.channel.send({ embeds: [tokenEmbed] });
-	},
-};
+}
