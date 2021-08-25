@@ -1,5 +1,5 @@
-const package = require('../package.json');
-const version = package.version;
+import { version as _version } from '../package.json';
+const version = _version;
 
 function printVersion(message) {
     message.channel.send('Bot version: ' + version);
@@ -97,20 +97,18 @@ function printAll(message, client) {
     message.channel.send({ embeds: [infoEmbed] });
 }
 
-module.exports = {
-	name: 'info',
-	description: 'Displays info about the bot.',
-	execute(message, args, client) {
-        switch(args[0]){
-            case 'version':
-                return printVersion(message);
-            case 'uptime':
-                return printUptime(message, client);
-            case 'all':
-                return printAll(message, client);
-            default:
-                message.channel.send(`Bro do \`\`${prefix}help\`\` so you know how to use the damn command.`);
-                break;
-        }
-	},
-};
+export const name = 'info';
+export const description = 'Displays info about the bot.';
+export function execute(message, args, client) {
+    switch (args[0]) {
+        case 'version':
+            return printVersion(message);
+        case 'uptime':
+            return printUptime(message, client);
+        case 'all':
+            return printAll(message, client);
+        default:
+            message.channel.send(`Bro do \`\`${prefix}help\`\` so you know how to use the damn command.`);
+            break;
+    }
+}

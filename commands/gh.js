@@ -1,7 +1,6 @@
-module.exports = {
-	name: 'gh',
-	description: 'I reply with the link to my github',
-	execute(message) {
+export const name = 'gh';
+export const description = 'I reply with the link to my github';
+export function execute(message) {
     const ghEmbed = {
         color: 0x0099ff,
         title: 'GitHub Repository',
@@ -15,5 +14,4 @@ module.exports = {
         timestamp: new Date(),
     };
     message.channel.send({ embeds: [ghEmbed] });
-	},
-};
+}
