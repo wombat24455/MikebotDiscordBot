@@ -13,6 +13,6 @@ export function execute(message) {
         url: url,
       },
     };
-    message.channel.send({eds: [amongUsmemeEmbed]});
+    message.channel.send({embeds: [amongUsmemeEmbed]});
   });
 }
