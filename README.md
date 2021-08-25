@@ -1,11 +1,10 @@
 # MikeBot
 
-MikeBot is a multipurpose discord bot which has a mix of fun features and administration features. Although MikeBot doesn't have many features at the moment you can still invite the bot through the [website](https://wombat24455.github.io/mikebot.github.io/) or [directly](https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847). The bot is being developed by the bot developers: wombat24455, Jacket-Chan, ~Cwavs~ and Crazy Teacup. Cwavs has decided to step down from his position.
+MikeBot is a "multipurpose" discord bot which has a mix of fun features and "administration features". Although MikeBot doesn't have many features at the moment you can still invite the bot through the [website](https://wombat24455.github.io/mikebot.github.io/) or [directly](https://discord.com/oauth2/authorize?client_id=639421464185143301&scope=bot&permissions=2146958847). The bot is being developed by the bot developers: wombat24455, Jacket-Chan, ~Cwavs~ and Crazy Teacup. Cwavs has decided to step down from his position.
 
-
-<img src="https://img.shields.io/github/stars/wombat24455/MikebotDiscordBot">
-<img src="https://www.codefactor.io/repository/github/wombat24455/mikebotdiscordbot/badge/master">
-<img src="https://img.shields.io/github/license/wombat24455/MikebotDiscordBot">
+![Stars](https://img.shields.io/github/stars/wombat24455/MikebotDiscordBot)
+![Codefactor](https://www.codefactor.io/repository/github/wombat24455/mikebotdiscordbot/badge/master)
+![License](https://img.shields.io/github/license/wombat24455/MikebotDiscordBot)
 
 ## MikeBot Dev Team
 
@@ -17,6 +16,7 @@ MikeBot is a multipurpose discord bot which has a mix of fun features and admini
 ## Contribute
 
 If you would like to contribute a change, please do so to the dev branch. We do this so that potential errors can be fixed before it is merged into the main repo (which is live).
+Read CONTRIBUTING.md for more info
 
 ## [MikeBot Wiki](https://github.com/wombat24455/MikebotDiscordBot/wiki)
 
