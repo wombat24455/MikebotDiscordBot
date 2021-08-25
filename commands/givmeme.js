@@ -2,6 +2,7 @@ export const name = 'givmeme';
 export const description = 'Gets a meme/image from the one of the subreddits in the list';
 export function execute(message) {
 	import randomPuppy from 'random-puppy';
+
 	let reddit = [
 		"memes",
 		"dankmemes",
