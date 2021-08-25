@@ -1,7 +1,9 @@
 export const name = 'actinsusngl';
 export const description = 'gets memes from r/AmongUs';
 export function execute(message) {
+  /*
   import randomPuppy from 'random-puppy';
+
   let amongUsSubreddit = "AmongUs";
   randomPuppy(amongUsSubreddit).then(async (url) => {
     const amongUsmemeEmbed = {
@@ -15,4 +17,6 @@ export function execute(message) {
     };
     message.channel.send({eds: [amongUsmemeEmbed]});
   });
+  */
+  message.reply('It broked D:');
 }
