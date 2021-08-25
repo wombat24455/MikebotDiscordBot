@@ -20,7 +20,7 @@ BotToken = process.env.token
 
 /* bot version */
 /* format: major.minor.patch */
-var version = '1.2.2';
+var version = '1.2.3';
 
 /* outputs in console when bot code is run */
 client.on('ready', () => {
