@@ -4,12 +4,12 @@ module.exports = {
 	execute(message) {
     const ghEmbed = {
         color: 0x0099ff,
-        title: 'This stuff be coming soon',
-        description: 'The stuff listed here might be worked on soon.',
+        title: 'GitHub Repository',
+        description: 'Helo :)',
         fields: [
             {
-                name: 'Helo :)',
-                value: 'This is the link to my github: https://github.com/wombat24455/MikebotDiscordBot',
+                name: 'This is the link to my github:',
+                value: 'https://github.com/wombat24455/MikebotDiscordBot',
             },
         ],
         timestamp: new Date(),
