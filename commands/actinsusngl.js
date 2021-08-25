@@ -1,20 +1,20 @@
 const randomPuppy = require('random-puppy');
 
-export const name = 'actinsusngl';
-export const description = 'sussy';
-export function execute(message) {
-  import randomPuppy from 'random-puppy';
-
-  randomPuppy("AmongUs").then(async (url) => {
-    const amongUsmemeEmbed = {
-      color: 0x0099ff,
-      title: 'this was stolen from r/' + amongUsSubreddit,
-      description: `[Open in browser](${url})`,
-      url: `https://www.reddit.com/r/${amongUsSubreddit}`,
-      attachment: {
-        url: url,
-      },
-    };
-    message.channel.send({embeds: [amongUsmemeEmbed]});
-  });
+module.exports = {
+  name: 'actinsusngl',
+  description: 'sussy baka',
+  execute(message) {
+    randomPuppy("AmongUs").then(async url => {
+      const amongUsmemeEmbed = {
+        color: 0x0099ff,
+        title: 'this was stolen from r/' + amongUsSubreddit,
+        description: `[Open in browser](${url})`,
+        url: `https://www.reddit.com/r/${amongUsSubreddit}`,
+        attachment: {
+          url: url,
+        },
+      };
+      message.channel.send({ embeds: [amongUsmemeEmbed] });
+    });
+  }
 }
