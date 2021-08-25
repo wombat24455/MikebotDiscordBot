@@ -9,11 +9,13 @@ export function execute(message) {
 		"sbubby",
 		"bonehurtingjuice",
 		"antimeme",
-		"NoahGetTheBoat",
 		"blursedimages",
 		"cursedimages",
 		"animenocontext",
-		"HolUp"
+		"HolUp",
+		"engrish",
+		"skamtebord",
+		"shitposting"
 	];
 
 	let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
