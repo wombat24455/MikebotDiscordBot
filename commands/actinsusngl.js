@@ -9,10 +9,11 @@ export function execute(message) {
       title: 'this was stolen from r/' + amongUsSubreddit,
       description: `[Open in browser](${url})`,
       url: `https://www.reddit.com/r/${amongUsSubreddit}`,
-      image: {
+      attachment: {
         url: url,
       },
     };
     message.channel.send({embeds: [amongUsmemeEmbed]});
   });
 }
+  
