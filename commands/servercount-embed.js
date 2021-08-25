@@ -1,7 +1,6 @@
-module.exports = {
-	name: 'servercount',
-	description: 'Displays the number of servers the bot is in',
-	execute(message, args, client) {
+export const name = 'servercount';
+export const description = 'Displays the number of servers the bot is in';
+export function execute(message, args, client) {
     const servercountEmbed = {
         color: 0x0099ff,
         title: 'I am currently in',
@@ -9,5 +8,4 @@ module.exports = {
         timestamp: new Date(),
     };
     message.channel.send({ embeds: [servercountEmbed] });
-	},
-};
+}
