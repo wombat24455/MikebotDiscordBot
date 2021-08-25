@@ -1,7 +1,6 @@
-module.exports = {
-	name: 'features',
-	description: 'Displays an embed of the stuff that is coming soon.',
-	execute(message) {
+export const name = 'features';
+export const description = 'Displays an embed of the stuff that is coming soon.';
+export function execute(message) {
     const featureEmbed = {
         color: 0x0099ff,
         title: 'This stuff be coming soon',
@@ -23,5 +22,4 @@ module.exports = {
         timestamp: new Date(),
     };
     message.channel.send({ embeds: [featureEmbed] });
-	},
-};
+}

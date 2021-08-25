@@ -1,7 +1,6 @@
-module.exports = {
-	name: 'website',
-	description: 'Provides a link to the bot website.',
-	execute(message) {
+export const name = 'website';
+export const description = 'Provides a link to the bot website.';
+export function execute(message) {
     const websiteEmbed = {
         color: 0x0099ff,
         title: 'My website:',
@@ -9,5 +8,4 @@ module.exports = {
         timestamp: new Date(),
     };
     message.channel.send({ embeds: [websiteEmbed] });
-	},
-};
+}

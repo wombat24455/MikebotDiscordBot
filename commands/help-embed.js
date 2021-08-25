@@ -1,7 +1,6 @@
-module.exports = {
-	name: 'help',
-	description: 'Displays the help embed.',
-	execute(message) {
+export const name = 'help';
+export const description = 'Displays the help embed.';
+export function execute(message) {
     const helpEmbed = {
         color: 0x0099ff,
         title: 'MikeBot Command List',
@@ -66,18 +65,18 @@ module.exports = {
                 name: ">$reportbug",
                 value: "Report a bug."
             },
-						{
-								name: ">$cow",
-								value: "cow"
-						},
-						{
-								name: ">$simonstupid",
-								value: "can only be used by 2 specific people :>"
-						},
-						{
-								name: ">$owo",
-								value: "OwOifies youw sentences"
-						},
+            {
+                name: ">$cow",
+                value: "cow"
+            },
+            {
+                name: ">$simonstupid",
+                value: "can only be used by 2 specific people :>"
+            },
+            {
+                name: ">$owo",
+                value: "OwOifies youw sentences"
+            },
             {
                 name: 'Nothing here yet buddy',
                 value: 'This part is coming soon:tm:',
@@ -90,5 +89,4 @@ module.exports = {
     };
     //console.log(`Command author: ${message.author.tag}\nChannel ID: ${message.channel}`)
     message.channel.send({ embeds: [helpEmbed] });
-	},
-};
+}
