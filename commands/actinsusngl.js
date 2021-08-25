@@ -1,3 +1,5 @@
+const randomPuppy = require('random-puppy');
+
 export const name = 'actinsusngl';
 export const description = 'sussy';
 export function execute(message) {
@@ -16,4 +18,3 @@ export function execute(message) {
     message.channel.send({embeds: [amongUsmemeEmbed]});
   });
 }
-  
