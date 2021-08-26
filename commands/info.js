@@ -1,19 +1,18 @@
 const package = require('../package.json');
 const version = package.version;
 
-let totalSeconds = (client.uptime / 1000);
-let days = Math.floor(totalSeconds / 86400);
-let hours = Math.floor(totalSeconds / 3600);
-totalSeconds %= 3600;
-let minutes = Math.floor(totalSeconds / 60);
-let seconds = Math.floor(totalSeconds % 60);
-var totalUptime = `${days}d, ${hours}h, ${minutes}m and ${seconds}s`;
-
 function printVersion(message) {
     message.channel.send(`Bot version: ${version}`);
 }
 function printUptime(message) {
-
+    let totalSeconds = (client.uptime / 1000);
+    let days = Math.floor(totalSeconds / 86400);
+    let hours = Math.floor(totalSeconds / 3600);
+    totalSeconds %= 3600;
+    let minutes = Math.floor(totalSeconds / 60);
+    let seconds = Math.floor(totalSeconds % 60);
+    var totalUptime = `${days}d, ${hours}h, ${minutes}m and ${seconds}s`;
+    
     const uptimeEmbed = {
         color: 0x0099ff,
         title: 'I have been awake for',
@@ -31,6 +30,15 @@ function printUptime(message) {
     message.channel.send({ embed: [uptimeEmbed] });
 }
 function printAll(message, client) {
+    let totalSeconds = (client.uptime / 1000);
+    let days = Math.floor(totalSeconds / 86400);
+    let hours = Math.floor(totalSeconds / 3600);
+    totalSeconds %= 3600;
+    let minutes = Math.floor(totalSeconds / 60);
+    let seconds = Math.floor(totalSeconds % 60);
+    var totalUptime = `${days}d, ${hours}h, ${minutes}m and ${seconds}s`;
+    
+
     const infoEmbed = {
         color: 0x0099ff,
         title: 'Bot info',

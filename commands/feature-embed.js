@@ -15,10 +15,6 @@ module.exports = {
                     name: 'Better website functionality',
                     value: 'Not much of the website works rn lol (mostly the top part) so I will work on those at some point.',
                 },
-                {
-                    name: 'Discord server',
-                    value: 'There is an official server but it is still in development and is not available to the public as of right now.',
-                },
             ],
             timestamp: new Date(),
         };
