@@ -9,10 +9,8 @@ module.exports = {
     const sayMessage = args.join(' ');
 
     if (message.content.includes(everyone)) {
-      message.delete();
       message.reply("I am not saying that >:(");
     } else if (message.content.includes(here)) {
-      message.delete();
       message.reply("I am not saying that >:(");
     } else {
       message.delete();

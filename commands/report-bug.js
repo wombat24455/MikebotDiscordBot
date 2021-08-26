@@ -17,19 +17,19 @@ module.exports = {
         };
         //remove this if the commandName isnt in the arguments
         let reportBugArgs = args.slice(1);
-    
+
         if (!reportBugArgs || reportBugArgs.length == 0) {
-    
+
             let bug = await prompt(message, "What is the bug?");
             while (bug.length > 1024) {
                 bug = await prompt(message, "Please shorten the bug to 1024 characters or shorter.");
             }
-    
+
             let desc = await prompt(message, "Please explain the bug or steps to reproduce.");
             while (desc.length > 1024) {
                 desc = await prompt(message, "Please shorten the description to 1024 characters or shorter.");
             }
-    
+
             const reportEmbed = {
                 color: 0xff0800,
                 title: 'Bug Report',
