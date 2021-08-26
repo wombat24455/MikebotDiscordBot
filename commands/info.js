@@ -4,6 +4,7 @@ const version = package.version;
 function printVersion(message) {
     message.channel.send(`Bot version: ${version}`);
 }
+
 function printUptime(message) {
     let totalSeconds = (client.uptime / 1000);
     let days = Math.floor(totalSeconds / 86400);
@@ -12,7 +13,7 @@ function printUptime(message) {
     let minutes = Math.floor(totalSeconds / 60);
     let seconds = Math.floor(totalSeconds % 60);
     var totalUptime = `${days}d, ${hours}h, ${minutes}m and ${seconds}s`;
-    
+
     const uptimeEmbed = {
         color: 0x0099ff,
         title: 'I have been awake for',
@@ -37,7 +38,6 @@ function printAll(message, client) {
     let minutes = Math.floor(totalSeconds / 60);
     let seconds = Math.floor(totalSeconds % 60);
     var totalUptime = `${days}d, ${hours}h, ${minutes}m and ${seconds}s`;
-    
 
     const infoEmbed = {
         color: 0x0099ff,
