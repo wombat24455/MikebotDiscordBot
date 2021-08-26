@@ -5,7 +5,7 @@ function printVersion(message) {
     message.channel.send(`Bot version: ${version}`);
 }
 
-function printUptime(message) {
+function printUptime(message, client) {
     let totalSeconds = (client.uptime / 1000);
     let days = Math.floor(totalSeconds / 86400);
     let hours = Math.floor(totalSeconds / 3600);
