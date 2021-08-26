@@ -1,10 +1,6 @@
 const package = require('../package.json');
 const version = package.version;
 
-<<<<<<< Updated upstream
-const vars = require("../vars.js");
-const uptime = vars.botUptime;
-=======
 let totalSeconds = (client.uptime / 1000);
 let days = Math.floor(totalSeconds / 86400);
 let hours = Math.floor(totalSeconds / 3600);
@@ -12,7 +8,6 @@ totalSeconds %= 3600;
 let minutes = Math.floor(totalSeconds / 60);
 let seconds = Math.floor(totalSeconds % 60);
 var totalUptime = `${days}d, ${hours}h, ${minutes}m and ${seconds}s`;
->>>>>>> Stashed changes
 
 function printVersion(message) {
     message.channel.send(`Bot version: ${version}`);

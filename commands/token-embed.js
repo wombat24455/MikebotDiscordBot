@@ -11,8 +11,6 @@ module.exports = {
         inline: false,
       }, ],
     };
-    message.channel.send({
-      embeds: [tokenEmbed]
-    });
+    message.channel.send({ embeds: [tokenEmbed] });
   }
 }
