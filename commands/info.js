@@ -1,17 +1,14 @@
-import { version as _version } from '../package.json';
-const version = _version;
+const package = require('../package.json');
+const version = package.version;
+
+const vars = require("../vars.js");
+const uptime = vars.botUptime;
 
 function printVersion(message) {
     message.channel.send('Bot version: ' + version);
 }
-function printUptime(message, client) {
-    let totalSeconds = (client.uptime / 1000);
-    let days = Math.floor(totalSeconds / 86400);
-    let hours = Math.floor(totalSeconds / 3600);
-    totalSeconds %= 3600;
-    let minutes = Math.floor(totalSeconds / 60);
-    let seconds = Math.floor(totalSeconds % 60);
-    let uptime = `${days}d, ${hours}h, ${minutes}m and ${seconds}s`;
+function printUptime(message) {
+
     const uptimeEmbed = {
         color: 0x0099ff,
         title: 'I have been awake for',
@@ -29,13 +26,6 @@ function printUptime(message, client) {
     message.channel.send({ embed: [uptimeEmbed] });
 }
 function printAll(message, client) {
-    let totalSeconds = (client.uptime / 1000);
-    let days = Math.floor(totalSeconds / 86400);
-    let hours = Math.floor(totalSeconds / 3600);
-    totalSeconds %= 3600;
-    let minutes = Math.floor(totalSeconds / 60);
-    let seconds = Math.floor(totalSeconds % 60);
-    let uptime = `${days}d, ${hours}h, ${minutes}m and ${seconds}s`;
     const infoEmbed = {
         color: 0x0099ff,
         title: 'Bot info',
@@ -89,7 +79,7 @@ function printAll(message, client) {
             },
             {
                 name: 'My Discord',
-                value: 'Coming soon',
+                value: '[Join](https://discord.gg/JKMSZds)',
                 inline: true,
             },
         ],
@@ -97,18 +87,20 @@ function printAll(message, client) {
     message.channel.send({ embeds: [infoEmbed] });
 }
 
-export const name = 'info';
-export const description = 'Displays info about the bot.';
-export function execute(message, args, client) {
-    switch (args[0]) {
-        case 'version':
-            return printVersion(message);
-        case 'uptime':
-            return printUptime(message, client);
-        case 'all':
-            return printAll(message, client);
-        default:
-            message.channel.send(`Bro do \`\`${prefix}help\`\` so you know how to use the damn command.`);
-            break;
-    }
-}
+module.exports = {
+	name: 'info',
+	description: 'Displays info about the bot.',
+	execute(message, args) {
+        switch(args[0]){
+            case 'version':
+                return printVersion(message);
+            case 'uptime':
+                return printUptime(message);
+            case 'all':
+                return printAll(message);
+            default:
+                message.reply(`Did i stutter? Re-read the help message or use either \`version\`, \`uptime\`, or \`all\``);
+                break;
+        }
+	},
+};
