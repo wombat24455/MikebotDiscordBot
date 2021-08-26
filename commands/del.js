@@ -2,7 +2,7 @@ module.exports = {
 	name: 'del',
 	description: 'Deletes the amount of messages specified (limit of 100)',
 	execute(message, args) { 
-		if (message.member.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) {
+		if (message.member.permissions.has(Permissions.MANAGE_MESSAGES)) {
 			if (!args[0]) {
 				message.reply('You need to tell me the number of messages you want to delete you numpty.');
 				return;
