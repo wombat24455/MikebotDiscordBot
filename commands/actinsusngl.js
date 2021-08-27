@@ -4,7 +4,8 @@ module.exports = {
   name: 'actinsusngl',
   description: 'sussy baka',
   execute(message) {
-    randomPuppy("AmongUs").then(async url => {
+    amongUsSubreddit = "AmongUs";
+    randomPuppy(amongUsSubreddit).then(async url => {
       const amongUsmemeEmbed = {
         color: 0x0099ff,
         title: 'this was stolen from r/' + amongUsSubreddit,
