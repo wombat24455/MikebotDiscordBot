@@ -12,7 +12,7 @@ module.exports = {
         title: 'this was stolen from r/' + amongUsSubreddit,
         description: `[Open in browser](${url})`,
         url: `https://www.reddit.com/r/${amongUsSubreddit}`,
-        attachment: {
+        image: {
           url: url,
         },
       };
