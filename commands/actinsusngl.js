@@ -5,6 +5,7 @@ module.exports = {
   description: 'sussy baka',
   execute(message) {
     amongUsSubreddit = "AmongUs";
+
     randomPuppy(amongUsSubreddit).then(async url => {
       const amongUsmemeEmbed = {
         color: 0x0099ff,
@@ -15,6 +16,7 @@ module.exports = {
           url: url,
         },
       };
+
       message.channel.send({ embeds: [amongUsmemeEmbed] });
     });
   }
