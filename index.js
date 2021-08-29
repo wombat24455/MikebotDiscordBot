@@ -28,8 +28,8 @@ client.on('ready', () => {
   let user_count = 0;
 
   client.guilds.cache.each((g) => user_count += g.memberCount);
-  module.exports = { guildNames: `${client.guilds.cache.map(g => g.name).join("\n")}` };
-  module.exports = { guildNum: `${client.guilds.cache.size}` };
+  const guildNames = client.guilds.cache.map(g => g.name).join("\n");
+  const guildNum = client.guilds.cache.size;
 
 
   console.log(`Bot logged in as ${client.user.tag} v${version}, watching ${guildNum} servers, and serving over ${user_count} users`);

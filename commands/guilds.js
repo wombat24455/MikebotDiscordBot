@@ -1,6 +1,5 @@
-const index = require('../index');
-const servers = index.guildNum;
-const names = index.guildNames;
+const servers = client.guilds.cache.size;
+const names = client.guilds.cache.map(g => g.name).join("\n");
 
 module.exports = {
     name: `guilds`,
