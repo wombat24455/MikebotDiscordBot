@@ -1,5 +1,5 @@
 module.exports = { 
-	name: 'gh',
+	name: 'gh' || `github`,
 	description: 'I reply with the link to my github',
 	execute(message) {
         const ghEmbed = {
