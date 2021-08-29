@@ -28,8 +28,8 @@ client.on('ready', () => {
   let user_count = 0;
 
   client.guilds.cache.each((g) => user_count += g.memberCount);
-  let guildNames = client.guilds.cache.map(g => g.name).join("\n");
-  let guildNum = client.guilds.cache.size;
+  guildNames = client.guilds.cache.map(g => g.name).join("\n");
+  guildNum = client.guilds.cache.size;
 
   console.log(`Bot logged in as ${client.user.tag} v${version}, watching ${guildNum} servers, and serving over ${user_count} users`);
   console.log(`I am currently in:\n${guildNames}`);
