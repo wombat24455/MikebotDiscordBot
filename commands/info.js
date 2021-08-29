@@ -112,7 +112,7 @@ module.exports = {
             case 'all':
                 return printAll(message);
             default:
-                message.reply(`Did i stutter? Re-read the help message or use either \`version\`, \`uptime\`, or \`all\``);
+                message.reply(`Use either \`version\`, \`uptime\`, or \`all\`. Don't make me repeat myself.`);
                 break;
         }
 	},
