@@ -30,7 +30,7 @@ module.exports = {
                 },
                 {
                     name: 'degenerate sh*t',
-                    value: '```>$owo```',
+                    value: '```>$owo [message]```',
                     inline: true,
                 },
                 {
