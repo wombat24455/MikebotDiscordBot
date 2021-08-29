@@ -1,5 +1,6 @@
 module.exports = { 
 	name: 'gh',
+    alias: 'repo',
 	description: 'I reply with the link to my github',
 	execute(message) {
         const ghEmbed = {
