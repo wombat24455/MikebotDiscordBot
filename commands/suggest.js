@@ -5,7 +5,7 @@ module.exports = {
         const vars = require('../vars.js');
         const everyone = vars.everyonePing;
         const here = vars.herePing
-		const fullUser = `${message.author.username}${message.author.discriminator}`;
+		const fullUser = `${message.author.username}#${message.author.discriminator}`;
         const suggestion = args.join(' ');
 
         if (message.content.includes(everyone)) {
