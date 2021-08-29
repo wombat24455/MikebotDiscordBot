@@ -8,7 +8,7 @@ MikeBot is a "multipurpose" discord bot which has a mix of fun features and "adm
 
 ## MikeBot Dev Team
 
-- [Wombat](https://github.com/wombat24455) - Bot owner, bot host manager and main developer.
+- [wombat24455](https://github.com/wombat24455) - Bot owner, bot host manager and main developer.
 - [techman471](https://github.com/techman471) - Bot developer, latest one to join the team :) 
 - [Jacket-Chan](https://github.com/Jacket-Chan) - Manages backend systems for the bot, bot developer.
 - [Cwavs](https://github.com/Cwavs) - Bug finder (breaks shit), Bot crasher, ex-contributions manager, ex-partial bot developer, ex-contributor.
