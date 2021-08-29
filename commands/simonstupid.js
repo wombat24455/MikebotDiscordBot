@@ -2,9 +2,10 @@ module.exports = {
 	name: 'simonstupid',
 	description: 'very stuipd',
 	execute(message) {
-		meanMsg = "WHY U ARE SO STINKET :face_vomiting:"
-		
-		switch (message.author.id) {
+		idiot = message.author.id;
+		meanMsg = "WHY U ARE SO STINKET :face_vomiting:";
+
+		switch (idiot) {
 			case '375990913870200833':
 				message.reply(meanMsg);
 				break;
@@ -12,6 +13,7 @@ module.exports = {
 				message.reply(meanMsg);
 			default:
 				message.reply("no");
+				break;
 		}
 	}
 }
