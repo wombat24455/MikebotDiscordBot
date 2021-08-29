@@ -5,7 +5,7 @@ module.exports = {
         const vars = require('../vars.js');
         const everyone = vars.everyonePing;
         const here = vars.herePing
-				const fullUser = `${message.author.username}${message.author.discriminator}`;
+		const fullUser = `${message.author.username}${message.author.discriminator}`;
         const suggestion = args.join(' ');
 
         if (message.content.includes(everyone)) {
@@ -13,7 +13,7 @@ module.exports = {
         } else if (message.content.includes(here)) {
             message.reply("Nice try buckaroo you can't get me to mention here");
         } else {
-            client.channels.cache.get('731267852564430882').send(`${suggestion} - Suggested by user: ${user}`);
+            client.channels.cache.get('731267852564430882').send(`${suggestion} - Suggested by user: ${fullUser}`);
         }
     }
 }
