@@ -56,11 +56,13 @@ client.on('messageCreate', message => {
 
   /* Replies to mention of bot */
   if (message.content.includes(client.user.id)) {
-    message.channel.send(`my prefix is ${prefix} buddy.`);
+    message.reply(`OI BRUH STOP PINGING ME my goddamn prefix is \`${prefix}\``);
   }
   /* Reacts to the specified user's messages */
-  if (message.author.id === "765874143064358923") {
-    message.react('😡');
+  switch (message.author.id) {
+    case "765874143064358923":
+      message.react('😡');
+      break;
   }
 });
 
