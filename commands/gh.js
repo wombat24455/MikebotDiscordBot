@@ -1,5 +1,6 @@
-if (message == `gh` || `github`) {
+
   module.exports = {
+    if (message == `gh` || `github`) {
     name: message,
     description: "I reply with the link to my github",
     execute(message) {
@@ -17,5 +18,5 @@ if (message == `gh` || `github`) {
       };
       message.channel.send({ embeds: [ghEmbed] });
     },
-  };
-}
+  }
+};
