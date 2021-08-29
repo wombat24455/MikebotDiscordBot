@@ -5,15 +5,10 @@ module.exports = {
 		idiot = message.author.id;
 		meanMsg = "WHY U ARE SO STINKET :face_vomiting:";
 
-		switch (idiot) {
-			case '375990913870200833':
-				message.reply(meanMsg);
-				break;
-			case '546107653718540298':
-				message.reply(meanMsg);
-			default:
-				message.reply("no");
-				break;
+		if (idiot === "375990913870200833" || "546107653718540298") {
+			message.reply(meanMsg);
+		} else {
+			message.reply("no");
 		}
 	}
 }

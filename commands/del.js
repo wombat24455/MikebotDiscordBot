@@ -9,7 +9,7 @@ module.exports = {
 			}
 			var newamount = Number(args[0]) + Number(1);
 			message.channel.bulkDelete(newamount);
-			message.channel.send(`Yeeted ${args[0]} messages into the void.`).then(message => {
+			message.reply(`Yeeted ${args[0]} messages into the void.`).then(message => {
 					message.delete({ timeout: 3000 });
 				})
 				.catch(console.error);
