@@ -1,6 +1,6 @@
-const guild = require('../index.js');
-const names = guild.guildNames;
-const servers = guild.guildNum;
+const index = require('../index');
+const servers = index.guildNum;
+const names = index.guildNames;
 
 module.exports = {
     name: `guilds`,
