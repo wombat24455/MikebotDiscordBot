@@ -11,11 +11,11 @@ module.exports = {
             },
             fields: [{
                     name: 'get to know me ;)',
-                    value: '```>$invite\n>$info [query]\n>$suggest\n>$givtoken\n>$servercount\n>$website\n>$roadmap```',
+                    value: '```>$invite\n>$info [query]\n>$givtoken\n>$servercount\n>$website\n>$roadmap```',
                 },
                 {
                     name: 'help fix my sh*t',
-                    value: '```>$reportbug\n>$suggest```',
+                    value: '```>$reportbug\n>$suggest [suggestion]```',
                     inline: true,
                 },
                 {
