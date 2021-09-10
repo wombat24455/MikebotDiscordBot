@@ -80,7 +80,8 @@ client.on('messageCreate', async message => {
     client.commands.get(command).execute(message, args, client);
   } catch (error) {
     console.error(error);
-    message.reply('Oi mate somefing wrong innit bruv, this command wont work bruv');
+    message.reply(`Oi mate somefing wrong innit bruv, this command wont work`);
+    message.channel.send(`<:fuuuuuuuk:884938512368042054>`);
   }
 });
 

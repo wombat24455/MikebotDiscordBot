@@ -17,7 +17,7 @@ module.exports = {
         ],
         timestamp: new Date(),
       };
-      
+
       message.channel.send({ embeds: [ghEmbed] });
     },
 };
