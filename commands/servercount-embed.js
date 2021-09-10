@@ -5,7 +5,7 @@ module.exports = {
         const servercountEmbed = {
             color: 0x0099ff,
             title: 'I am currently in',
-            description: `${client.guilds.cache.size} servers`,
+            description: `${client.guilds} servers`,
             timestamp: new Date(),
         };
         message.channel.send({ embeds: [servercountEmbed] });
