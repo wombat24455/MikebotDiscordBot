@@ -30,6 +30,7 @@ client.on('ready', () => {
   client.guilds.cache.each((g) => user_count += g.memberCount);
   const guildNames = client.guilds.cache.map(g => g.name).join("\n");
   const guildNum = client.guilds.cache.size;
+  console.log(guildNum);
 
 
   console.log(`Bot logged in as ${client.user.tag} v${version}, watching ${guildNum} servers, and serving over ${user_count} users`);
