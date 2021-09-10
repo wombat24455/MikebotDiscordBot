@@ -8,8 +8,8 @@ Read the stuff about Code of Conduct [here](https://github.com/wombat24455/Mikeb
 
 ## Want something to be added to MikeBot?
 
-Well you've come to the right place... to be told to go create an [issue](https://github.com/wombat24455/MikebotDiscordBot/issues) or use the **>$suggest** command, either way I will take a look at your requests.
+Well you've come to the right place... to be told to go create an [issue](https://github.com/wombat24455/MikebotDiscordBot/issues) or use the `>$suggest` command, either way I will take a look at your requests.
 
 ## Spotted an issue with MikeBot?
 
-If you've spotted an issue with MikeBot (command abuse etc) create an [issue](https://github.com/wombat24455/MikebotDiscordBot/issues) (again lol) ~~I will be creating a command similar to the **>$suggest** command which will be sent to the MikeBot discord server (not public yet)~~ or you can report the bug using the command **>$reportbug**.
+If you've spotted an issue with MikeBot (command abuse etc) create an [issue](https://github.com/wombat24455/MikebotDiscordBot/issues) (again lol) ~~I will be creating a command similar to the `>$suggest` command which will be sent to the MikeBot discord server (not public yet)~~ or you can report the bug using the command `>$reportbug`.

@@ -17,7 +17,7 @@ MikeBot is a "multipurpose" discord bot which has a mix of fun features and "adm
 ## Contribute
 
 If you would like to contribute a change, please do so to the dev branch. We do this so that potential errors can be fixed before it is merged into the main repo (which is live).
-Read CONTRIBUTING.md for more info
+Read [CONTRIBUTING.md](./CONTRIBUTING.md) for more info
 
 ## [MikeBot Wiki](https://github.com/wombat24455/MikebotDiscordBot/wiki)
 
