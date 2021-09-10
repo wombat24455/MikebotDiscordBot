@@ -38,7 +38,7 @@ client.on('ready', () => {
 
   setInterval(() => {
     if (isUsed) {
-      client.user.setActivity('https://www.cwavs.xyz/', { type: 'WATCHING' });
+      client.user.setActivity('https://www.ciputin.cf/', { type: 'WATCHING' });
       isUsed = false;
     } else {
       client.user.setActivity('the world burn', { type: 'WATCHING' });
