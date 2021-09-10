@@ -1,3 +1,5 @@
+const randomPuppy = require('random-puppy');
+
 module.exports = {
 	name: 'givmeme',
 	description: 'Gets a meme/image from the one of the subreddits in the list',
@@ -9,8 +11,6 @@ module.exports = {
 			"bonehurtingjuice",
 			"antimeme",
 			"blursedimages",
-			"cursedimages",
-			"animenocontext",
 			"HolUp",
 			"engrish",
 			"skamtebord",
