@@ -25,7 +25,7 @@ module.exports = {
 				title: 'this was stolen from r/' + subreddit,
 				description: `[Open in browser](${url})`,
 				url: `https://www.reddit.com/r/${subreddit}`,
-				attachment: {
+				image: {
 					url: url,
 				},
 			}
