@@ -5,9 +5,10 @@ module.exports = {
         const servercountEmbed = {
             color: 0x0099ff,
             title: 'I am currently in',
-            description: client.guilds.length + ` servers`, // we shall see
+            description: `This is a test message`, // we shall see
             timestamp: new Date(),
         };
         message.channel.send({embeds: [servercountEmbed]});
     }
 }
+console.log(client.guilds);
