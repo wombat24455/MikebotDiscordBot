@@ -9,6 +9,5 @@ module.exports = {
             timestamp: new Date(),
         };
         message.channel.send({embeds: [servercountEmbed]});
-        console.log(client.guilds);
     }
 }
