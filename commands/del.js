@@ -7,7 +7,7 @@ module.exports = {
 				message.reply('You need to tell me the number of messages you want to delete you numpty.');
 				return;
 			}
-			var newamount = Number(args[0]) + Number(1);
+			let newamount = Number(args[0]) + Number(1);
 			message.channel.bulkDelete(newamount);
 			message.reply(`Yeeted ${args[0]} messages into the void.`).then(message => {
 					message.delete({ timeout: 3000 });
